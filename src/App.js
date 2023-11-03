@@ -8,13 +8,29 @@ function App() {
     alert('Button clicked!');
   };
 
-  return (
-    <div>
-      <h1>Hello, React!</h1>
-      <Button label="Click Me" onClick={handleClick} />
-      <Menu />
+ 
+
+
+return (
+    <div className="App">
+      <div className="menu">
+        <ul>
+          <li><Button label="Button 1" onClick={handleClick} /></li>
+           <li><Button label="Button 2" onClick={handleClick} /></li>
+           <li><Button label="Button 3" onClick={handleClick} /></li>
+           <li><Button label="Button 4" onClick={handleClick} /></li>
+          <li><input type="text" placeholder="Search" /></li>
+        </ul>
+      </div>
+      <div className="content">
+        <img src="https://www.freecodecamp.org/news/content/images/size/w2000/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg" alt="Your Image" className="image" />
+      </div>
     </div>
   );
+
+
+
+
 }
 
 export default App;
