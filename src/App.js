@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import Button from './Button';
-import Menu from './Menu';
+
 
 function App() {
   const handleClick = () => {
@@ -23,7 +23,7 @@ return (
         </ul>
       </div>
       <div className="content">
-        <img src="https://www.freecodecamp.org/news/content/images/size/w2000/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg" alt="Your Image" className="image" />
+<img src="https://www.freecodecamp.org/news/content/images/size/w2000/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg" alt="Mountain" className="image" />
       </div>
     </div>
   );
