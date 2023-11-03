@@ -27,11 +27,7 @@ return (
       <div className="content">
 <img src="https://www.freecodecamp.org/news/content/images/size/w2000/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg" alt="Mountain" className="image" />
       </div>
-<div>
-      <h1>My Firebase App</h1>
-      <AddData />
-      {/* Other components or content */}
-    </div>
+
     </div>
   );
 
