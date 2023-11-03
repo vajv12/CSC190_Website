@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import Button from './Button';
-
+import './App.css'; // CSS for styling
 
 function App() {
   const handleClick = () => {
