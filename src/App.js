@@ -2,6 +2,8 @@
 import React from 'react';
 import Button from './Button';
 import './App.css'; // CSS for styling
+import AddData from './AddData';
+
 
 function App() {
   const handleClick = () => {
