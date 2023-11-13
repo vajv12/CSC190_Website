@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us:</title>
+    <!-- link contact css-->
+    <link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+
+<body>
+    <!--using for reference not functional-->
+    <nav>
+        <ul>
+            <a href="">
+                <button>Shop all</button>
+            </a>
+
+            <a href="..\item\item.html">
+                <button>Shop By Category</button
+                    ></a>
+
+            <a href="">
+            <button>Events</button>
+        </a>
+
+            <a href=""> 
+            <button>About
+                
+            </button>
+
+        </a>
+            <a href="contact.html">
+                <button>Contact</button>
+            </a>
+
+            <!-- link to cart placeholder-->
+            <a href="..\cart\cart.html">
+                <button>cart</button>
+            </a>
+        </ul>
+    </nav>
+    <header>
+        <!-- logo placement-->
+        <img 
+        src="placeholder.png" 
+        class="logo">
+    <h1>Great Escape Games</h1>
+    
+    
+
+<!-- start contact pafe-->
+    </header>
+    <h1>Contact Us</h1>
+    
+    <!-- Contact page for users to use communicate with company -->
+    <!-- keeps it out of url  action="submit.php" method="POST" or whatever we use to secure-->
+    <form >
+
+        <label for = "fName" > First Name:</label>
+        <br>
+        <input 
+        type = "text"
+         id = "fName" 
+         name ="fName" required  
+         placeholder="Bob"
+         class="space">
+
+        <br>
+        <label for = "lName" > Last Name:</label>
+        <br>
+        <input 
+        type = "text" 
+        id = "lName" 
+        name ="lName" required 
+        placeholder="Belcher"
+        class="space">
+
+        <br>
+        <label for = "email" > Email:</label>
+        <br>
+        <input 
+        type = "email" 
+        id = "email" 
+        name ="email" required 
+        placeholder="xyz@email.com" 
+        class="space">
+        <br>
+
+        <label for = "phone" > Phone Number:</label>
+        <br>
+        <input 
+        type = "tel" 
+        id = "phone" 
+        name ="phone" 
+        class="space" 
+        //pattern="+[0-9]{1}[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+        minlength="11"
+        maxlength="11"
+        placeholder="19161234567"
+        required 
+        >
+
+        <br>
+        <label for = "message" > Message:</label>
+        <br>
+
+        <!-- better solution?
+        <input
+         type = "text" 
+         id = "message"
+         name ="message" required 
+         rows ="300";
+         class="mSpace">
+        -->
+
+        <textarea id ="message" 
+        class="message" 
+        rows="10" 
+        cols="22"
+        placeholder="Input message"
+        required 
+        ></textarea>
+
+
+        <br>
+        <button
+         id= "sMessage"
+        value="sMessage"
+
+        > Send Message</button >
+        
+
+    </form>
+   
+    <!--empty space-->
+    <br />   <br />   <br />   <br />  <br />   <br />   <br />   <br />   <br />  <br />  <br />  
+
+
+<!-- footer -->
+    <footer>
+         &copy; 2023 Great Escape Games
+         <br>
+         <br>  
+         <button id="subscribe"> Subscribe </button>
+         <br/>  <br />
+         <print>Sign up to receive emails on future promotions, events, and specials</print>
+
+    </footer>
+
+</body>
+
+
+</html>
