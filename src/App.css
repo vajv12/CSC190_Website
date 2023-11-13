@@ -1,33 +1,11 @@
-/* src/App.css */
-
 .App {
-  display: flex;
-  height: 100vh; /* 100% of the viewport height */
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  font-family: "Segoe UI", Geneva, Verdana, sans-serif;
 }
 
-.menu {
-  width: 30%;
-  background-color: #f0f0f0;
-  padding: 20px;
-}
-
-.menu ul {
-  list-style: none;
+body {
   padding: 0;
-}
-
-.menu li {
-  margin-bottom: 10px;
-}
-
-.content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image {
-  max-height: 30vh; /* 30% of the viewport height */
-  max-width: 100%;
+  margin: 0;
 }
