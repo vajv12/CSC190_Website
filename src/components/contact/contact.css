@@ -5,7 +5,7 @@ html {
 /*  set size */
 .site-wrapper {
     max-width: 1200px; /* Set a maximum width for the site wrapper */
-    margin: 0 auto; /* Center the site wrapper horizontally */
+    text-align: center;
     padding: 20px; /* Add padding for spacing around the content */
     background-color: #f0f0f0; /* Set a background color for the site wrapper */
 }
@@ -18,19 +18,27 @@ html {
  
 }
 
+input{
+    width: 500px;
+    height: 50px;
+
+}
+
 .logo{
     position:absolute;
-    top: 0;
-    left: 0;
-    margin-left: 2%;
-    max-width: 100%;
-    max-height: 100%;
+    bottom: -16%;
+    left: -2%;
+    margin-left: 3%;
+    width: 150px;
+    height: auto;
 }
 
 .message{
     background-color: #B9D9EB;
     border-color: #B9D9EB;
     box-shadow: none;
+    width: 500px;
+    height: auto;
 }
 
 .blank{
@@ -51,7 +59,7 @@ nav{
 }
 
 header{
-    background-color:#72A0C1 ;
+    background-color:rgb(109, 116, 116) ;
     text-align: center;
     position: relative;
     width: 100%;
@@ -61,6 +69,7 @@ header{
 
 body{
     font-family:Helvetica, sans-serif ;
+    text-align: center;
     margin-bottom: 10 px;
    
    /*text-align: center; */
@@ -68,13 +77,14 @@ body{
 }
 
 form{
+    
     p {
         padding: 8px;
-        margin: 25px;
-        
-        /* other styling */
-        background-color: #33475b;
-        border-radius: 10px;
+        text-align: center;
+        width: 600px;
+        /* other styling 
+        background-color: #33475b;*/
+        /*border-radius: 10px; */ 
         color: white;
         font-family: Arial;
       }
@@ -83,7 +93,53 @@ form{
 footer{
     background-color:#72A0C1 ;
     text-align: center;
-    padding: 40px;
+    padding: 5px;
 
 }
 
+
+footer {
+    background-color:#72A0C1 ;
+    color: #fff;
+    padding: auto;
+    text-align: center;
+    display: flex;
+    justify-content:space-evenly; /* Adjust as needed */
+    align-items: center;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+footer img {
+    width: 30px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: auto;
+    padding: 10px;
+   
+}
+
+/*set social in middle close together */
+.social{
+    margin: auto;
+    justify-content: center;
+   
+}
+
+.rights{
+    background-color:#000000 ;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content:space-evenly; /* Adjust as needed */
+    align-items: center;
+}
+
+
+/* send message button */
+#sMessage{
+    padding: 15px;
+}

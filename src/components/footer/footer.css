@@ -1,0 +1,32 @@
+
+
+footer {
+    background-color:#72A0C1 ;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content:space-evenly; /* Adjust as needed */
+    align-items: center;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+footer img {
+    width: 30px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.rights{
+    background-color:#000000 ;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content:space-evenly; /* Adjust as needed */
+    align-items: center;
+}

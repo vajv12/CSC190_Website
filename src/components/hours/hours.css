@@ -10,19 +10,14 @@ html{
 /*set logo to left corner*/
 .logo{
     position:absolute;
-    top: 0;
-    left: 0;
-    margin-left: 2%;
-    width: 110px; /* Adjust the width as needed */
+    bottom: -16%;
+    left: -2%;
+    margin-left: 3%;
+    width: 150px;
     height: auto;
 }
 
-/*set social in middle close together */
-.social{
-    margin: auto;
-    justify-content: center;
-   
-}
+
 #add{
     background-color: #318CE7;
     size: 1px;
@@ -66,8 +61,20 @@ h2{
     text-align: center;
 }
 
-sub{
-    vertical-align:sub;
+h1{
+    text-align: center;
+}
+
+ /* Remove default list styling */
+ ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+li{
+    text-align: center;
+    margin-bottom: 10px;
+
 }
 
 header{
@@ -91,12 +98,13 @@ body{
 footer {
     background-color:#72A0C1 ;
     color: #fff;
-    padding: auto;
+    padding: 20px;
     text-align: center;
     display: flex;
     justify-content:space-evenly; /* Adjust as needed */
     align-items: center;
 }
+
 footer a:hover {
     text-decoration: underline;
 }
@@ -106,11 +114,8 @@ footer a:hover {
 footer img {
     width: 30px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
-    margin: auto;
-    padding: 10px;
-   
+    margin-right: 5px; /* Adjust the margin as needed */
 }
-
 
 .rights{
     background-color:#000000 ;
