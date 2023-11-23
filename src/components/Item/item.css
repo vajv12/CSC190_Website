@@ -38,13 +38,29 @@ html{
 }
 
 .itemplace{
-    margin-top: -250px;
-    margin-left: 500px;
+    text-align: center;
+    margin:center;
+
+}
+.itemplace image{
+    align-content: center;
 
 }
 
-.centerMay{
+div .itemplace h1, div .itemplace sub{
+    content: center;
     margin-left: 500px;
+    margin-top: -250px;
+    float: right;
+}
+
+.centerMay{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+
+    float: left;
 }
 
 .suggestionText{
@@ -66,9 +82,7 @@ h2{
     text-align: center;
 }
 
-sub{
-    vertical-align:sub;
-}
+
 
 header{
     background-color:rgb(36, 95, 95) ;
@@ -88,6 +102,7 @@ body{
 
 
 
+/* footer */
 footer {
     background-color:#72A0C1 ;
     color: #fff;
