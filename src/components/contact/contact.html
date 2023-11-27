@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>Contact Us</title>
     <!-- link contact css-->
-    <link rel="stylesheet" type="text/css" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="contact.css" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"">
 </head>
 
 <body>
@@ -18,75 +18,51 @@
 </nav>
 
     <header>
-        <!-- logo placement-->
-        <img 
-        src="../images/GEG-logo.png" 
-        alt ="Great Escape Games logo"
-        class="logo">
-
-        <!--search bar-->
-        <div id="search-container">
-            <input type="text" id="search-bar" placeholder="Search...">
-            <button id="search-button">Search</button>
-        </div>
+     
         
     <nav class="topNav" >
-        <div class="dropdown">
-            <button class="dropbtn"></button>
-            <a href=""> <img src ="../images/login.png"
-                alt = "login">
-                </a>
-                
-           
 
+          <!-- logo placement-->
+          <a  href="home">
+          <img class="logo"
+          src="../images/GEG-logo.png" 
+          alt ="Great Escape Games logo"
+          >
+        </a>
+
+           <!--search bar-->
+            <input type="text" id="search-bar" placeholder="Search...">
+            <button id="search-button">Search</button>
+          
+            
+         <!--right side of top nav bar login/cart-->
+            <div class="topNav-right"> 
+    
+            <!--login with dropdown-->
+            <div class="dropdown">
+                <button class ="dropbtn"></button>
+            <a href="#login">
+                <img src ="../images/login.png" 
+                alt = "login"
+                >
+            </a>
             <div class="dropdown-content">
                 <a href="../hours/hours.html">Sign in</a>
                 <a href="#">Join</a>
-              
             </div>
         </div>
 
-        <!-- link to cart-->
-               <div class="dropdown"> 
-                <a href="..\cart\cart.html">
-                    <img src ="../images/cart.png" 
-                    alt = "cart"
-                    class="topNavImg"
-                    > 
+           <!--cart-->
+            <div class="dropdown">
+                <a href="../Cart/cart.html" 
+               >
+                <img src ="../images/cart.png" 
+                alt = "cart"
+             >
                 </a>
-            </div>
-
-          <!--
-        <ul>
-            <li><a href="">
-        <img src ="../images/login.png"
-        alt = "login">  
-        </a>
-        -->
-        <!-- Drop down menu
-      
-        <ul>
-                <li><a href="">Sign in</a></li>
-                <li><a href="">Join</a></li>
-            </ul>        
-           -->
-           <!--
-        </li>
-                <!-- link to cart
-               <li>
-                <a href="..\cart\cart.html">
-                    <img src ="../images/cart.png" 
-                    alt = "cart"
-                    class="topNavImg"
-                    > 
-                </a>
-            </li>
-          
-        </ul> 
-    -->
- 
         
-    
+          </div>
+ 
         </nav>
 </header>
     
@@ -96,127 +72,141 @@
 
         <div class="homeNav">
           <a href="#home">Home</a>
-          <a href="#news">News</a>
+
+          <!--news-->
           <div class="dropdown">
-            <button class="dropbtn">Shop
-              <i class="fa fa-caret-down"></i>
+            <button class="dropbtn">News
+         
             </button>
             <div class="dropdown-content">
-              <a href="#">shop all</a>
+              <a href="#">Event Calendar</a>
+              <a href="../reserve/reserve.html">Reserve Room</a>
+              <a href="../tournament/tournament.html">Tournaments</a>
+             
+            </div>
+          </div> 
+
+          <!--shop-->
+          <div class="dropdown">
+            <button class="dropbtn">Shop
+             
+            </button>
+            <div class="dropdown-content">
+              <a href="../Item/item.html">shop all</a>
               <a href="#">shop catergory</a>
              
             </div>
           </div> 
           <div class="dropdown">
             <button class="dropbtn">About
-              <i class="fa fa-caret-down"></i>
+         
             </button>
             <div class="dropdown-content">
               <a href="#">About Us</a>
               <a href="../contact/contact.html">Contact Us</a>
-              <a href="../hours/hours.html">Hours</a>
-              <a href="../locations/locations.html">Locations</a>
+              <a href="../hoursLocations/hourLocations.html">Locations/Hours</a>
+     
 
              
             </div>
+            
           </div> 
         </div>
+
  <!-- start contact page make box -->
-    <h1>Contact Us</h1>
-    <p>We'll be happy to answer any questions or concerns. Please either call the number below or fill out the form below</p>
+ <h1>Contact Us</h1>
+
+   
+    <p>We'll be happy to answer any questions or concerns. 
+    </br> Please either call the number below or fill out the form.</p>
     <h4>By Phone</h4>
    
-       Sacramento Phone:916 927 0810 
+       Sacramento: 916 927 0810 
     </br>  </br>
-        Rocklin Phone: 916 927 0810 
-    </br>  </br>
-</br>
+        Rocklin: 916 927 0810 
+ 
 
 
 
     
     <!-- Contact page for users to use communicate with company -->
-    <!-- keeps it out of url  action="submit.php" method="POST" or whatever we use to secure-->
-    <form >
-       
-        <label for = "fName" > First Name:</label>
-    </br>
-            <input 
-             type = "text"
-              id = "fName" 
-              name ="fName" required 
-              placeholder="Bob"
-              class="space">
-          
-    </br>    </br>
-        <label for = "lName" > Last Name:</label>
-        
-    </br>
-        <input 
-        type = "text" 
-        id = "lName" 
-        name ="lName" required 
-        placeholder="Belcher"
-        class="space">
-       
-    </br>    </br>
-
-        <label for = "email" > Email:</label>
-
-    </br>
-        <input 
-        type = "email" 
-        id = "email" 
-        name ="email" required 
-        placeholder="xyz@email.com" 
-        class="space">
-      
-        
   
-   </br>   </br>
-        <label for = "phone" > Phone Number:</label>
-    </br>
-      
+ <form >
+    <label for = "fName" > First Name:</label>
+</br>
         <input 
-        type = "tel" 
-        id = "phone" 
-        name ="phone" 
-        class="space" 
-        pattern="+[0-9]{1}[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        minlength="11"
-        maxlength="11"
-        placeholder="19161234567"
-        required>
-
-    </br>
-        <label for = "message" > Message:</label>
+         type = "text"
+          id = "fName" 
+          name ="fName" required 
+          placeholder="Bob"
+          class="space">
       
-    </br>
-        <textarea id ="message" 
-        class="message" 
-        rows="10" 
-        cols="22"
-        placeholder="Input message"
-        required >
-        </textarea>
-        
-
- 
-
-    </br> </br>
-        <button
-         id= "sMessage"
-        value="sMessage"
-
-        > Send Message</button >
-        
-
-    </form>
+</br>    </br>
+    <label for = "lName" > Last Name:</label>
+    
+</br>
+    <input 
+    type = "text" 
+    id = "lName" 
+    name ="lName" required 
+    placeholder="Belcher"
+    class="space">
    
+</br>    </br>
+
+    <label for = "email" > Email:</label>
+
+</br>
+    <input 
+    type = "email" 
+    id = "email" 
+    name ="email" required 
+    placeholder="xyz@email.com" 
+    class="space">
+
+</br>   </br>
+    <label for = "phone" > Phone Number:</label>
+</br>
+  
+    <input 
+    type = "tel" 
+    id = "phone" 
+    name ="phone" 
+    class="space" 
+    pattern="+[0-9]{1}[0-9]{3}-[0-9]{3}-[0-9]{4}"
+    minlength="11"
+    maxlength="11"
+    placeholder="19161234567"
+    required>
+
+</br>
+    <label for = "message" > Message:</label>
+  
+</br>
+    <textarea id ="message" 
+    class="message" 
+    rows="10" 
+    cols="22"
+    placeholder="Input message"
+    required >
+    </textarea>
+    
+</br> </br>
+    <button
+     id= "sMessage"
+    value="sMessage"
+
+    > Send Message</button >
+    
+</form>
+
     <!--empty space-->
     <br />   <br />   <br />   <br />  <br />   <br />   <br />   <br />   <br />  <br />  <br />  
 
+    <br />   <br />   <br />   <br />  <br />   <br />   <br />   <br />   <br />  <br />  <br />  
 
+
+    <br />   <br />   <br />   <br />  <br />   <br />   <br />   <br />   <br />  <br />  <br />  
 
 <!-- footer  -->
 <footer>
@@ -232,34 +222,30 @@
     </br> </br> </br>
     </p>
 
-  
-
-    
-    <p>
-        Resources
-        </br> </br>
-        <a href="#">Home</a>
-        <br>
-        <a href="#">About</a>
-        <br>
-        <a href="../contact/contact.html">Contact Us</a>
-        <br>
-       
-      
-        <a href="..\hours\hours.html">Hours</a>
-       
-    </p>
     <div id="subEmail">
-    <p> Subscribe 
-    </br>
+    <p> 
         Join us to get updates on events, sales, and more!
     </p>
       
             <input type="email" id="suEmail-bar" placeholder="Enter your Email ...">
+            <br></br>
             <button id="sub-button">subscribe</button>
         </div>
         <br>
-       
+        <p>
+            Resources
+            </br> </br>
+            <a href="#">Home</a>
+            <br>
+            <a href="#">About</a>
+            <br>
+            <a href="../contact/contact.html">Contact Us</a>
+            <br>
+           
+          
+            <a href="..\hours\hours.html">Hours</a>
+           
+        </p>     
       
        
    
