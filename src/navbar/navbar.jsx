@@ -10,8 +10,8 @@ export const Navbar = () => {
       <div className="links">
         <Link to="/Home"> Home Page </Link>
         <Link to="/Shop"> Shop All </Link>
-        <Link to="/Events"> Events </Link>
-        <Link to="/About"> About Us </Link>
+        <Link to="/Event"> Events </Link>
+        <Link to="/AboutShop"> About Us </Link>
         <Link to="/Contact"> Contact </Link>
         <Link to="/Cart"> Cart </Link>
       </div>
