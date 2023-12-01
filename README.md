@@ -53,15 +53,26 @@ NOTE: When coming up with the timeline this is the timeline for what you expect 
 
 text
 
+# Setup Environment
+Github
+pull code from respiratory 
+
+To run react files
+
+FireBase setup 
+
+
 # Testing
 
-Placeholder CSC191
+Continue in CSC191
+
 # Deployment
 
-Placeholder CSC191
+Continue in CSC191
+
 # Developers Instruction
 
-Placeholder CSC191
+Continue in CSC191
 
 
 
