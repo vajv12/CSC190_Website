@@ -8,8 +8,9 @@ import Shop from './pages/Shop'
 import Contact from './components/contact/contact'
 import Cart from './pages/Cart'
 import Event from './pages/Event'
+import AboutShop from './components/AboutShop/AboutShop';
 //import { MainFooter, SocialFooterSacramento, SocialFooterRocklin, RightsFooter } from './footer/footer';
-
+import LoginSignUp from './components/LoginSignup/LoginSignUp';
 function App() {
   return (
     <div className="App">
@@ -21,12 +22,13 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
             <Route path ="/event" element={<Event />} />
+        
+            
           </Routes>
         </BrowserRouter>
-       <MainFooter />
-      <SocialFooterSacramento />
-      <SocialFooterRocklin />
-      <RightsFooter />
+<Event/>
+<LoginSignUp/>
+
     </div>
   );
 }
