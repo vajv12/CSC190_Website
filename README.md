@@ -5,8 +5,6 @@
 alt="CSS logo" width="30%" height="30%">
 <img src="https://cdn-icons-png.flaticon.com/512/1322/1322195.png" alt="partnership handshake" width="15%" height="15%">
 <img src ="public/image/Soft Group Logo.png" alt="SoftGroup Logo" width="30%" height="30%">
-create a img folder for github to use that'll have all our imgs on file that we cannot use urls of 
-<img src=upload softgroup logo onto image file and copy the HTML URL of the GitHub to display  use width and height to level
 
 # Synonsis
 
