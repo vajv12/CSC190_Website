@@ -1,3 +1,72 @@
+# Great Escape Games Website Revamp
+*presented by SoftGroup*
+
+<img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
+alt="CSS logo" width="30%" height="30%">
+<img src="https://cdn-icons-png.flaticon.com/512/1322/1322195.png" alt="partnership handshake" width="15%" height="15%">
+
+create a img folder for github to use that'll have all our imgs on file that we cannot use urls of 
+<img src=upload softgroup logo onto image file and copy the HTML URL of the GitHub to display  use width and height to level
+
+# Synonsis
+
+CSC 190 we are working with our client Gary Lane owner of Great Escape Games, he has an outdated website that is counterproductive as it no longer 
+serves the client's needs. Our task is to redesign the website with the criteria of modern with certain pages. Throughout this semester we worked 
+together to find the best languages, IDE, API's, and databases. We created ER Diagrams and prototype pages. Once we established the
+design we started coding the front end and database. Ending, the semester we discuss how we are proceeding our work into the next semester. 
+
+
+
+
+
+# Programming Languages
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
+alt="CSS logo" width="22%" height="30%">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="30%" height="30%">
+<img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="30%" height="30%">
+
+The programming languages we are using throughout this project are CSS, HTML, and React. We choose these languages as it is fundamental to use to create a dynamic website.
+
+# IDE
+<img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="50%" height="30%">
+The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and found it the most user-friendly. 
+
+# Database
+<img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="50%" height="30%">
+FireBase is chosen as the backend and database, the reason being ____
+
+
+# ERD
+image
+
+# Prototype
+
+
+
+# CSC 190 Progress
+
+Use your JIRA to create a timeline section with key milestones for your project
+NOTE: When coming up with the timeline this is the timeline for what you expect to get done in 191 based on the user stories you created in the backlog for all the key features with estimates.
+# Plans for CSC191
+
+text
+
+# Testing
+
+Placeholder CSC191
+# Deployment
+
+Placeholder CSC191
+# Developers Instruction
+
+Placeholder CSC191
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
