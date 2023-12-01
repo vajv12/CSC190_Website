@@ -49,49 +49,58 @@ image
 
 Use your JIRA to create a timeline section with key milestones for your project
 NOTE: When coming up with the timeline this is the timeline for what you expect to get done in 191 based on the user stories you created in the backlog for all the key features with estimates.
-System Deployment: 
+JIRA Mile Stones Sprints 1-4
+#### System Deployment: 
 59,66,62,61,58,2,60
-Data Base Model: 
+#### Data Base Model: 
 64,67,65,68,69
-UI/UX Design: 
+#### UI/UX Design: 
 51,48,49,53,54,57,56,52
 
 # Plans for CSC191
-Sprint 5: Complete UI/UX Design 
-Sprint 6: Start Backend development
+#### Sprint 5: Complete UI/UX Design 
+#### Sprint 6: Start Backend development
+
 - Admin privilege
 - User privilege
 - Payment Portal
 - Finish Web page connection
 - User Accounts/Profiles
-Sprint 7: Backend Development/Update UI-UX Design
+#### Sprint 7: Backend Development/Update UI-UX Design
+
 - Mobel Version
 - Backup and Recovery
 - Security Develpment
 - Inventory Develpment
-Sprint 8: Begin app Testing/Update Backend Development/Update UI-UX Design
+#### Sprint 8: Begin app Testing/Update Backend Development/Update UI-UX Design
+
 - Inventoy BugTesting
 - Account BugTesting
 - Backup and Recovery
 - Payment Gateway
 - UI/UX BugTesting
-Sprint 9: App Testing/app feature develpment
+#### Sprint 9: App Testing/app feature develpment
+
 - Backend BugTesting
 - Updates to testing results
-Sprint 10: Open App Testing/Bugfixing
+#### Sprint 10: Open App Testing/Bugfixing
+
 - Open App testing to client
 - BugFixing of previous results
-Sprint 11: Final BugFixing/Testing
+#### Sprint 11: Final BugFixing/Testing
+
 - Open App BugFixing
 - Final Backend/Front End Testing
-Sprint 12: Full App deployment/BugFixing
+
+#### Sprint 12: Full App deployment/BugFixing
 
 # Setup Environment
 Github
 pull code from respiratory:
 (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-To run react files
+To run react files:
+See 
 
 FireBase setup 
 
