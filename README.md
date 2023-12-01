@@ -46,8 +46,8 @@ Used Figma to help map out our website dynamics and to give a clear and concise 
 
 # CSC 190 Progress
 
-Use your JIRA to create a timeline section with key milestones for your project
-NOTE: When coming up with the timeline this is the timeline for what you expect to get done in 191 based on the user stories you created in the backlog for all the key features with estimates.
+[//]: <> (Use your JIRA to create a timeline section with key milestones for your project)
+[//]: <> (NOTE: When coming up with the timeline this is the timeline for what you expect to get done in 191 based on the user stories you created in the backlog for all the key features with estimates.)
 JIRA Mile Stones Sprints 1-4
 #### System Deployment: 
 59,66,62,61,58,2,60
