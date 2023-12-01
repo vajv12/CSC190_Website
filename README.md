@@ -35,11 +35,12 @@ The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has ex
 
 # Database
 <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="50%" height="30%">
-FireBase is chosen as the backend and database, the reason being ____
+FireBase is chosen as the backend and database, the reason being it is a simple application to use along with development options that work well with our plan for the application. 
 
 
 # ERD
-image
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="50%" height="30%">
+Used Figma to help map out our website dynamics and to give a clear and concise picture to our client on what steps we are planning on taking.
 
 # Prototype
 
@@ -100,9 +101,10 @@ pull code from respiratory:
 (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 To run react files:
-See 
+See Getting Starting with Create React App
 
-FireBase setup 
+FireBase setup:
+(https://firebase.google.com/docs/hosting/github-integration#:~:text=You%20can%20integrate%20deploys%20to,PR%20on%20your%20GitHub%20repository.)
 
 
 # Testing
