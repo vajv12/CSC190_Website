@@ -19,7 +19,7 @@ In CSC 190, our focus has been working with our client: Gary Lane. He is the own
 
 The programming languages we are using throughout this project are CSS, HTML, and React. We chose these languages as it is fundamental to use when creating a dynamic website.
 
-# IDE <img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="10%" height="10%">
+# IDE <img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="14%" height="14%">
 The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and is user-friendly.
 
 # Database <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="10%" height="10%">
@@ -31,15 +31,15 @@ The ERD is shown below:
 
 <img src="src/components/images/ERD.JPG" alt="ERD" width="100%" height="100%">
 
-# Prototype <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="Figma logo" width="10%" height="10%">
+# Prototype <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="Figma logo" width="5%" height="5%">
 
 We utilized Figma to help map out our website dynamics. It was also used to inform our client of a clear and concise picture of what steps we are planning to take.
-Below we have provided a quick look into our layout. For more details click on the link.
-
+Below we have provided a quick look into our layout. <a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">For more details click here.
+</a> 
 
 <img src="src/components/images/prototype.JPG" alt="prototype" width="50%" height="50%">
 
-<a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">Link to Figma Wireframe</a>
+
 
 
 
