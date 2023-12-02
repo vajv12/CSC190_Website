@@ -1,5 +1,6 @@
 # Great Escape Games Website Revamp
 *presented by SoftGroup*
+<sub><
 
 <img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
@@ -99,7 +100,8 @@ pull code from respiratory:
 (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 To run react files:
-See Getting Starting with Create React App
+[See Getting Starting with Create React App](#CRA)
+
 
 FireBase setup:
 (https://firebase.google.com/docs/hosting/github-integration#:~:text=You%20can%20integrate%20deploys%20to,PR%20on%20your%20GitHub%20repository.)
@@ -120,7 +122,7 @@ Continue in CSC191
 
 
 
-
+<a name="CRA></a>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
