@@ -1,6 +1,6 @@
 # Great Escape Games Website Revamp
 *presented by SoftGroup*
-<sub><
+<sub>
 
 <img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
