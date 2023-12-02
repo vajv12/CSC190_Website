@@ -41,6 +41,9 @@ FireBase is chosen as the backend and database, the reason being it is a simple 
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="50%" height="30%">
 Used Figma to help map out our website dynamics and to give a clear and concise picture to our client on what steps we are planning on taking.
 
+<a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">Link to Figma Wireframe</a>
+
+
 # Prototype
 
 
