@@ -1,7 +1,7 @@
 # Great Escape Games Website Revamp
 *Worked on by SoftGroup*
 
-<sub>Anuja Chouhan, Alexis Dawatan, Vayhout Lim, Chris Long, Dzmitry Matsiulka, Shari Nguyen, Bruno Reviglio, Voua Vang</sub>
+<sub>Team members: Anuja Chouhan, Alexis Dawatan, Vayhout Lim, Chris Long, Dzmitry Matsiulka, Shari Nguyen, Bruno Reviglio, Voua Vang</sub>
 
 <img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
@@ -15,22 +15,14 @@ In CSC 190, our focus has been working with our client: Gary Lane. He is the own
 
 
 
-# Programming Languages
-
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
-alt="CSS logo" width="14%" height="20%">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="20%" height="20%">
-<img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="20%" height="20%">
+# Programming Languages <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" alt="CSS logo" width="7%" height="10%"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="10%" height="10%"><img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="10%" height="10%">
 
 The programming languages we are using throughout this project are CSS, HTML, and React. We chose these languages as it is fundamental to use when creating a dynamic website.
 
-# IDE
-<img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="40%" height="30%">
+# IDE <img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="10%" height="10%">
 The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and is user-friendly.
 
-# Database
-<img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="40%" height="30%">
+# Database <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="10%" height="10%">
 FireBase is chosen as the backend and database, the reason being it is a simple application to use along with development options that work well with our plan for the application. 
 
 
@@ -39,11 +31,14 @@ The ERD is shown below:
 
 <img src="src/components/images/ERD.JPG" alt="ERD" width="100%" height="100%">
 
-# Prototype
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="50%" height="50%">
-We utilized Figma to help map out our website dynamics. It was also helpful to give a clear and concise picture to our client on what steps we are planning to take.
+# Prototype <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="Figma logo" width="10%" height="10%">
 
-<img src="src/components/images/prototype.JPG" alt="prototype" width="30%" height="30%">
+We utilized Figma to help map out our website dynamics. It was also used to inform our client of a clear and concise picture of what steps we are planning to take.
+Below we have provided a quick look into our layout. For more details click on the link.
+
+
+<img src="src/components/images/prototype.JPG" alt="prototype" width="50%" height="50%">
+
 <a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">Link to Figma Wireframe</a>
 
 
