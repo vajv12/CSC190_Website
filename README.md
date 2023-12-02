@@ -108,7 +108,7 @@ Pull code from respiratory:
 (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 To run react files:
-[See Getting Starting with Create React App](#CRA)
+[See Getting Starting with Create React App](#"Getting-Started-with-Create-React-App")
 
 
 FireBase setup:
@@ -129,8 +129,7 @@ Continue in CSC191
 
 
 
-
-<a name="CRA></a>
+<a name="Getting-Started-with-Create-React-App"></a>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
