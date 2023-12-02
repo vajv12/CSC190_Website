@@ -30,17 +30,17 @@ The programming languages we are using throughout this project are CSS, HTML, an
 The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and it is also the most user-friendly.
 
 # Database
-<img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="50%" height="30%">
+<img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="80%" height="80%">
 FireBase is chosen as the backend and database, the reason being it is a simple application to use along with development options that work well with our plan for the application. 
 
 
 # ERD
 The ERD is shown below:
 
-<img src="src/components/images/ERD.JPG" alt="ERD" width="50%" height="50%">
+<img src="src/components/images/ERD.JPG" alt="ERD" width="100%" height="100%">
 
 # Prototype
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="20%" height="20%">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="50%" height="50%">
 We utilized Figma to help map out our website dynamics. It was also helpful to give a clear and concise picture to our client on what steps we are planning to take.
 
 <img src="src/components/images/prototype.JPG" alt="prototype" width="30%" height="30%">
@@ -104,7 +104,7 @@ Pull code from respiratory:
 (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 To run react files:
-[See Getting Starting with Create React App](#"Getting-Started-with-Create-React-App")
+[See Getting Starting with Create React App](#Getting-Started-with-Create-React-App)
 
 
 FireBase setup:
@@ -125,7 +125,6 @@ Continue in CSC191
 
 
 
-<a name="Getting-Started-with-Create-React-App"></a>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
