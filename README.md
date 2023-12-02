@@ -1,5 +1,6 @@
 # Great Escape Games Website Revamp
 *presented by SoftGroup*
+<sub>
 
 <img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
@@ -39,6 +40,9 @@ FireBase is chosen as the backend and database, the reason being it is a simple 
 # ERD
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="50%" height="30%">
 Used Figma to help map out our website dynamics and to give a clear and concise picture to our client on what steps we are planning on taking.
+
+<a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">Link to Figma Wireframe</a>
+
 
 # Prototype
 
@@ -99,7 +103,8 @@ pull code from respiratory:
 (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 To run react files:
-See Getting Starting with Create React App
+[See Getting Starting with Create React App](#CRA)
+
 
 FireBase setup:
 (https://firebase.google.com/docs/hosting/github-integration#:~:text=You%20can%20integrate%20deploys%20to,PR%20on%20your%20GitHub%20repository.)
@@ -120,7 +125,7 @@ Continue in CSC191
 
 
 
-
+<a name="CRA></a>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
