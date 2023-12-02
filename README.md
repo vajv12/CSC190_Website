@@ -26,11 +26,11 @@ alt="CSS logo" width="14%" height="20%">
 The programming languages we are using throughout this project are CSS, HTML, and React. We chose these languages as it is fundamental to use when creating a dynamic website.
 
 # IDE
-<img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="50%" height="30%">
-The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and it is also the most user-friendly.
+<img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="40%" height="30%">
+The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and is user-friendly.
 
 # Database
-<img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="80%" height="80%">
+<img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="40%" height="30%">
 FireBase is chosen as the backend and database, the reason being it is a simple application to use along with development options that work well with our plan for the application. 
 
 
