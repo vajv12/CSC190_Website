@@ -1,6 +1,7 @@
 # Great Escape Games Website Revamp
-*presented by SoftGroup*
-<sub>
+*Worked on by SoftGroup*
+
+<sub>Anuja Chouhan, Alexis Dawatan, Vayhout Lim, Chris Long, Dzmitry Matsiulka, Shari Nguyen, Bruno Reviglio, Voua Vang</sub>
 
 <img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
@@ -22,11 +23,11 @@ design we started coding the front end and database. Ending, the semester we dis
 
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
-alt="CSS logo" width="22%" height="30%">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="30%" height="30%">
-<img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="30%" height="30%">
+alt="CSS logo" width="14%" height="20%">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="20%" height="20%">
+<img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="20%" height="20%">
 
-The programming languages we are using throughout this project are CSS, HTML, and React. We choose these languages as it is fundamental to use to create a dynamic website.
+The programming languages we use throughout this project are CSS, HTML, and React. We choose these languages as it is fundamental to use to create a dynamic website.
 
 # IDE
 <img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="50%" height="30%">
@@ -38,13 +39,17 @@ FireBase is chosen as the backend and database, the reason being it is a simple 
 
 
 # ERD
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="50%" height="30%">
-Used Figma to help map out our website dynamics and to give a clear and concise picture to our client on what steps we are planning on taking.
+The ERD is shown below:
 
-<a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">Link to Figma Wireframe</a>
-
+<img src="src/components/images/ERD.JPG" alt="ERD" width="50%" height="50%">
 
 # Prototype
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="20%" height="20%">
+Used Figma to help map out our website dynamics and to give our client a clear and concise picture of what steps we plan on taking.
+
+<img src="src/components/images/prototype.JPG" alt="prototype" width="30%" height="30%">
+<a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">Link to Figma Wireframe</a>
+
 
 
 
@@ -73,8 +78,8 @@ JIRA Mile Stones Sprints 1-4
 
 - Mobel Version
 - Backup and Recovery
-- Security Develpment
-- Inventory Develpment
+- Security Development
+- Inventory Development
 #### Sprint 8: Begin app Testing/Update Backend Development/Update UI-UX Design
 
 - Inventoy BugTesting
@@ -82,13 +87,13 @@ JIRA Mile Stones Sprints 1-4
 - Backup and Recovery
 - Payment Gateway
 - UI/UX BugTesting
-#### Sprint 9: App Testing/app feature develpment
+#### Sprint 9: App Testing/app feature development
 
 - Backend BugTesting
 - Updates to testing results
 #### Sprint 10: Open App Testing/Bugfixing
 
-- Open App testing to client
+- Open App testing to the client
 - BugFixing of previous results
 #### Sprint 11: Final BugFixing/Testing
 
@@ -98,8 +103,8 @@ JIRA Mile Stones Sprints 1-4
 #### Sprint 12: Full App deployment/BugFixing
 
 # Setup Environment
-Github
-pull code from respiratory:
+GitHub
+Pull code from respiratory:
 (https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 To run react files:
