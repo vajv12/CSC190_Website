@@ -10,11 +10,7 @@ alt="CSS logo" width="30%" height="30%">
 
 # Synonsis
 
-CSC 190 we are working with our client Gary Lane owner of Great Escape Games, he has an outdated website that is counterproductive as it no longer 
-serves the client's needs. Our task is to redesign the website with the criteria of modern with certain pages. Throughout this semester we worked 
-together to find the best languages, IDE, API's, and databases. We created ER Diagrams and prototype pages. Once we established the
-design we started coding the front end and database. Ending, the semester we discuss how we are proceeding our work into the next semester. 
-
+In CSC 190, our focus has been working with our client: Gary Lane. He is the owner of Great Escape Games, a local store specializing in board games and collectables. Gary's existing website is an outdated website that is counterproductive as it no longer serves the client's needs. Our primary task is to revamp the website and create a modernized interface while also adding new pages and functions that the old website did not have. Our goal is to create an interactive and dynamic website that will help the client better serve his customers' needs enhancing customer-client interaction. Throughout this semester, Soft Group has worked together to find the most suitable languages, IDE, API's, and databases for this project. We created ER Diagrams and prototype pages. Once we established the design, we proceeded into the developmental phase which included coding the front-end and the database. As the semester comes to an end, we discuss how we are proceeding with our work onto the upcoming semester and what we are hoping to achieve.
 
 
 
@@ -27,11 +23,11 @@ alt="CSS logo" width="14%" height="20%">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="20%" height="20%">
 <img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="20%" height="20%">
 
-The programming languages we use throughout this project are CSS, HTML, and React. We choose these languages as it is fundamental to use to create a dynamic website.
+The programming languages we are using throughout this project are CSS, HTML, and React. We chose these languages as it is fundamental to use when creating a dynamic website.
 
 # IDE
 <img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="50%" height="30%">
-The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and found it the most user-friendly. 
+The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and it is also the most user-friendly.
 
 # Database
 <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="50%" height="30%">
@@ -45,7 +41,7 @@ The ERD is shown below:
 
 # Prototype
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="VSCode logo" width="20%" height="20%">
-Used Figma to help map out our website dynamics and to give our client a clear and concise picture of what steps we plan on taking.
+We utilized Figma to help map out our website dynamics. It was also helpful to give a clear and concise picture to our client on what steps we are planning to take.
 
 <img src="src/components/images/prototype.JPG" alt="prototype" width="30%" height="30%">
 <a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">Link to Figma Wireframe</a>
