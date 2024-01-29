@@ -27,9 +27,9 @@ const MainFooter = () => {
       <p>
         Resources
         <br /><br />
-        <a href="#">Home</a>
+        <a href="javascript:void(0);">Home</a>
         <br />
-        <a href="#">About</a>
+        <a href="javascript:void(0);">About</a>
         <br />
         <a href="./contact/contact.html">Contact Us</a>
         <br /><br />
