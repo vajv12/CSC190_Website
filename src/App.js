@@ -1,36 +1,36 @@
-// src/App.js
-import './App.css'; // CSS for styling
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "./navbar/navbar";
-import Home from './pages/Home'
-import Shop from './pages/Shop'
-import Contact from './components/contact/contact'
-import Cart from './pages/Cart'
-import Event from './pages/Event'
-import AboutShop from './components/AboutShop/AboutShop';
-//import { MainFooter, SocialFooterSacramento, SocialFooterRocklin, RightsFooter } from './footer/footer';
-import LoginSignUp from './components/LoginSignup/LoginSignUp';
-function App() {
+import './App.css';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Login from './pages/Login.jsx';
+import Locations from './pages/Locations.jsx';
+import Rocklin from './pages/Rocklin.jsx';
+
+
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Contact from './pages/Contact.jsx';
+
+
+const App = () => {
   return (
     <div className="App">
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/Shop" element={<Shop />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path ="/event" element={<Event />} />
-        
-            
-          </Routes>
-        </BrowserRouter>
-<Event/>
-<LoginSignUp/>
-
+      <Router>
+       <Navbar />
+      <Routes>
+        <Route path="/pages/Home" element={<Home />}/>
+        <Route path="/pages/About" element={<About />}/>
+        <Route path="/pages/Contact" element={<Contact />}/>  
+        <Route path="/pages/Login" element={<Login />}/>
+        <Route path="/pages/Locations" element={<Locations />}/>
+        <Route path="/pages/Rocklin" element ={<Rocklin />}/>
+  
+  
+      </Routes>
+      <Footer />
+      </Router>
     </div>
   );
 }
-  
+
 export default App;
