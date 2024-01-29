@@ -8,9 +8,9 @@ const MainFooter = () => {
       <p>
         Locations
         <br /><br />
-        <a href="Sacramento">Sacramento</a>
-        <br />
-        <a href="Rocklin">Rocklin</a>
+          <a href="/sacramento">Sacramento</a> {/* Update this line */}
+          <br />
+          <a href="/rocklin">Rocklin</a> {/* Update this line */}
         <br /><br /><br />
       </p>
 
