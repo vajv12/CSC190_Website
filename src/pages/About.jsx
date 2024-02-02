@@ -12,7 +12,7 @@ import tiktok from '../assets/tiktok.png';
 function AboutShop() {
   return (
     <>
-            <img src ={CardShopLogo} alt ="" />
+            <img src ={CardShopLogo} alt ="Great Escape Games Logo" />
       <div className='title'> Great Escape Game
         <div className='description'>
           Northern California's Premier Game store with a massive collection of Board Games, RPGs, Miniature Games, CCGs, gaming accessories, dice and more!

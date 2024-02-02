@@ -4,7 +4,9 @@ import "../styles/Contact.css";
 function Product() {
   return (
     <div className="">
-        use storefront that gary has api
+        <p>use storefront that gary has api just to show product and pricing 
+        NOT buying 
+        </p>
 
     </div>
   );

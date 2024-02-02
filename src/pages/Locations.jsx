@@ -1,6 +1,7 @@
 import React from "react";
 
-import "../styles/Locations.css"
+import "../styles/Locations.css";
+
 function Locations(){
     return (
 <div>
