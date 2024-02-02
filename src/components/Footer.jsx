@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FaceBookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -7,13 +7,15 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import '../styles/Footer.css';
 
 function Footer() {
+   
   /*set email listing */
+  {/* 
   const [email, setEmail] = useState('');
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-   {/* 
+  
   const handleSubscribe = (event) => {
    event.preventDefault();
     // Add logic here to handle the subscription, e.g., send the email to your server
