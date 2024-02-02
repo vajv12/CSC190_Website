@@ -13,14 +13,14 @@ import ReorderIcon from'@mui/icons-material/Reorder';
 
 function Navbar() {
 
-    {/* set so that button can function*/}
+    //set so that button can function
     const[openLinks, setOpenLinks] = useState(false);
 
     const toggleNavbar = () =>{
         setOpenLinks(!openLinks);
     };
 
-    {/*dropdown for locations */}
+    //dropdown for locations 
 
 return (
     /*navbar and link */
