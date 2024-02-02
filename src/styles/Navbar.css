@@ -1,0 +1,119 @@
+.navbar {
+    width: 100%;
+    height: 120px;
+    background-color: #66B2B2;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar .leftSide {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 150px;
+  }
+  
+  .navbar .leftSide img {
+    width: 130px;
+  }
+  
+  .navbar .rightSide {
+    flex: 50%;
+    font-size: x-large;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar a, 
+  .NavIcon {
+    color: white;
+    text-decoration:none;
+    margin: 20px;
+  }
+  
+  .navbar .rightSide button {
+    background-color: transparent;
+    border: none;
+    color:white;
+    cursor: pointer;
+  }
+  
+  .navbar .rightSide svg {
+    font-size: 40px;
+  }
+
+  
+  .navbar .leftSide .hiddenLinks {
+    display: none;
+}
+
+  /* when open logo disappears use # */
+  .navbar #open {
+    padding-left: 0px;
+  }
+  .navbar #open img {
+    display: none;
+  }
+  
+  .navbar .close img {
+    display: inherit;
+  }
+  
+  .navbar #open .hiddenLinks {
+    display: inherit;
+    font-size: medium;
+    margin-left: 30px;
+  }
+
+
+  .navbar .close .hiddenLinks {
+    display: inherit;
+
+  }
+  
+  .navbar #open a {
+    width: 70px;
+    margin: 5px;
+  }
+  
+  @media only screen and (max-width: 1250px) {
+    .navbar .rightSide a{
+      width: 70px;
+    }
+    .navbar .leftSide {
+      padding-left: 50px;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 1250px) {
+    .navbar .rightSide a,
+    .navbar .rightSide .NavIcon {
+      display: none;
+    }
+  
+    .navbar .rightSide {
+      justify-content: flex-end;
+      padding-right: 50px;
+    }
+
+    .navbar .rightSide button {
+      display: inherit;
+    }
+  }
+  
+  /* control width size to show reorder button when below min width */
+  @media only screen and (min-width: 1250px) {
+    .navbar .rightSide button {
+      display: none;
+    }
+  
+    .hiddenLinks {
+      display: none;
+    }
+  
+  
+  }

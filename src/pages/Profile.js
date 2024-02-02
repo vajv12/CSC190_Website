@@ -1,5 +1,5 @@
 import React from 'react'
-import './Profile.css'
+import '../styles/Profile.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Profile() {
     
@@ -84,7 +84,7 @@ function Profile() {
 
 </div>
 	</div>
-)
+);
 }
 
-export default Profile
+export default Profile;
