@@ -29,11 +29,12 @@ const MainFooter = () => {
         <br /><br />
        <a href="/home">Home</a> {/* Update this line */}
         <br />
-        <a href="/about">About</a> {/* Update this line */}
+        <a href="/AboutShop">About</a> {/* Update this line */}
         <br />
-        <a href="./contact/contact.html">Contact Us</a>
+        {/*<a href="./contact/contact.html">Contact Us</a>*/}
+        <a href="/contact">Contact Us</a>
         <br /><br />
-        <a href="../hours/hours.html">Hours</a>
+        <a href="/AboutShop">Hours</a>
       </p>
     </footer>
   );
