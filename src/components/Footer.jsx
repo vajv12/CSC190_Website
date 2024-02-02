@@ -13,9 +13,9 @@ function Footer() {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-
+   {/* 
   const handleSubscribe = (event) => {
-    event.preventDefault();
+   event.preventDefault();
     // Add logic here to handle the subscription, e.g., send the email to your server
 
     // For demonstration purposes, log the email to the console
@@ -24,7 +24,7 @@ function Footer() {
     // Reset the email input
     setEmail('');
   };
-
+*/}
   return (
     <div className="footer">
       <div className="socialMedia">
