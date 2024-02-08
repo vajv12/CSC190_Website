@@ -13,6 +13,7 @@ import Locations from './pages/Locations.jsx';
 import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
+import Payment from './pages/Payment.js';
 function App() {
   //The Route allows for the diffrent pages to be connected to. 
   // When you make a new page and need it routed to a specific place you need to create a Route first.
@@ -31,6 +32,7 @@ function App() {
             <Route path="/pages/Rocklin" element ={<Rocklin />}/>
             <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
             <Route path="/pages/Product" element ={<Product/>}/>
+            <Route path="/pages/Payment" element ={<Payment/>}/>
           </Routes>
         </BrowserRouter>
         <Footer />
