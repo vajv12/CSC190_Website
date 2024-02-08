@@ -1,4 +1,4 @@
-import './Payment.css';
+import '../styles/Payment.css';
 import trophy from '../assets/trophy.jpg';
 import React from 'react';
 
