@@ -1,0 +1,71 @@
+.admin {
+    width: 100vw;
+    height: 100vh;
+    padding: 0%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.adminSide{
+    display: flex;
+    flex-direction: row;
+}
+
+.adminSide .SidebarLeft {
+    padding: 1.3%;
+    margin-left: 20px;
+    width: 200px;
+    height: auto;
+    background-color: #bdbdbd;
+}
+
+.adminSide .SidebarLeft .row {
+    height: 70px;
+    list-style-type: none;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.adminSide .SidebarLeft .row:hover {
+    cursor: pointer;
+    background-color:  rgb(131, 202, 210);
+}
+
+.adminSide .SidebarLeft #active {
+    background-color: rgb(131, 202, 210);
+}
+
+/*changes for logout */
+.SidebarLeft .row.logout:hover {
+    background-color: red;
+    color: #ffffff;
+    cursor: pointer; 
+  }
+  .SidebarLeft .row.logout{
+    margin-top: 100px;
+    margin-bottom: 5px;
+  }
+.adminSide .SidebarLeft .row #icon {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+}
+
+.SidebarLeft .row #title {
+    flex: 70%;
+}
+
+.adminRightSide {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+}

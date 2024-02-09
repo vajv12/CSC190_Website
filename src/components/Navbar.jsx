@@ -57,7 +57,7 @@ return (
 
           <AccountBox alt="account icon" />
         </Link>
-        <Link to='./pages/About'>
+        <Link to='./pages/PrivateRooms'>
            <ShoppingCart  alt="shopping cart"/>
            </Link>
            
