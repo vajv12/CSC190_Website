@@ -1,0 +1,73 @@
+/* About.css */
+
+/* Container styles */
+.title {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .description {
+    margin-top: 10px;
+  }
+  
+  /* Flex container for map sections */
+  .maps-container {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    margin-top: 20px;
+  }
+  
+  /* Map container styles */
+  .map1{
+    text-align: center;
+    margin-left: 400px; /* Add margin between maps */
+  }
+  .map2 {
+    text-align: center;
+    margin-left: 25px; /* Add margin between maps */
+  }
+  
+  /* Location icon styles */
+  .location img {
+    width: 20px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .location {
+    margin-top: 10px;
+  }
+  
+  /* Ensure the Google Maps iframe is responsive */
+  iframe {
+    width: 400px;
+    height: 200px;
+    border: 0;
+  }
+  .hours dd {
+    margin: 5px 0; /* Adjust the top and bottom margin to control the spacing */
+  }
+  
+  .phone{
+    padding: 25px;
+  }
+  .phone img {
+    width: 15px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Adjustable values */
+  :root {
+    --margin-top: 20px;
+    --icon-width: 20px;
+  }
+  .apps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .apps img {
+    width: 20px; /* Adjust the width to make the icons smaller */
+    height: 20px; /* Adjust the height proportionally */
+    margin: 0 5px;
+  }
