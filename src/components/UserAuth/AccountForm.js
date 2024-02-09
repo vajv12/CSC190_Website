@@ -2,6 +2,10 @@
 import React, {Component} from 'react'
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
+import user_icon from '../../assets/person.png';
+import email_icon from '../../assets/email.png';
+import password_icon from '../../assets/password.png';
+import '../../styles/LoginSignUp.css';
 
 class AccountForm extends React.Component{
 	constructor(props){
@@ -73,8 +77,8 @@ class AccountForm extends React.Component{
 				default:
             return 'An unknown error occurred. Please try again.';
     }
-}
-
+	}
+	
 	render(){
 		const style = {
 			color: this.state.favColor
@@ -90,12 +94,19 @@ class AccountForm extends React.Component{
 				{this.state.type === "createAccount" ?
 					(
 						<form class="InputForm" onSubmit={this.handleSubmit}>
-							<label>Email Address:&nbsp;
+							
+							<div className="input" >
+								<img src ={user_icon} alt =""/>
+								<input placeholder = 'User Name' type ='text' />
+							</div>
+							<div className='input'>
+								<img src ={email_icon} alt =""/>
 								<input class="InputText" type="text" name="email" value={this.state.value} placeholder={this.props.emailPlaceholder} onChange={this.changeHandler} />
-							</label>
-							<label>Create a Password:&nbsp;
+							</div>
+							<div className='input'>
+								<img src ={password_icon} alt =""/>
 								<input class="InputText" type="text" name="password" value={this.state.value} placeholder={this.props.passwordPlaceholder} onChange={this.changeHandler} />
-							</label>
+							</div>	
 							<div class="SubmitButton" onClick={this.handleClickCreateAccount} >Create Account</div>
 							{ errorText }
 						</form>
@@ -103,12 +114,14 @@ class AccountForm extends React.Component{
 				}
 				{this.state.type === "signIn" ? (
 						<form class="InputForm" onSubmit={this.handleSubmit}>
-							<label>Email Address:&nbsp;
+							<div className='input'>
+								<img src ={email_icon} alt =""/>
 								<input class="InputText" type="text" name="email" value={this.state.value} placeholder={this.props.emailPlaceholder} onChange={this.changeHandler} />
-							</label>
-							<label>Password:&nbsp;
+							</div>
+							<div className='input'>
+								<img src ={password_icon} alt =""/>
 								<input class="InputText" type="text" name="password" value={this.state.value} placeholder={this.props.passwordPlaceholder} onChange={this.changeHandler} />
-							</label>
+							</div>	
 							<div class="SubmitButton" onClick={this.handleClickSignIn} >Sign In</div>
 							{ errorText }
 						</form>

@@ -1,5 +1,4 @@
 import './App.css'; // CSS for styling
-import AccountForm from './components/UserAuth/AccountForm'
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar.jsx';
@@ -15,6 +14,8 @@ import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 import Payment from './pages/Payment.js';
+import { AuthProvider } from './AuthContext'; 
+
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
@@ -78,43 +79,26 @@ function App() {
   // When you make a new page and need it routed to a specific place you need to create a Route first.
   return (
     <div className="App">
-      <div className="menu">
-          
-          
-        <AccountForm 
-          namePlaceholder="First Last" 
-          emailPlaceholder="example@domain.com" 
-          passwordPlaceholder="password"
-          type="createAccount"
-          auth={auth}
-        />
-        <AccountForm 
-          namePlaceholder="First Last" 
-          emailPlaceholder="example@domain.com" 
-          passwordPlaceholder="password"
-          type="signIn"
-          auth={auth}
-        />
-      </div>
       <div className="content">
       </div>
-
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/pages/Home" element={<Home />} />
-            <Route path="/pages/Shop" element={<Shop />} />
-            <Route path="/pages/Contact" element={<Contact />} />
-            <Route path="/pages/About" element={<About />} />
-            <Route path="/pages/Admin" element={<Admin />} />
-            <Route path="/pages/Login" element={<Login />} />
-            <Route path="/pages/Locations" element={<Locations />}/>
-            <Route path="/pages/Rocklin" element ={<Rocklin />}/>
-            <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
-            <Route path="/pages/Product" element ={<Product/>}/>
-            <Route path="/pages/Payment" element ={<Payment/>}/>
-          </Routes>
-        </BrowserRouter>
+          <AuthProvider auth={auth}>
+            <BrowserRouter>
+              <Navbar />
+              <Routes>
+                <Route path="/pages/Home" element={<Home />} />
+                <Route path="/pages/Shop" element={<Shop />} />
+                <Route path="/pages/Contact" element={<Contact />} />
+                <Route path="/pages/About" element={<About />} />
+                <Route path="/pages/Admin" element={<Admin />} />
+                <Route path="/pages/Login" element={<Login />} />
+                <Route path="/pages/Locations" element={<Locations />}/>
+                <Route path="/pages/Rocklin" element ={<Rocklin />}/>
+                <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
+                <Route path="/pages/Product" element ={<Product/>}/>
+                <Route path="/pages/Payment" element ={<Payment/>}/>
+              </Routes>
+            </BrowserRouter>
+        </AuthProvider>
         <Footer />
     </div>
   );

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 20px;
     width: 500px;
     background:white;
     padding-bottom: 30px;
@@ -31,7 +31,7 @@
 }
 
 .inputs{
-    margin-top: 55px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -44,7 +44,7 @@
     height: 100px;
     background: orange;
     border-radius: 6px;
-
+    margin-top:25px;
 }
 .input img{
     margin: 90px 20px;
@@ -87,7 +87,7 @@
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 200px;
+    margin-top: 20px;
 }
 .gray{
     background: white;
