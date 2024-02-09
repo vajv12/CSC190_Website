@@ -1,7 +1,7 @@
 // src/UserAuth/AccountForm.js
 import React, {Component} from 'react'
 import './AccountForm.css'
-import Button from '../Button';
+import Button from '../../Button';
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 
