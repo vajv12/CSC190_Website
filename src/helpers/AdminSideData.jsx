@@ -12,41 +12,41 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 export const AdminSideData =[
     {
-        title:"home",
+        title:"Home",
         icon: <HomeIcon />,
         link:"pages/pages/Home"
     },
 
     {
-        title:"product",
+        title:"Product",
         icon:<InventoryIcon />,
         link:"/pages/pages/product"
     },
 
     {
-        title:"info",
+        title:"Store Info",
         icon:<InfoIcon />,
         link:"/Sacramento"
     },
 
     {
-        title:"location page",
+        title:"Location Hours",
         icon:<EditLocationAltIcon />,
         link:"/pages/pages/Locations"
     },
     {
-        title:"about",
+        title:"About",
         icon:<EditIcon />,
         link:"pages/pages/About"
     },
     {
-        title:"accounts",
+        title:"Accounts",
         icon:<AccountBoxIcon />,
         link:"pages/pages/Login"
     },
 
     {
-        title:"email",
+        title:"Email",
         icon:<EmailIcon />,
         link:"pages/pages/Contact"
     },

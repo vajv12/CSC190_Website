@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Logo from "../assets/GEG-white.png";
 import {Link}  from 'react-router-dom';
 import '../styles/AdminNavbar.css';
