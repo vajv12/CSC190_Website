@@ -7,6 +7,7 @@ function Product() {
         <p>use storefront that gary has api just to show product and pricing 
         NOT buying 
         </p>
+        <p>to get to admin page put http://localhost:3000/admin/Admin</p>
 
     </div>
   );

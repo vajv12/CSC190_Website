@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Stores.css'
-function Rocklin(){
+function RocklinHours(){
     return(
         <div className='stores'>
              <p>Rocklin</p>Rocklin hours </div>
@@ -8,5 +8,5 @@ function Rocklin(){
     );
 }
 
-export default Rocklin;
+export default RocklinHours;
 
