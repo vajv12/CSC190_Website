@@ -40,6 +40,7 @@ return (
             <Link to ='./pages/PrivateRooms'>Private Rooms</Link>
             <Link to ='./pages/About'>About</Link>
             <Link to ='./pages/Contact'>Contact</Link>
+            <Link to ='./pages/Payment'>Payment</Link>
         </div>
 
         </div>
@@ -53,6 +54,7 @@ return (
             <Link to ='./pages/PrivateRooms'>Private Rooms</Link>
             <Link to ='./pages/About'>About</Link>
             <Link to ='./pages/Contact'>Contact</Link>
+            <Link to ='./pages/Payment'>Payment</Link>
             <Link to='./pages/Login'>
 
           <AccountBox alt="account icon" />

@@ -3,16 +3,11 @@ import React from 'react'
 import CardShopLogo from '../assets/GEG-logo.png';
 import phone from '../assets/phone.png';
 import location from '../assets/location.jpg';
-import facebook from '../assets/facebook.png';
-import youtube from '../assets/youtube.png';
-import instagram from '../assets/instagram.png';
-import tiktok from '../assets/tiktok.png';
-
-
-function AboutShop() {
+import {Media1,Media2} from '../components/Media';
+function About() {
   return (
     <>
-            <img src ={CardShopLogo} alt ="Great Escape Games Logo" />
+            <img src ={CardShopLogo} alt ="" />
       <div className='title'> Great Escape Game
         <div className='description'>
           Northern California's Premier Game store with a massive collection of Board Games, RPGs, Miniature Games, CCGs, gaming accessories, dice and more!
@@ -25,13 +20,20 @@ function AboutShop() {
           <img src={location} alt="Location Icon" />
             Sacramento Location: 1250 Howe Ave 3a, Sacramento, California 95825
           </div>
-          <div className='Media'>
+          <div className='Medias'>
           Social Media:
           <div className='apps'>
-            <img src={facebook} alt="Facebook Icon" />
-            <img src={youtube} alt="YouTube Icon" />
-            <img src={instagram} alt="Instagram Icon" />
-            <img src={tiktok} alt="TikTok Icon" />
+            {
+              Media1.map((item,index) =>{
+                return (
+                  <div key ={index}>
+                   <a href={item.href} target="_blank" rel="noopener noreferrer">
+                    <img src={item.img} alt='media' className="h-28" />
+                  </a>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
             <iframe
@@ -51,7 +53,7 @@ function AboutShop() {
           <div className='hours'> Business Hours:</div>
             <dd>Monday: 12pm - 8pm</dd>
             <dd>Tuesday: 12pm - 10pm</dd>
-            <dd>Wedsnesday: 12pm - 9pm</dd>
+            <dd>Wednesday: 12pm - 9pm</dd>
             <dd>Thursday: 12pm - 10pm</dd>
             <dd>Friday: 12pm - 11pm</dd>
             <dd>Saturday: 12pm - 10pm</dd>
@@ -66,10 +68,17 @@ function AboutShop() {
           <div className='Media'>
           Social Media:
           <div className='apps'>
-            <img src={facebook} alt="Facebook Icon" />
-            <img src={youtube} alt="YouTube Icon" />
-            <img src={instagram} alt="Instagram Icon" />
-            <img src={tiktok} alt="TikTok Icon" />
+          {
+              Media2.map((item,index) =>{
+                return (
+                  <div key ={index}>
+                    <a href={item.href} target="_blank" rel="noopener noreferrer">
+                      <img src={item.img} alt='media' className="h-28" />
+                    </a>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
           <iframe
@@ -89,7 +98,7 @@ function AboutShop() {
          <div className='hours'> Business Hours:</div>
           <dd>Monday: 12pm - 7pm</dd>
           <dd>Tuesday: 12pm - 7pm</dd>
-          <dd>Wedsnesday: 12pm - 9pm</dd>
+          <dd>Wednesday: 12pm - 9pm</dd>
           <dd>Thursday: 12pm - 7pm</dd>
           <dd>Friday: 12pm - 10pm</dd>
           <dd>Saturday: 12pm - 10pm</dd>
@@ -100,4 +109,4 @@ function AboutShop() {
   );
 }
 
-export default AboutShop;
+export default About;
