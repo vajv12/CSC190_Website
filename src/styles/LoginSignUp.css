@@ -6,6 +6,7 @@
     width: 500px;
     background:white;
     padding-bottom: 30px;
+    min-height: 878px;
 }
 .header{
     display: flex;
@@ -63,8 +64,7 @@
 .forgot-password{
     color: black;
     font-size: 20px;
-    margin-top: 160px;
-    margin-right: 200px;
+    margin:auto;
 }
 .forgot-password span{
     color: orange;
@@ -73,7 +73,7 @@
 .submit-container{
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    margin: 10px auto;
 }
 .submit{
     display: flex;

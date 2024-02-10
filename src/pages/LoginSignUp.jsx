@@ -1,28 +1,29 @@
 import React, {useState} from 'react';
 import '../styles/LoginSignUp.css';
 import AccountForm from '../components/UserAuth/AccountForm'
-import { useAuth } from '../AuthContext';
+import { useFirebase } from '../FirebaseContext';
 
 const LoginSignUp = () => {
-    const auth = useAuth();
+    const {auth, db, isAuthenticated, username} = useFirebase();
     const [action,setAction] = useState("Sign Up");   
     
     return (
-        <div className="container">
+        <div className="container {{isAuthenticated}}">
             <div className="header">
                 <div className="text">{action}</div>
                 <div className="underline"></div>
             </div>
             <div className = "inputs">
             
-                {action === "Login"?<di></di>:
+                {action === "Login"?<div></div>:
                     <>
                         <AccountForm 
-                            namePlaceholder="Username" 
+                            usernamePlaceholder="Username" 
                             emailPlaceholder="Email" 
                             passwordPlaceholder="Password"
                             type="createAccount"
                             auth={auth}
+                            db={db}
                         />
                     </>
                 }
@@ -35,6 +36,7 @@ const LoginSignUp = () => {
                         passwordPlaceholder="Password"
                         type="signIn"
                         auth={auth}
+                        db={db}
                     />
                     <div className='forgot-password'>Forgot Password? <span>Click Here!</span></div>
                 </>

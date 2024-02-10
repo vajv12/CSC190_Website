@@ -1,6 +1,6 @@
 import './App.css'; // CSS for styling
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import Shop from './pages/Product.jsx';
@@ -14,11 +14,11 @@ import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 import Payment from './pages/Payment.js';
-import { AuthProvider } from './AuthContext'; 
+import { FirebaseProvider } from './FirebaseContext.js'; 
 
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAuth} from "firebase/auth";
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
@@ -39,38 +39,25 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+let isAuthenticated = false;
+let loggedInUser;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth();
 
-auth.onAuthStateChanged(function(user) {
-  alert("auth state has changed");
-  console.log("auth state has changed");
-  console.log(user);
-  // if (user) {
-
-  //    // Updates the user attributes:
-
-  //   user.updateProfile({ // <-- Update Method here
-
-  //     displayName: "NEW USER NAME",
-  //     photoURL: "https://example.com/jane-q-user/profile.jpg"
-
-  //   }).then(function() {
-
-  //     // Profile updated successfully!
-  //     //  "NEW USER NAME"
-
-  //     var displayName = user.displayName;
-  //     // "https://example.com/jane-q-user/profile.jpg"
-  //     var photoURL = user.photoURL;
-
-  //   }, function(error) {
-  //     // An error happened.
-  //   });     
-
-  // }
+//observer that gets called when user logs in or logs out
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in.
+    isAuthenticated = true;
+    loggedInUser = user;
+  } else {
+    // No user is signed in.
+    isAuthenticated = false;
+    loggedInUser = null;
+  }
 });
+
 //**************************** End of Firebase Initialization************************************* */
 const analytics = getAnalytics(app);
 
@@ -81,24 +68,29 @@ function App() {
     <div className="App">
       <div className="content">
       </div>
-          <AuthProvider auth={auth}>
-            <BrowserRouter>
-              <Navbar />
-              <Routes>
-                <Route path="/pages/Home" element={<Home />} />
-                <Route path="/pages/Shop" element={<Shop />} />
-                <Route path="/pages/Contact" element={<Contact />} />
-                <Route path="/pages/About" element={<About />} />
-                <Route path="/pages/Admin" element={<Admin />} />
-                <Route path="/pages/Login" element={<Login />} />
-                <Route path="/pages/Locations" element={<Locations />}/>
-                <Route path="/pages/Rocklin" element ={<Rocklin />}/>
-                <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
-                <Route path="/pages/Product" element ={<Product/>}/>
-                <Route path="/pages/Payment" element ={<Payment/>}/>
-              </Routes>
-            </BrowserRouter>
-        </AuthProvider>
+        <FirebaseProvider 
+          auth={auth} 
+          db={db} 
+          isAuthenticated={isAuthenticated} 
+          username={loggedInUser ? loggedInUser.displayName : ""}
+        >
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/pages/Home" element={<Home />} />
+              <Route path="/pages/Shop" element={<Shop />} />
+              <Route path="/pages/Contact" element={<Contact />} />
+              <Route path="/pages/About" element={<About />} />
+              <Route path="/pages/Admin" element={<Admin />} />
+              <Route path="/pages/Login" element={<Login />} />
+              <Route path="/pages/Locations" element={<Locations />}/>
+              <Route path="/pages/Rocklin" element ={<Rocklin />}/>
+              <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
+              <Route path="/pages/Product" element ={<Product/>}/>
+              <Route path="/pages/Payment" element ={<Payment/>}/>
+            </Routes>
+          </BrowserRouter>
+        </FirebaseProvider>
         <Footer />
     </div>
   );
