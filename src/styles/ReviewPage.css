@@ -1,0 +1,60 @@
+.review-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%; /* Adjust to full width */
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.review-card {
+    border: 1px solid #ddd;
+    padding: 25px; /* Increased padding */
+    margin: 15px 0; /* Adjust margin if needed */
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.review-card h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.review-card p {
+    color: #666;
+}
+
+.filled-star {
+    color: gold; /* Color for filled stars */
+}
+
+.empty-star {
+    color: lightgray; /* Color for empty stars */
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px; /* Slightly increased padding */
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 20px; /* Added margin to create space from the store name */
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff3333; /* Slightly darker red on hover */
+}
