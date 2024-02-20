@@ -43,21 +43,23 @@ return (
         </div>
 
         </div>
-     {/*pages link to respective spots. uses import page on top and link images */}
+     {/*pages link to respective spots. uses import page on top and link pages */}
         <div className="rightSide">
             <Link to ='./pages/Home'>Home</Link>
             <Link to ='./pages/Product'>Product</Link>
 
               {/* Use the Dropdown locations*/}
               < Dropdownlocations />
+
             <Link to ='./pages/PrivateRooms'>Private Rooms</Link>
             <Link to ='./pages/About'>About</Link>
             <Link to ='./pages/Contact'>Contact</Link>
-            <Link to='./pages/Login'>
 
+            <Link to='./pages/Login'>
           <AccountBox alt="account icon" />
         </Link>
-        <Link to='./pages/About'>
+
+        <Link to='./pages/Cart'>
            <ShoppingCart  alt="shopping cart"/>
            </Link>
            
