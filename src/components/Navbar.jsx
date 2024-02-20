@@ -8,7 +8,7 @@ import Dropdownlocations from "../helpers/DropdownLocations.jsx";
 //Icons install with npm install @mui/material @emotion/react @emotion/styled
 //and npm install @mui/icons-material
 import AccountBox from '@mui/icons-material/AccountBox';
-import ShoppingCart from '@mui/icons-material/ShoppingCart';
+import PaymentIcon from '@mui/icons-material/Payment';
 import ReorderIcon from'@mui/icons-material/Reorder';
 
 function Navbar() {
@@ -30,6 +30,7 @@ return (
         <Link to ='./pages/Home'>
         <img src={Logo} alt="Great Escape Games Logo"/>
         </Link>
+
         <div className="hiddenLinks">
             <Link to ='./pages/Home'>Home</Link>
             <Link to ='./pages/Product'>Product</Link>
@@ -40,7 +41,6 @@ return (
             <Link to ='./pages/PrivateRooms'>Private Rooms</Link>
             <Link to ='./pages/About'>About</Link>
             <Link to ='./pages/Contact'>Contact</Link>
-            <Link to ='./pages/Payment'>Payment</Link>
         </div>
 
         </div>
@@ -55,12 +55,15 @@ return (
             <Link to ='./pages/PrivateRooms'>Private Rooms</Link>
             <Link to ='./pages/About'>About</Link>
             <Link to ='./pages/Contact'>Contact</Link>
+
+            <Link to='./pages/Payment'>
+           <PaymentIcon  alt="payment card"/>
+           </Link>
+
             <Link to='./pages/Login'>
           <AccountBox alt="account icon" />
         </Link>
-        <Link to='./pages/About'>
-           <ShoppingCart  alt="shopping cart"/>
-           </Link>
+   
            
 {/*When screen is small itll show the reorder button that is toggle on and off, uses hiddenlink className */}
            <button onClick={toggleNavbar}>

@@ -4,14 +4,14 @@
   }
   
   /* Styling for the table containing cart items */
-  table {
+ .cart table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
   }
   
   /* Styling for table header cells */
-  th {
+ .cart th {
     background-color: #f2f2f2;
     padding: 12px;
     text-align: left;
@@ -19,20 +19,20 @@
   }
   
   /* Styling for table data cells */
-  td {
+  .cart td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
   }
   
   /* Styling for the input field inside the table */
-  input {
+  .cart input {
     width: 40px;
     text-align: center;
   }
   
   /* Styling for the "Remove" button */
-  button {
+ .cart  button {
     padding: 8px 12px;
     background-color: #e74c3c;
     color: white;
