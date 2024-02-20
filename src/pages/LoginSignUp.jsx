@@ -1,42 +1,54 @@
-                    import React, {useState} from 'react';
-                    import '../styles/LoginSignUp.css';
-                    import user_icon from '../assets/person.png';
-                    import email_icon from '../assets/email.png';
-                    import password_icon from '../assets/password.png';
+import React, {useState} from 'react';
+import '../styles/LoginSignUp.css';
+import AccountForm from '../components/UserAuth/AccountForm'
+import { useFirebase } from '../FirebaseContext';
 
-                        const LoginSignUp = () => {
-                        
-                        const [action,setAction] = useState("Sign Up");   
+const LoginSignUp = () => {
+    const {auth, db, isAuthenticated, username} = useFirebase();
+    const [action,setAction] = useState("Sign Up");   
+    
+    return (
+        <div className="container {{isAuthenticated}}">
+            <div className="header">
+                <div className="text">{action}</div>
+                <div className="underline"></div>
+            </div>
+            <div className = "inputs">
+            
+                {action === "Login"?<div></div>:
+                    <>
+                        <AccountForm 
+                            usernamePlaceholder="Username" 
+                            emailPlaceholder="Email" 
+                            passwordPlaceholder="Password"
+                            type="createAccount"
+                            auth={auth}
+                            db={db}
+                        />
+                    </>
+                }
+                
+                {action === "Sign Up"?<div></div>:
+                <>
+                    <AccountForm 
+                        namePlaceholder="Username" 
+                        emailPlaceholder="Email" 
+                        passwordPlaceholder="Password"
+                        type="signIn"
+                        auth={auth}
+                        db={db}
+                    />
+                    <div className='forgot-password'>Forgot Password? <span>Click Here!</span></div>
+                </>
+                }
+            </div>
+            <div className = "submit-container">
+                <div className={action === "Login"?"submit gray":"submit"} onClick = {() => {setAction("Sign Up")}}> Sign Up</div>
+                <div className={action === "Sign Up"?"submit gray":"submit"} onClick = {() => {setAction("Login")}}> Login</div>
+                
+            </div>
+        </div>   
+    )
+}
 
-                        return (
-                            <div className="container">
-                                <div className="header">
-                                    <div className="text">{action}</div>
-                                    <div className="underline"></div>
-                                </div>
-                                <div className = "inputs">
-                                    {action === "Login"?<di></di>:
-                                    <div className="input">
-                                        <img src ={user_icon} alt =""/>
-                                        <input placeholder = 'User Name' type ='text' />
-                                    </div>}
-                                    <div className='input'>
-                                        <img src ={email_icon} alt =""/>
-                                        <input placeholder='Email' type ='email'/>
-                                    </div>
-                                    <div className='input'>
-                                         <img src ={password_icon} alt =""/>
-                                        <input placeholder ="Password" type = "password"/>
-                                    </div>
-                                </div>
-                                {action === "Sign Up"?<div></div>:
-                                <div className='forgot-password'>Forgot Password? <span>Click Here!</span></div>}
-                                <div className = "submit-container">
-                                    <div className={action === "Login"?"submit gray":"submit"} onClick = {() => {setAction("Sign Up")}}> Sign Up</div>
-                                    <div className={action === "Sign Up"?"submit gray":"submit"} onClick = {() => {setAction("Login")}}> Login</div>
-                                </div>
-                            </div>   
-                        )
-                    }
-
-                    export default LoginSignUp
+export default LoginSignUp

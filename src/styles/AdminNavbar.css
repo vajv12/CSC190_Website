@@ -1,0 +1,35 @@
+.adminnavbar {
+    width: 100%;
+    height: 120px;
+    background-color: #bdbdbd;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .adminnavbar .leftSide {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 150px;
+  }
+  
+  .adminnavbar .leftSide img {
+    width: 130px;
+  }
+  
+  .adminnavbar .rightSide {
+    flex: 50%;
+    font-size: x-large;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .adminnavbar p{
+    font-size: 40px;
+    color: red;
+  }
+  
+  
