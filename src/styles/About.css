@@ -5,10 +5,21 @@
     text-align: center;
     margin-top: 20px;
   }
-  
-  .description {
-    margin-top: 10px;
+  .about.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  
+  .about .icon img {
+    max-width: 500px; /* Set the maximum width of the image */
+    width: auto; 
+    height: auto; 
+    display: block;
+    margin: 0 auto;
+    padding: 5px; /* Smaller padding */
+  }
+  
   
   /* Flex container for map sections */
   .maps-container {
@@ -18,18 +29,20 @@
   }
   
   /* Map container styles */
-  .map1{
+ 
+  .about .map1{
     text-align: center;
-    margin-left: 400px; /* Add margin between maps */
+   
   }
-  .map2 {
+
+  .about .map2 {
     text-align: center;
     margin-left: 25px; /* Add margin between maps */
   }
   
   /* Location icon styles */
   .location img {
-    width: 20px; /* Adjust the width as needed */
+    width: 20px; 
     height: auto; /* Maintain aspect ratio */
   }
   
@@ -43,14 +56,19 @@
     height: 200px;
     border: 0;
   }
-  .hours dd {
+  .about .map1 .hours dd, 
+  .about .map2 .hours dd{
+    font-size: 30px ;
     margin: 5px 0; /* Adjust the top and bottom margin to control the spacing */
   }
   
-  .phone{
-    padding: 25px;
+  .about .map1 .phone, 
+  .about .map2 .phone{
+    font-size: 25px;
+    padding: 5px;
   }
-  .phone img {
+  .about .map1 .phone img,
+  .about .map2 .phone img{
     width: 15px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
   }
@@ -70,4 +88,49 @@
     width: 20px; /* Adjust the width to make the icons smaller */
     height: 20px; /* Adjust the height proportionally */
     margin: 0 5px;
+  }
+
+  /* text about stles */
+  .aboutBottom {
+    display: flex;
+    flex-direction: column;
+    height: 55%;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .aboutBottom p {
+    font-size: xx-large;
+    width: 1200px;
+  }
+  
+  .about .aboutBottom h1 {
+    font-weight: 400;
+    font-size: 70px;
+    color: black;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-40px);
+  }
+
+  .about .aboutBottom h2 {
+    font-weight: 400;
+    font-size: 40px;
+    color: black;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+ 
+  }
+
+  .about .aboutBottom h3 {
+    font-weight: 500;
+    margin-left: center;
+    font-size: 30px;
+    color: black;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+
   }

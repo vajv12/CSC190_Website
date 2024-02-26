@@ -12,7 +12,7 @@ function Home(){
             backgroundImage: `url(${BannerImage})`
           }}
         >
-                <h1>Great Games Escape</h1>
+                <h1>Great Escape Games</h1>
                 <p>Free your imagination</p>
                 <Link to="store">
                 <button> View Products</button>
