@@ -1,8 +1,8 @@
-import '../styles/Payment.css';
+import '../styles/Tournament.css';
 import trophy from '../assets/trophy.jpg';
 import React from 'react';
 
-function Payment() {
+function Tournament() {
     function redirectToStripeCheckout(event) {
         event.preventDefault();
 
@@ -10,7 +10,7 @@ function Payment() {
     }
 
     return (
-        <div className='Payment'>
+        <div className='Tournament'>
             <h1>Payment for Tournament</h1>
             <div className="content-wrapper">
                 <div className="trophy-section">
@@ -29,4 +29,4 @@ function Payment() {
     );
 }
 
-export default Payment;
+export default Tournament;
