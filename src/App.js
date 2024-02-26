@@ -17,7 +17,7 @@ import Locations from './pages/Locations.jsx';
 import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
-import Payment from './pages/Payment.js';
+import Tournament from './pages/Tournament.js';
 import { FirebaseProvider } from './FirebaseContext.js'; 
 
 //**************************** Start of Firebase Initialization************************************* */
@@ -90,6 +90,7 @@ function App() {
                     <Route path="/pages/Rocklin" element={<Rocklin />} />
                     <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
                     <Route path="/pages/Product" element={<Product />} />
+                    <Route path="/pages/Tournament" element={<Tournament />} />
                   </Routes>
                 </MainLayout>
               }
@@ -130,7 +131,7 @@ function App() {
               <Route path="/pages/Rocklin" element ={<Rocklin />}/>
               <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
               <Route path="/pages/Product" element ={<Product/>}/>
-              <Route path="/pages/Payment" element ={<Payment/>}/>
+              <Route path="/pages/Tournament" element ={<Tournament/>}/>
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
