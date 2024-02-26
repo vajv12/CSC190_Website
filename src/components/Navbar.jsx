@@ -56,7 +56,7 @@ return (
             <Link to ='./pages/About'>About</Link>
             <Link to ='./pages/Contact'>Contact</Link>
 
-            <Link to='./pages/Payment'>
+            <Link to='./pages/Tournament'>
            <PaymentIcon  alt="payment card"/>
            </Link>
 
