@@ -1,32 +1,36 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Ensures the page content is flexibly displayed */
+.page-content {
+  flex: 1 0 auto;
+}
+
 .footer {
-    width: 100%;
-    height: 100%;
-    position:relative;
-    background-color: #66B2B2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 10px;
-  }
-  
-  .socialMedia svg {
-    color: white;
-    margin: 20px;
-    font-size: 70px;
-    cursor: pointer;
-  }
-  
-  .footer p {
-    color: white;
-  }
-   /* 
-  .footer button {
-    color: rgb(235, 8, 8);
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  */
+  width: 100%;
+
+  position: fixed; 
+  bottom: 0; /* Anchors the footer at the bottom of the screen */
+  background-color: #66B2B2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px; /* Adjust padding to ensure content is visible */
+}
+
+.socialMedia svg {
+  color: white;
+  margin: 20px;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+.footer p {
+  color: white;
+}
+
+
