@@ -40,12 +40,11 @@
 }
 
 .nav-button {
-  width: 8px; /* Smaller width for a smaller button */
-  height: 8px; /* Smaller height to match the width, keeping the button round */
+  width: 8px;
+  height: 8px;
   border-radius: 50%; /* Ensures the button is perfectly round */
   margin: 0 5px; /* Adjust spacing between buttons as needed */
   background-color: #ccc; /* Light color for inactive buttons */
-  border: 2px solid white; /* Optional: adds a white border for better visibility */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
