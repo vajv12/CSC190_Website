@@ -1,44 +1,55 @@
 .slideshow {
-    position: relative;
-    width: 100%; 
-    height: 300px; 
-    overflow: hidden;
-  }
-  
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
-  
-  .active {
-    opacity: 1;
-  }
-
-  .slide-btn {
-    position: absolute; 
-    z-index: 10;
-    cursor: pointer;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent button background */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 24px;
-  
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
 }
 
-.prev, .next {
-    bottom: 20px; /* Position at the bottom of the slide */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-.prev {
-    left: 20px; /* Position to the left */
+.active {
+  opacity: 1;
 }
 
-.next {
-    right: 20px; /* Position to the right */
+.slide-navigation {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+  color: white;
+  padding: 10px 0; /* Adjust as needed */
+}
+
+.nav-button {
+  width: 8px; /* Smaller width for a smaller button */
+  height: 8px; /* Smaller height to match the width, keeping the button round */
+  border-radius: 50%; /* Ensures the button is perfectly round */
+  margin: 0 5px; /* Adjust spacing between buttons as needed */
+  background-color: #ccc; /* Light color for inactive buttons */
+  border: 2px solid white; /* Optional: adds a white border for better visibility */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button.active {
+  background-color: #333; /* Darker color for the active button */
 }
