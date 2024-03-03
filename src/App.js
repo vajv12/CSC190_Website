@@ -9,7 +9,6 @@ import Home from './pages/Home.jsx';
 import Shop from './pages/Product.jsx';
 import Contact from './pages/Contact.jsx';
 import About from './pages/About.jsx';
-import Footer from './components/Footer.jsx';
 import Admin from './admin/Admin.jsx';
 import Login from './pages/LoginSignUp.jsx';
 import Cart from './pages/Cart.jsx';
@@ -69,49 +68,6 @@ const analytics = getAnalytics(app);
 function App() {
   return (
     <div className="App">
-
-        <BrowserRouter>
-          <Routes>
-                  {/*uses the teal color for header for all pages */}
-              
-            <Route
-              path="/pages/*"
-              element={
-                <MainLayout>
-                  {/* routes to pages in main */}
-                  <Routes>
-                    <Route path="/pages/Home" element={<Home />} />
-                    <Route path="/pages/Shop" element={<Shop />} />
-                    <Route path="/pages/Contact" element={<Contact />} />
-                    <Route path="/pages/About" element={<About />} />
-                    <Route path="/pages/Login" element={<Login />} />
-                    <Route path="/pages/Cart" element={<Cart />} />
-                    <Route path="/pages/Locations" element={<Locations />} />
-                    <Route path="/pages/Rocklin" element={<Rocklin />} />
-                    <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
-                    <Route path="/pages/Product" element={<Product />} />
-                    <Route path="/pages/Tournament" element={<Tournament />} />
-                  </Routes>
-                </MainLayout>
-              }
-            />
-            {/* changes header to grey and takes nav links  to distinguish change */}
-            <Route
-              path="/admin/Admin"
-              element={
-                <AdminLayout>
-                  <Routes>
-                    <Route path="/" element={<Admin />} />
-                 
-                  </Routes>
-                </AdminLayout>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-
-      <div className="content">
-      </div>
         <FirebaseProvider 
           auth={auth} 
           db={db} 
@@ -119,23 +75,52 @@ function App() {
           username={loggedInUser ? loggedInUser.displayName : ""}
         >
           <BrowserRouter>
-            <Navbar />
             <Routes>
-              <Route path="/pages/Home" element={<Home />} />
-              <Route path="/pages/Shop" element={<Shop />} />
-              <Route path="/pages/Contact" element={<Contact />} />
-              <Route path="/pages/About" element={<About />} />
-              <Route path="/pages/Admin" element={<Admin />} />
-              <Route path="/pages/Login" element={<Login />} />
-              <Route path="/pages/Locations" element={<Locations />}/>
-              <Route path="/pages/Rocklin" element ={<Rocklin />}/>
-              <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
-              <Route path="/pages/Product" element ={<Product/>}/>
-              <Route path="/pages/Tournament" element ={<Tournament/>}/>
+              {/*uses the teal color for header for all pages */}
+              
+              <Route path="/" exact element={
+                  <MainLayout>
+                    <Home />
+                  </MainLayout>
+                } 
+              />
+              <Route
+                path="/pages/*"
+                element={
+                  <MainLayout>
+                    {/* routes to pages in main */}
+                    <Routes>
+                      <Route path="/pages/Home" element={<Home />} />
+                      <Route path="/pages/Shop" element={<Shop />} />
+                      <Route path="/pages/Contact" element={<Contact />} />
+                      <Route path="/pages/About" element={<About />} />
+                      <Route path="/pages/Login" element={<Login />} />
+                      <Route path="/pages/Cart" element={<Cart />} />
+                      <Route path="/pages/Locations" element={<Locations />} />
+                      <Route path="/pages/Rocklin" element={<Rocklin />} />
+                      <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
+                      <Route path="/pages/Product" element={<Product />} />
+                      <Route path="/pages/Tournament" element={<Tournament />} />
+                    </Routes>
+                  </MainLayout>
+                }
+              />
+              {/* changes header to grey and takes nav links  to distinguish change */}
+              <Route
+                path="/admin/Admin"
+                element={
+                  <AdminLayout>
+                    <Routes>
+                      <Route path="/" element={<Admin />} />
+                  
+                    </Routes>
+                  </AdminLayout>
+                }
+              />
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
-        <Footer />
+      
     </div>
   );
 }
