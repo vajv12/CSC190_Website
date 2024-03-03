@@ -36,20 +36,7 @@
     color: rgb(255, 255, 255);
   }
   
-  .headerContainer button {
-    color: black;
-    margin-left: 5%;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    justify-content: center;
-    background-color:rgb(129, 129, 129);
-    height: 50px;
-    width: 180px;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-  }
+
   
   /*button hover color for buy now*/
   .headerContainer button:hover {
