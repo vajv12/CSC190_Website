@@ -25,6 +25,18 @@ function Home() {
             <div className="headerContainer">
                 <Slideshow images={images} />
             </div>
+
+            <div className="MiddleContainer">
+            <h2>Featured Games:</h2>
+            
+            </div>
+
+
+            <div className="BottomContainer">
+            <h2>Events:</h2>
+            
+            </div>
+
         </div>
     );
 
