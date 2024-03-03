@@ -9,28 +9,56 @@ html, body {
 }
 
 .footer {
-  width: 100%;
 
-  position: fixed; 
-  bottom: 0; /* Anchors the footer at the bottom of the screen */
-  background-color: #66B2B2;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+  padding: 20px;
+  background-color: #66B2B2;
+  color: white;
+}
+
+.footer-column {
+  display: flex; 
+  flex: 1; /* This ensures that each column takes up equal space */
+  padding: 0 20px; 
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Ensures text within is also centered */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: space-between; /* Adjusts vertical distribution */
+
+  
+}
+
+
+.footer-nav{
+  display: flex;
   flex-direction: column;
-  padding-top: 10px;
-  padding-bottom: 10px; /* Adjust padding to ensure content is visible */
+  flex-grow: 1; /* Allows these containers to grow and take available space */
+  justify-content: center; /* Center items vertically within each container */
 }
 
-.socialMedia svg {
-  color: white;
-  margin: 20px;
-  font-size: 70px;
-  cursor: pointer;
+.social-icons {
+  display: flex; /* Ensures icons are in a flex container */
+  justify-content: center; /* Centers icons horizontally */
+  flex-wrap: wrap; /* Allows icons to wrap if space is insufficient */
+ 
 }
 
-.footer p {
-  color: white;
+.footer a {
+  color: white; /* Set link color to white */
+  text-decoration: none; /* Removes underline from links */
 }
 
 
+.footer a:hover {
+  color: #cccccc; /* Light grey color for hover */
+}
+
+.footer p{
+  margin: 0; /* Removes default margins */
+  padding: 0; /* Removes default padding */
+}
+
+.footer a {
+  padding: 10px; 
+}
