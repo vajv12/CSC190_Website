@@ -21,7 +21,7 @@
 
 .slide-navigation {
   position: absolute;
-  bottom: 50px;
+  bottom: 45px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -40,15 +40,16 @@
 }
 
 .nav-button {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%; /* Ensures the button is perfectly round */
-  margin: 0 5px; /* Adjust spacing between buttons as needed */
+  width: 20px; /* Increased width for a rectangular shape */
+  height: 5px; /* Adjusted height to complement the width */
+  border-radius: 4px; /* Slightly rounded corners for a modern look */
+  margin: 0 5px; /* Keeps the spacing between buttons */
   background-color: #ccc; /* Light color for inactive buttons */
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: none;
 }
 
 .nav-button.active {
-  background-color: #333; /* Darker color for the active button */
+  background-color: #333; /* Maintains a darker color for the active button */
 }

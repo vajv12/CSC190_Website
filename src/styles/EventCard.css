@@ -36,15 +36,15 @@
   
   .eventDetailsButton {
     position: absolute;
-    bottom: 0; /* Aligns the button at the bottom of the image container */
+    bottom: 0; /* Keeps the button at the bottom of the image container */
     left: 0; /* Aligns the button to the left edge of the container */
-    width: 100%; /* Makes the button take the full width of the container */
+    width: 100%; /* Ensures the button spans the full width */
     background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
-    color: white; /* Adjust text color as needed */
+    color: white;
     text-decoration: none;
-    padding: 10px 0; /* Adds padding inside the button */
-    text-align: center; /* Centers the button text */
+    padding: 20px 0; /* Increased padding to make the button taller */
+    text-align: center;
     font-weight: bold;
-    border: none; /* Removes any default border */
+    border: none;
   }
   
