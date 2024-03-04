@@ -1,0 +1,50 @@
+/* EventCard.css */
+.eventCard {
+    height: 400px; /* Example fixed height */
+    width: 300px; /* Adjust based on your needs */
+    border: 1px solid #ccc; /* Basic border, customize as needed */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    overflow: hidden; /* Ensures nothing spills outside the border */
+    margin-bottom: 20px; /* Space between cards if listed */
+  }
+  
+  .eventDate, .eventTitle {
+    text-align: center; /* Centers the text */
+    padding: 8px 0; /* Adds some space around the text */
+  }
+  
+  .eventDate {
+    font-size: 48px; /* Larger font size for the date */
+    font-weight: bold;
+  }
+  
+  .eventTitle {
+    font-size: 36px; /* Slightly smaller font size for the title */
+  }
+  
+  .eventImageContainer {
+    position: relative;
+    height: calc(400px - 120px); /* Adjust 120px based on the actual space taken by date and title */
+    overflow: hidden;
+  }
+  
+  .eventImage {
+    width: 100%;
+    height: 100%; /* Make the image cover the available height */
+    object-fit: cover; /* This will cover the area without distorting the image */
+  }
+  
+  .eventDetailsButton {
+    position: absolute;
+    bottom: 0; /* Aligns the button at the bottom of the image container */
+    left: 0; /* Aligns the button to the left edge of the container */
+    width: 100%; /* Makes the button take the full width of the container */
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+    color: white; /* Adjust text color as needed */
+    text-decoration: none;
+    padding: 10px 0; /* Adds padding inside the button */
+    text-align: center; /* Centers the button text */
+    font-weight: bold;
+    border: none; /* Removes any default border */
+  }
+  

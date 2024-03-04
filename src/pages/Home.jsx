@@ -5,7 +5,7 @@ import '../styles/Home.css';
 import Slideshow from '../components/Slideshow';
 import '../styles/Slideshow.css'
 import ItemCard from '../components/ItemCard'; 
-
+import EventCard from "../components/EventCard";
 
 
 import picture1 from '../assets/sample-picture-1.jpg';
@@ -39,6 +39,12 @@ const items = [
     
   ];
   
+  const event = {
+    date: '06',
+    title: 'Summer Fest',
+    imageUrl: 'url-to-event-image.jpg',
+    detailUrl: 'link-to-event-details',
+  };
 
 function Home() {
     return (
@@ -60,6 +66,7 @@ function Home() {
 
             <div className="bottomContainer">
                 <h2>Events:</h2>
+                <EventCard event={event} />
 
             </div>
 
