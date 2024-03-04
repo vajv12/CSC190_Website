@@ -4,6 +4,7 @@ import BannerImage from '../assets/horse-forest.png';
 import '../styles/Home.css';
 import Slideshow from '../components/Slideshow';
 import '../styles/Slideshow.css'
+import ItemCard from '../components/ItemCard'; 
 
 
 
@@ -18,6 +19,27 @@ const images = [
     picture3,
 ];
 
+
+// Array of item objects
+const items = [
+    {
+      name: 'Vintage Chair',
+      description: 'A beautifully crafted vintage chair with intricate details.',
+      imageUrl: 'url-to-image-vintage-chair.jpg',
+      rating: 4.5,
+      externalUrl: 'https://example.com/vintage-chair',
+    },
+    {
+      name: 'Modern Lamp',
+      description: 'A sleek lamp perfect for modern interiors.',
+      imageUrl: 'url-to-image-modern-lamp.jpg',
+      rating: 4.2,
+      externalUrl: 'https://example.com/modern-lamp',
+    },
+    
+  ];
+  
+
 function Home() {
     return (
         <div className="home">
@@ -26,15 +48,19 @@ function Home() {
                 <Slideshow images={images} />
             </div>
 
-            <div className="MiddleContainer">
-            <h2>Featured Games:</h2>
-            
+            <div className="middleContainer">
+                <h2>Featured Games:</h2>
+                <div className="itemsContainer">
+                    {items.map((item, index) => (
+                        <ItemCard key={index} item={item} />
+                    ))}
+                </div>
             </div>
 
 
-            <div className="BottomContainer">
-            <h2>Events:</h2>
-            
+            <div className="bottomContainer">
+                <h2>Events:</h2>
+
             </div>
 
         </div>
