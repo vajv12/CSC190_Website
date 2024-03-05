@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 // import Rating from './Rating';
 
 const ItemCard = ({ item }) => {
-    const { name, description, imageUrl, itemId } = item; // Assume `itemId` is used to build the link
+    const { name, description, image, itemId } = item; // Assume `itemId` is used to build the link
   
     return (
       <Link to={`/item/${itemId}`} className="itemCardLink">
-        <div className="itemCard" style={{ backgroundImage: `url(${imageUrl})` }}>
+        <div className="itemCard" style={{ backgroundImage: `url(${image})` }}>
           <div className="itemInfo">
             <h3 className="itemName">{name}</h3>
             <p className="itemDescription">{description}</p>

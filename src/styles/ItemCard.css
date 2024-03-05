@@ -3,8 +3,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+
     width: 300px; 
     height: 300px; 
     color: white; 
@@ -18,6 +20,12 @@
   
   .itemName, .itemDescription {
     margin: 5px 0;
+    display: -webkit-box; /* Required for line-clamp to work */
+    -webkit-line-clamp: 3; /* Number of lines you want to display */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis; /* This will show "..." at the end if the text is truncated */
+    white-space: normal; /* Ensures the text wraps and doesn't stay on one line */
   }
   
   

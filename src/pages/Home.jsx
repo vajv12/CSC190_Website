@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from 'react-router-dom';
-import BannerImage from '../assets/horse-forest.png';
+import { collection, getDocs } from "firebase/firestore";
+
+
 import '../styles/Home.css';
 import Slideshow from '../components/Slideshow';
 import '../styles/Slideshow.css'
 import ItemCard from '../components/ItemCard'; 
 import EventCard from "../components/EventCard";
 
-
 import picture1 from '../assets/sample-picture-1.jpg';
 import picture2 from '../assets/sample-picture-2.jpg';
 import picture3 from '../assets/sample-picture-3.jpg';
+
+import { FirebaseContext } from '../FirebaseContext'; // Import the context
 
 
 const images = [
@@ -19,34 +22,28 @@ const images = [
     picture3,
 ];
 
-
-// Array of item objects
-const items = [
-    {
-      name: 'Vintage Chair',
-      description: 'A beautifully crafted vintage chair with intricate details.',
-      imageUrl: 'url-to-image-vintage-chair.jpg',
-      rating: 4.5,
-      externalUrl: 'https://example.com/vintage-chair',
-    },
-    {
-      name: 'Modern Lamp',
-      description: 'A sleek lamp perfect for modern interiors.',
-      imageUrl: 'url-to-image-modern-lamp.jpg',
-      rating: 4.2,
-      externalUrl: 'https://example.com/modern-lamp',
-    },
-    
-  ];
-  
-  const event = {
+const event = {
     date: '06',
     title: 'Summer Fest',
     imageUrl: 'url-to-event-image.jpg',
     detailUrl: 'link-to-event-details',
-  };
+};
 
 function Home() {
+    const { db } = useContext(FirebaseContext); // Destructure db from context
+    const [items, setItems] = useState([]); // Initialize items state
+
+    useEffect(() => {
+        // Fetch featured items from Firestore
+        const fetchItems = async () => {
+            const itemsCollectionRef = collection(db, "products"); // Assume your items are stored in a collection named "items"
+            const data = await getDocs(itemsCollectionRef);
+            setItems(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+        };
+
+        fetchItems();
+    }, [db]); // Empty dependency array means this effect runs once on mount
+
     return (
         <div className="home">
 
@@ -55,24 +52,21 @@ function Home() {
             </div>
 
             <div className="middleContainer">
-                <h2>Featured Games:</h2>
+                <h2>Featured Items:</h2>
                 <div className="itemsContainer">
-                    {items.map((item, index) => (
-                        <ItemCard key={index} item={item} />
+                    {items.map((item) => (
+                        <ItemCard key={item.id} item={item} />
                     ))}
                 </div>
             </div>
 
-
             <div className="bottomContainer">
                 <h2>Events:</h2>
                 <EventCard event={event} />
-
             </div>
 
         </div>
     );
-
 }
 
 export default Home;
