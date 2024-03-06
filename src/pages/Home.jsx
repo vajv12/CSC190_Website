@@ -32,23 +32,29 @@ const event = {
 function Home() {
     const { db } = useContext(FirebaseContext); // Destructure db from context
     const [items, setItems] = useState([]); // Initialize items state
+    const [events, setEvents] = useState([]); // Initialize events state
 
     useEffect(() => {
-        // Fetch featured items from Firestore
-        const fetchItems = async () => {
-            const itemsCollectionRef = collection(db, "products"); // Assume your items are stored in a collection named "items"
-            const data = await getDocs(itemsCollectionRef);
-            setItems(data.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+        // Fetch featured items and events from Firestore
+        const fetchData = async () => {
+            // Fetching items
+            const itemsCollectionRef = collection(db, "products");
+            const itemsData = await getDocs(itemsCollectionRef);
+            setItems(itemsData.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+
+            // Fetching events
+            const eventsCollectionRef = collection(db, "events"); // Assuming events are stored in a collection named "events"
+            const eventsData = await getDocs(eventsCollectionRef);
+            setEvents(eventsData.docs.map(doc => ({ ...doc.data(), id: doc.id })));
         };
 
-        fetchItems();
-    }, [db]); // Empty dependency array means this effect runs once on mount
+        fetchData();
+    }, [db]); // Dependency array includes db to re-run if db changes
 
     return (
         <div className="home">
-
             <div className="headerContainer">
-                <Slideshow images={images} />
+                <Slideshow />
             </div>
 
             <div className="middleContainer">
@@ -62,9 +68,11 @@ function Home() {
 
             <div className="bottomContainer">
                 <h2>Events:</h2>
-                <EventCard event={event} />
+                {/* Render EventCard for each event */}
+                {events.map((event) => (
+                    <EventCard key={event.id} event={event} />
+                ))}
             </div>
-
         </div>
     );
 }
