@@ -1,33 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link } from 'react-router-dom';
 import { collection, getDocs } from "firebase/firestore";
 
 
 import '../styles/Home.css';
 import Slideshow from '../components/Slideshow';
 import '../styles/Slideshow.css'
-import ItemCard from '../components/ItemCard'; 
+import ItemCard from '../components/ItemCard';
 import EventCard from "../components/EventCard";
 
-import picture1 from '../assets/sample-picture-1.jpg';
-import picture2 from '../assets/sample-picture-2.jpg';
-import picture3 from '../assets/sample-picture-3.jpg';
 
-import { FirebaseContext } from '../FirebaseContext'; // Import the context
+import { FirebaseContext } from '../FirebaseContext'; 
 
-
-const images = [
-    picture1,
-    picture2,
-    picture3,
-];
-
-const event = {
-    date: '06',
-    title: 'Summer Fest',
-    imageUrl: 'url-to-event-image.jpg',
-    detailUrl: 'link-to-event-details',
-};
 
 function Home() {
     const { db } = useContext(FirebaseContext); // Destructure db from context
@@ -43,7 +26,7 @@ function Home() {
             setItems(itemsData.docs.map(doc => ({ ...doc.data(), id: doc.id })));
 
             // Fetching events
-            const eventsCollectionRef = collection(db, "events"); // Assuming events are stored in a collection named "events"
+            const eventsCollectionRef = collection(db, "events"); // events are stored in a collection named "events"
             const eventsData = await getDocs(eventsCollectionRef);
             setEvents(eventsData.docs.map(doc => ({ ...doc.data(), id: doc.id })));
         };
