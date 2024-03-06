@@ -4,7 +4,7 @@
   /* Center the slideshow container */
   overflow: hidden;
   width: 100%;
-  height: 500px;
+  height: 100%;
   position: relative;
 
 
@@ -74,6 +74,7 @@
   z-index: 1;
   opacity: 0.5;
   /* Less opacity for non-active slides */
+  
 }
 
 .slide.prev {
