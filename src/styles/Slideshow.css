@@ -70,7 +70,7 @@
   /* Absolute positioning to overlay on sides */
   width: 15%;
   /* Smaller width for prev/next slides */
-  height: 500px;
+  height: 80%;
   z-index: 1;
   opacity: 0.5;
   /* Less opacity for non-active slides */
