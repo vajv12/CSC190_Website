@@ -41,7 +41,7 @@ function Home() {
             </div>
 
             <div className="middleContainer">
-                <h2>Featured Items:</h2>
+                <h1>Featured Items:</h1>
                 <div className="itemsContainer">
                     {items.slice(0, 10).map((item) => (
                         <ItemCard key={item.id} item={item} />
@@ -53,7 +53,7 @@ function Home() {
             </div>
 
             <div className="bottomContainer">
-                <h2>Events:</h2>
+                <h1>Events:</h1>
                 <div className="itemsContainer">
                     {/* Render EventCard for each event */}
                     {events.map((event) => (
