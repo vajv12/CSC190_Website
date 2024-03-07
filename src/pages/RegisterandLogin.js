@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { database } from "./FirebaseConfig";
+import { database, auth } from "./FirebaseConfig";
+import {useAuthState} from 'react-firebase-hooks/auth';
 import {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword, getAuth, sendEmailVerification
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
+const auth = getAuth();
 
 function RegisterAndLogin() {
   const [login, setLogin] = useState(false);
 
   const history = useNavigate();
+  
 
   const handleSubmit = (e, type) => {
     e.preventDefault();
@@ -18,13 +22,19 @@ function RegisterAndLogin() {
     if (type == "signup") {
       createUserWithEmailAndPassword(database, email, password)
         .then((data) => {
+            console.log(auth.currentUser)
+           
           console.log(data, "authData");
           history("/home");
+          
         })
         .catch((err) => {
           alert(err.code);
           setLogin(true);
         });
+        
+        
+        
     } else {
       signInWithEmailAndPassword(database, email, password)
         .then((data) => {
@@ -34,6 +44,7 @@ function RegisterAndLogin() {
         .catch((err) => {
           alert(err.code);
         });
+        
     }
   };
 
@@ -70,4 +81,22 @@ function RegisterAndLogin() {
     </div>
   );
 }
+
+const actionCodeSettings = {
+  // URL you want to redirect back to. The domain (www.example.com) for this
+  // URL must be in the authorized domains list in the Firebase Console.
+  url: 'https://www.example.com/finishSignUp?cartId=1234',
+  // This must be true.
+  handleCodeInApp: true,
+  iOS: {
+    bundleId: 'com.example.ios'
+  },
+  android: {
+    packageName: 'com.example.android',
+    installApp: true,
+    minimumVersion: '12'
+  },
+  dynamicLinkDomain: 'example.page.link'
+};
+
 export default RegisterAndLogin;

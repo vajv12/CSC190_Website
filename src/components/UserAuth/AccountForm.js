@@ -1,6 +1,6 @@
 // src/UserAuth/AccountForm.js
 import React, {Component} from 'react'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendEmailVerification } from "firebase/auth";
 import { collection, getFirestore,  query, where, doc, addDoc, setDoc, getDocs,getDoc} from 'firebase/firestore';
 
 
@@ -8,6 +8,7 @@ import user_icon from '../../assets/person.png';
 import email_icon from '../../assets/email.png';
 import password_icon from '../../assets/password.png';
 import '../../styles/LoginSignUp.css';
+
 
 // Initialize Firebase Firestore
 
@@ -21,7 +22,7 @@ class AccountForm extends React.Component{
 			error:"",
 			type:props.type, //used to conditionally display either the CreateAccount or SignIn form
 		}
-
+		
 		this.changeHandler = this.changeHandler.bind(this)
 		this.handleClickCreateAccount = this.handleClickCreateAccount.bind(this)
 		this.handleClickSignIn = this.handleClickSignIn.bind(this)
@@ -60,6 +61,7 @@ class AccountForm extends React.Component{
 
 	//creates a user account using an email and password
 	async handleClickCreateAccount(){
+		const auth = getAuth();
 		this.setState({ error: "" })
 		//check if the username is at least 4 characters long
     if (this.state.username.length < 4) {
@@ -84,17 +86,23 @@ class AccountForm extends React.Component{
 		//attempt to create a user account
 		createUserWithEmailAndPassword(this.props.auth, this.state.email, this.state.password)
 			.then((userCredential) => {
+				const user = userCredential.user;
+
 				// Signed up 
 				//add username to users profile
 				return updateProfile(userCredential.user, {
 					displayName: this.state.username
 				}).then(() => userCredential);
+
+				
 			})
 			.then((userCredential) => {
 				//add username to Firestore
 				this.addUsernameToFirestore(userCredential.user.uid, this.state.username);
+				
 				//navigate back to home
-				window.location.href = '/pages/Home';
+				//window.location.href = '/pages/Home';
+				
 
 			})
 			.catch((error) => {
@@ -105,6 +113,7 @@ class AccountForm extends React.Component{
 				console.log(error.message);
 				this.setState({ error: this.getReadableErrorMessage(errorCode) })
 			});
+		
 
   };
 
@@ -112,8 +121,11 @@ class AccountForm extends React.Component{
 		signInWithEmailAndPassword(this.props.auth, this.state.email, this.state.password)
 			.then((userCredential) => {
 				// Signed in 
+				
+				console.log(userCredential)
+				
 				//navigate back to home
-				window.location.href = '/pages/Home';
+				//window.location.href = '/pages/Home';
 			})
 			.catch((error) => {
 				const errorCode = error.code;

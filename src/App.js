@@ -19,13 +19,16 @@ import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 import Tournament from './pages/Tournament.js';
 import { FirebaseProvider } from './FirebaseContext.js'; 
+import actionCodeSet from './helpers/actioncodeSet.js'
+
 
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { getAuth} from "firebase/auth";
+import { getAuth, sendEmailVerification} from "firebase/auth";
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -55,6 +58,12 @@ auth.onAuthStateChanged((user) => {
     // User is signed in.
     isAuthenticated = true;
     loggedInUser = user;
+    if(user.emailVerified){
+
+    }else{
+      sendEmailVerification(user, actionCodeSet);
+      console.log("email sent");
+    }
   } else {
     // No user is signed in.
     isAuthenticated = false;
@@ -132,6 +141,7 @@ function App() {
               <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
               <Route path="/pages/Product" element ={<Product/>}/>
               <Route path="/pages/Tournament" element ={<Tournament/>}/>
+              
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
