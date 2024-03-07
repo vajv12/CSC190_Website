@@ -43,10 +43,10 @@ function Home() {
             <div className="middleContainer">
                 <h2>Featured Items:</h2>
                 <div className="itemsContainer">
-                    {items.map((item) => (
-                        <ItemCard key={item.id} item={item} />
-                    ))}
-                </div>
+  {items.slice(0, 10).map((item) => (
+    <ItemCard key={item.id} item={item} />
+  ))}
+</div>
                 <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
                     <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Products</button>
                 </div>
