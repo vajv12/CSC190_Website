@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Slideshow.css'; // Make sure to create this CSS file
+import '../styles/Slideshow.css';
 
 const slidesData = [
   {
