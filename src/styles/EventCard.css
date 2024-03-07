@@ -48,3 +48,10 @@
     border: none;
   }
   
+
+  .eventsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the space between cards */
+    justify-content: space-evenly; /* Center the cards within the container */
+  }

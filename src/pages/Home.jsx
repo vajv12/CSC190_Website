@@ -54,11 +54,12 @@ function Home() {
 
             <div className="bottomContainer">
                 <h2>Events:</h2>
-                {/* Render EventCard for each event */}
-                {events.map((event) => (
-                    <EventCard key={event.id} event={event} />
-                ))}
-
+                <div className="itemsContainer">
+                    {/* Render EventCard for each event */}
+                    {events.map((event) => (
+                        <EventCard key={event.id} event={event} />
+                    ))}
+                </div>
                 <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
                     <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Rocklin Events</button>
                     <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Sacramento Events</button>
