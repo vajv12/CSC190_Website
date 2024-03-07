@@ -10,6 +10,8 @@
     height: 300px; 
     color: white; 
     position: relative;
+
+    
   }
   
   .itemInfo {
@@ -38,4 +40,13 @@
     flex-wrap: wrap;
     gap: 20px; /* Adjust the space between cards */
     justify-content: space-evenly; /* Center the cards within the container */
+
   }
+
+  .itemCard:hover .itemDescription, .itemCard:hover .itemName {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    
+  }
+
+  
