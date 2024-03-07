@@ -9,7 +9,7 @@ import ItemCard from '../components/ItemCard';
 import EventCard from "../components/EventCard";
 
 
-import { FirebaseContext } from '../FirebaseContext'; 
+import { FirebaseContext } from '../FirebaseContext';
 
 
 function Home() {
@@ -47,6 +47,9 @@ function Home() {
                         <ItemCard key={item.id} item={item} />
                     ))}
                 </div>
+                <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
+                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '20%' }}>View All Products</button>
+                </div>
             </div>
 
             <div className="bottomContainer">
@@ -55,6 +58,11 @@ function Home() {
                 {events.map((event) => (
                     <EventCard key={event.id} event={event} />
                 ))}
+
+                <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
+                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '20%' }}>View All Rocklin Events</button>
+                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '20%' }}>View All Sacramento Events</button>
+                </div>
             </div>
         </div>
     );
