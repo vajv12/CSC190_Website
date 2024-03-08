@@ -18,6 +18,7 @@ import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 import Payment from './pages/Payment.js';
+
 import { FirebaseProvider } from './FirebaseContext.js'; 
 
 //**************************** Start of Firebase Initialization************************************* */
@@ -90,6 +91,7 @@ function App() {
                     <Route path="/pages/Rocklin" element={<Rocklin />} />
                     <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
                     <Route path="/pages/Product" element={<Product />} />
+
                   </Routes>
                 </MainLayout>
               }
