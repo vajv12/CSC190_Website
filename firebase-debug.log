@@ -1,0 +1,74 @@
+[debug] [2024-03-09T14:42:57.842Z] ----------------------------------------------------------------------
+[debug] [2024-03-09T14:42:57.844Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2024-03-09T14:42:57.844Z] CLI Version:   13.4.1
+[debug] [2024-03-09T14:42:57.844Z] Platform:      win32
+[debug] [2024-03-09T14:42:57.844Z] Node Version:  v19.6.0
+[debug] [2024-03-09T14:42:57.844Z] Time:          Sat Mar 09 2024 06:42:57 GMT-0800 (Pacific Standard Time)
+[debug] [2024-03-09T14:42:57.844Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-09T14:42:57.897Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-09T14:42:57.898Z] > authorizing via signed-in user (achouhan0114@gmail.com)
+[debug] [2024-03-09T14:42:57.898Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
+[debug] [2024-03-09T14:42:57.899Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
+[debug] [2024-03-09T14:42:57.899Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
+[debug] [2024-03-09T14:42:57.899Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-03-09T14:42:58.041Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
+[debug] [2024-03-09T14:42:58.041Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-03-09T14:42:58.042Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-03-09T14:42:58.439Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-03-09T14:42:58.439Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb"},"state":"ACTIVE","etag":"1_7054efce-89e0-48ac-9875-f58c3361299e"}
+[info] 
+[info] === Serving from 'C:\Users\Tel\CSC190_Website'...
+[info] 
+[debug] [2024-03-09T14:42:58.445Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
+[debug] [2024-03-09T14:42:58.446Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
+[debug] [2024-03-09T14:42:58.448Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
+[debug] [2024-03-09T14:42:58.449Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
+[debug] [2024-03-09T14:42:58.824Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
+[debug] [2024-03-09T14:42:58.825Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com"}
+[debug] [2024-03-09T14:42:58.937Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
+[debug] [2024-03-09T14:42:58.937Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-09T14:42:58.937Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
+[debug] [2024-03-09T14:42:59.178Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config 200
+[debug] [2024-03-09T14:42:59.178Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config {"projectId":"csc190-w","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","apiKey":"AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M","authDomain":"csc190-w.firebaseapp.com","messagingSenderId":"59153071763","measurementId":"G-KYZHBDYFBR"}
+[debug] [2024-03-09T14:42:59.181Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-03-09T14:42:59.492Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-03-09T14:42:59.492Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb"},"state":"ACTIVE","etag":"1_7054efce-89e0-48ac-9875-f58c3361299e"}
+[info] i  functions: Watching "C:\Users\Tel\CSC190_Website\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Tel\\CSC190_Website\\functions\" for Cloud Functions..."}}
+[info] i  hosting[csc190-w]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[csc190-w]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-03-09T14:42:59.501Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-03-09T14:43:00.186Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "stripe": "^14.15.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-09T14:43:00.186Z] Building nodejs source
+[debug] [2024-03-09T14:43:00.187Z] Failed to find version of module node: reached end of search path C:\Users\Tel\CSC190_Website\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "19". Using node@19 from host. 
+[debug] [2024-03-09T14:43:00.188Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-09T14:43:00.192Z] Found firebase-functions binary at 'C:\Users\Tel\CSC190_Website\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8732
+
+[debug] [2024-03-09T14:43:00.303Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
