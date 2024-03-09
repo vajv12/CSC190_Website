@@ -25,7 +25,7 @@ function About() {
 
         <h2> Our Story</h2>
         <p>
-            Established in __, Great Escape Games was born out of love for tabletop games and a desire to 
+            Established in 1996, Great Escape Games was born out of love for tabletop games and a desire to 
             provide a dedicated spcae for gameres to connect, explore, and enjoy their favorite pastime activities.
             Our founder, Gary Lane, envisioned a space where the role-playing community could
             thrive, learn, and share their passion for strategy and creativity. 
@@ -49,7 +49,7 @@ function About() {
         <h3>Knowledgable Staff</h3>
         <p>
             Our team consists of avid gamers who are always ready to assist you. Whether you're a 
-            seasoned player or new to the world of tabletop gaming, we're here to provide recommendations, answer
+            new player or new to the world of tabletop gaming, we're here to provide recommendations, answer
             questions, and help you find the perfect game for any occasion.
         </p>
 

@@ -93,9 +93,10 @@ function Navbar() {
                 <Link to='./pages/PrivateRooms'>Private Rooms</Link>
                 <Link to='./pages/About'>About</Link>
                 <Link to='./pages/Contact'>Contact</Link>
+                {/* have no payments
                 <Link to='./pages/Payment'>
                     <PaymentIcon alt="payment card" />
-                </Link>
+                    </Link>*/}
                 <Link to='./pages/Login'>
                     <AccountBox alt="account icon" />
                 </Link>

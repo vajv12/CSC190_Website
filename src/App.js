@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from './layouts/MainLayout.jsx';
 import AdminLayout from './layouts/AdminLayout.jsx';
-import Navbar from './components/Navbar.jsx';
+//import Navbar from './components/Navbar.jsx';
 
 import Home from './pages/Home.jsx';
 import Shop from './pages/Product.jsx';
@@ -20,10 +20,14 @@ import Tournament from './pages/Tournament.js';
 import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
 
+
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import { getAuth} from "firebase/auth";
+import firebase from 'firebase/compat/app';
+
+import 'firebase/compat/firestore';
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -62,6 +66,23 @@ auth.onAuthStateChanged((user) => {
   }
 });
 
+//message for contact us 
+export const addMessage = async (name, email, subject, message) => {
+  try {
+    
+    await db.collection("contacts").add({
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    console.log("Message has been submitted");
+  } catch (error) {
+    console.error("Error submitting message:", error);
+  }
+};
+
 //**************************** End of Firebase Initialization************************************* */
 const analytics = getAnalytics(app);
 
@@ -74,7 +95,9 @@ function App() {
           db={db} 
           isAuthenticated={isAuthenticated} 
           username={loggedInUser ? loggedInUser.displayName : ""}
+          
         >
+           
           <BrowserRouter>
             <Routes>
               {/*uses the teal color for header for all pages */}
@@ -119,6 +142,7 @@ function App() {
                 }
               />  
               <Route path="/product/:id" element={<MainLayout><ProductDetailPage /></MainLayout>}/>
+            
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>

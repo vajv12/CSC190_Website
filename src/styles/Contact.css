@@ -1,15 +1,14 @@
 .contact {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
   }
   
   .contact .leftSide {
-    height: 100%;
+    height: 100vh;
     flex: 50%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
   }
   
   .contact .rightSide {
@@ -100,15 +99,24 @@
   
 .locationInfo {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center; 
+  align-items: center; 
   width: 100%;
-  height: 100%; /* Ensure it takes the full height of its container */
+  height: 100%; 
 }
 
-@media (max-width: 1260px) {
+@media  screen and (max-width: 500px) {
+  /* Stack items vertically on small screens */
   .locationInfo {
-    flex-direction: column; /* Stack items vertically on small screens */
+    flex-direction: column; 
+  }
+  /* Hide the left image for small screens*/
+  .contact .leftSide {
+    display: none; 
+  }
+   /* Expand the right side */
+  .contact .rightSide {
+    flex: 100%;
   }
 }
 
