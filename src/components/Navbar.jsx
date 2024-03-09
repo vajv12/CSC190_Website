@@ -8,7 +8,7 @@ import Dropdownlocations from "../helpers/DropdownLocations.jsx";
 //Icons install with npm install @mui/material @emotion/react @emotion/styled
 //and npm install @mui/icons-material
 import AccountBox from '@mui/icons-material/AccountBox';
-import PaymentIcon from '@mui/icons-material/Payment';
+//import PaymentIcon from '@mui/icons-material/Payment';
 import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
