@@ -1,0 +1,52 @@
+.itemCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+
+    width: 300px; 
+    height: 300px; 
+    color: white; 
+    position: relative;
+
+    
+  }
+  
+  .itemInfo {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+    padding: 10px;
+  }
+  
+  .itemName, .itemDescription {
+    margin: 5px 0;
+    display: -webkit-box; /* Required for line-clamp to work */
+    -webkit-line-clamp: 3; /* Number of lines to display */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis; /* This will show "..." at the end if the text is truncated */
+    white-space: normal; /* Ensures the text wraps and doesn't stay on one line */
+  }
+  
+  
+.itemCardLink {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps text color consistent with the rest of the card */
+  }
+
+  .itemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the space between cards */
+    justify-content: space-evenly; /* Center the cards within the container */
+
+  }
+
+  .itemCard:hover .itemDescription, .itemCard:hover .itemName {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    
+  }
+
+  
