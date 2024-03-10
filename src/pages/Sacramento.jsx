@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import '../styles/SacRock.css';
 
 // RocklinEvent component
-function RocklinEvent({ event }) {
+function SacramentoEvent({ event }) {
   return (
     <div className='event-box'>
       <div className='event'>
@@ -47,7 +47,7 @@ function EventCalendar() {
       <h2>Event Calendar</h2>
       <Slider {...settings}>
         {events.map((event, index) => (
-          <RocklinEvent key={index} event={event} />
+          <SacramentoEvent key={index} event={event} />
         ))}
       </Slider>
     </div>

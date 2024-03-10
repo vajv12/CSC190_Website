@@ -9,18 +9,20 @@ import Home from './pages/Home.jsx';
 import Shop from './pages/Product.jsx';
 import Contact from './pages/Contact.jsx';
 import About from './pages/About.jsx';
-import Footer from './components/Footer.jsx';
 import Admin from './admin/Admin.jsx';
 import Login from './pages/LoginSignUp.jsx';
 import Cart from './pages/Cart.jsx';
-import Locations from './pages/Locations.jsx';
 import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 import Tournament from './pages/Tournament.js';
+import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
 import actionCodeSet from './helpers/actioncodeSet.js'
 
+import Events from './pages/Events.jsx';
+import Sacramento from './pages/Sacramento.jsx';
+import Calendar from './pages/Calendar.jsx';
 
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
@@ -78,10 +80,15 @@ const analytics = getAnalytics(app);
 function App() {
   return (
     <div className="App">
-
-        <BrowserRouter>
-          <Routes>
-                  {/*uses the teal color for header for all pages */}
+        <FirebaseProvider 
+          auth={auth} 
+          db={db} 
+          isAuthenticated={isAuthenticated} 
+          username={loggedInUser ? loggedInUser.displayName : ""}
+        >
+          <BrowserRouter>
+            <Routes>
+              {/*uses the teal color for header for all pages */}
               
             <Route
               path="/pages/*"
@@ -141,11 +148,10 @@ function App() {
               <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
               <Route path="/pages/Product" element ={<Product/>}/>
               <Route path="/pages/Tournament" element ={<Tournament/>}/>
-              
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
-        <Footer />
+      
     </div>
   );
 }

@@ -18,7 +18,7 @@
 }
 .text {
     color: gray;
-    font-size: 100px;
+    font-size: 79px;
     height: 120px;
     background: white ;
     border-radius: 9px;
@@ -95,4 +95,41 @@
 .gray{
     background: white;
     color: gray;
+}
+
+.email-input {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: 2px solid #000000; /* Added border styling */
+    border-radius: 10px; /* Added border radius */
+    outline: none;
+    color: black;
+    font-size: 19px;
+}
+
+.reset-password-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: white;
+    background-color: #66B2B2;
+    border-radius: 60px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.icon {
+    
+    height: 100px;
+    margin-bottom: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 250px;
+    width: 100px;
+
 }

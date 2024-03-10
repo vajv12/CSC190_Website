@@ -1,0 +1,13 @@
+.calendar-container {
+    width: 100vw; /* 100% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Ensure no scrollbars */
+}
+
+.calendar-container iframe {
+    width: 100%; /* 100% of the container's width */
+    height: 100%; /* 100% of the container's height */
+    border: none; /* Remove border */
+}

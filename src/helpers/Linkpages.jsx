@@ -10,7 +10,7 @@ function Linkpages(){
         <div className="linkpages">
         <Link to ='./pages/Home'>Home</Link>
         <Link to ='./pages/Product'>Product</Link>
-        <Link to ='./pages/Locations'>Locations</Link>
+        <Link to ='./pages/Event'>Event</Link>
         <Link to ='./pages/PrivateRooms'>Private Rooms</Link>
         <Link to ='./pages/About'>About</Link>
         <Link to ='./pages/Contact'>Contact</Link>
