@@ -35,6 +35,8 @@ function Home() {
     }, [db]); // Dependency array includes db to re-run if db changes
 
     return (
+        
+
         <div className="home">
             <div className="headerContainer">
                 <Slideshow />

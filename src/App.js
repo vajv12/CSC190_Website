@@ -18,6 +18,8 @@ import Product from './pages/Product.jsx';
 import Tournament from './pages/Tournament.js';
 import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
+import actionCodeSet from './helpers/actioncodeSet.js'
+import Locations from './pages/Locations.jsx'
 import Events from './pages/Events.jsx';
 import Sacramento from './pages/Sacramento.jsx';
 import Calendar from './pages/Calendar.jsx';
@@ -25,9 +27,10 @@ import Calendar from './pages/Calendar.jsx';
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { getAuth} from "firebase/auth";
+import { getAuth, sendEmailVerification} from "firebase/auth";
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -57,6 +60,12 @@ auth.onAuthStateChanged((user) => {
     // User is signed in.
     isAuthenticated = true;
     loggedInUser = user;
+    if(user.emailVerified){
+
+    }else{
+      sendEmailVerification(user, actionCodeSet);
+      console.log("email sent");
+    }
   } else {
     // No user is signed in.
     isAuthenticated = false;
@@ -76,54 +85,69 @@ function App() {
           db={db} 
           isAuthenticated={isAuthenticated} 
           username={loggedInUser ? loggedInUser.displayName : ""}
-        >
+        />
           <BrowserRouter>
             <Routes>
               {/*uses the teal color for header for all pages */}
               
-              <Route path="/" exact element={
-                  <MainLayout>
-                    <Home />
-                  </MainLayout>
-                } 
-              />
-              <Route
-                path="/pages/*"
-                element={
-                  <MainLayout>
-                    {/* routes to pages in main */}
-                    <Routes>
-                      <Route path="/pages/Home" element={<Home />} />
-                      <Route path="/pages/Shop" element={<Shop />} />
-                      <Route path="/pages/Contact" element={<Contact />} />
-                      <Route path="/pages/About" element={<About />} />
-                      <Route path="/pages/Login" element={<Login />} />
-                      <Route path="/pages/Cart" element={<Cart />} />
-                      <Route path="/pages/Rocklin" element={<Rocklin />} />
-                      <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
-                      <Route path="/pages/Product" element={<Product />} />
-                      <Route path="/pages/Tournament" element={<Tournament />} />
-                      <Route path="/pages/Events" element={<Events/>} />
-                      <Route path="/pages/Sacramento" element={<Sacramento />} />
-                      <Route path="/pages/Calendar" element={<Calendar />} /> 
+            <Route
+              path="/pages/*"
+              element={
+                <MainLayout>
+                  {/* routes to pages in main */}
+                  <Routes>
+                    <Route path="/pages/Home" element={<Home />} />
+                    <Route path="/pages/Shop" element={<Shop />} />
+                    <Route path="/pages/Contact" element={<Contact />} />
+                    <Route path="/pages/About" element={<About />} />
+                    <Route path="/pages/Login" element={<Login />} />
+                    <Route path="/pages/Cart" element={<Cart />} />
+                    <Route path="/pages/Locations" element={<Locations />} />
+                    <Route path="/pages/Rocklin" element={<Rocklin />} />
+                    <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
+                    <Route path="/pages/Product" element={<Product />} />
+                    <Route path="/pages/Tournament" element={<Tournament />} />
+                  </Routes>
+                </MainLayout>
+              }
+            />
+            {/* changes header to grey and takes nav links  to distinguish change */}
+            <Route
+              path="/admin/Admin"
+              element={
+                <AdminLayout>
+                  <Routes>
+                    <Route path="/" element={<Admin />} />
+                 
+                  </Routes>
+                </AdminLayout>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
 
-                    </Routes>
-                  </MainLayout>
-                }
-              />
-              {/* changes header to grey and takes nav links  to distinguish change */}
-              <Route
-                path="/admin/Admin"
-                element={
-                  <AdminLayout>
-                    <Routes>
-                      <Route path="/" element={<Admin />} />
-                  
-                    </Routes>
-                  </AdminLayout>
-                }
-              />  
-              <Route path="/product/:id" element={<MainLayout><ProductDetailPage /></MainLayout>}/>
+      <div className="content">
+      </div>
+        <FirebaseProvider 
+          auth={auth} 
+          db={db} 
+          isAuthenticated={isAuthenticated} 
+          username={loggedInUser ? loggedInUser.displayName : ""}
+        >
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/pages/Home" element={<Home />} />
+              <Route path="/pages/Shop" element={<Shop />} />
+              <Route path="/pages/Contact" element={<Contact />} />
+              <Route path="/pages/About" element={<About />} />
+              <Route path="/pages/Admin" element={<Admin />} />
+              <Route path="/pages/Login" element={<Login />} />
+              <Route path="/pages/Locations" element={<Locations />}/>
+              <Route path="/pages/Rocklin" element ={<Rocklin />}/>
+              <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
+              <Route path="/pages/Product" element ={<Product/>}/>
+              <Route path="/pages/Tournament" element ={<Tournament/>}/>
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
