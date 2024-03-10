@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import BannerImage from '../assets/horse-forest.png';
+//import { Link } from 'react-router-dom';
+//import BannerImage from '../assets/horse-forest.png';
 import '../styles/Home.css';
 import Slideshow from '../components/Slideshow';
 import '../styles/Slideshow.css'
