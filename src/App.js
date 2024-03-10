@@ -19,7 +19,7 @@ import Tournament from './pages/Tournament.js';
 import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
 import actionCodeSet from './helpers/actioncodeSet.js'
-
+import Locations from './pages/Locations.jsx'
 import Events from './pages/Events.jsx';
 import Sacramento from './pages/Sacramento.jsx';
 import Calendar from './pages/Calendar.jsx';
@@ -85,7 +85,7 @@ function App() {
           db={db} 
           isAuthenticated={isAuthenticated} 
           username={loggedInUser ? loggedInUser.displayName : ""}
-        >
+        />
           <BrowserRouter>
             <Routes>
               {/*uses the teal color for header for all pages */}
