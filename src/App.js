@@ -18,7 +18,7 @@ import Product from './pages/Product.jsx';
 import Tournament from './pages/Tournament.js';
 import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
-import Event from './pages/Event.jsx';
+import Events from './pages/Events.jsx';
 import Sacramento from './pages/Sacramento.jsx';
 import Calendar from './pages/Calendar.jsx';
 
@@ -103,7 +103,7 @@ function App() {
                       <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
                       <Route path="/pages/Product" element={<Product />} />
                       <Route path="/pages/Tournament" element={<Tournament />} />
-                      <Route path="/pages/Event" element={<Event/>} />
+                      <Route path="/pages/Events" element={<Events/>} />
                       <Route path="/pages/Sacramento" element={<Sacramento />} />
                       <Route path="/pages/Calendar" element={<Calendar />} /> 
 

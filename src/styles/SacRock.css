@@ -1,0 +1,40 @@
+/* styles/Stores.css */
+
+.calendar {
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Use BEM (Block Element Modifier) naming convention for clarity */
+  .event-box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* Group related styles together */
+  .event {
+    font-size: 16px;
+  }
+  
+  .event p {
+    margin: 5px 0;
+  }
+  
+  /* Improved styling for the event grid */
+  .events {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Add hover effect to event boxes */
+  .event-box:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add any other desired hover effects */
+  }
+  

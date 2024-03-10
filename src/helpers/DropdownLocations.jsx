@@ -12,7 +12,7 @@ const DropdownLocations = () => {
   return (
     <div className="dropdownlocations">
       <div className="dropdown-trigger" onClick={toggleDropdown}>
-        <Link to='./pages/Event'>Event</Link>
+        <Link to='./pages/Events'>Events</Link>
       </div>
       {showDropdown && (
         <div className="dropdown-content">
