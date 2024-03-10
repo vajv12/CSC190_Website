@@ -12,13 +12,15 @@ import About from './pages/About.jsx';
 import Admin from './admin/Admin.jsx';
 import Login from './pages/LoginSignUp.jsx';
 import Cart from './pages/Cart.jsx';
-import Locations from './pages/Locations.jsx';
 import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 import Tournament from './pages/Tournament.js';
 import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
+import Event from './pages/Event.jsx';
+import Sacramento from './pages/Sacramento.jsx';
+import Calendar from './pages/Calendar.jsx';
 
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
@@ -97,11 +99,14 @@ function App() {
                       <Route path="/pages/About" element={<About />} />
                       <Route path="/pages/Login" element={<Login />} />
                       <Route path="/pages/Cart" element={<Cart />} />
-                      <Route path="/pages/Locations" element={<Locations />} />
                       <Route path="/pages/Rocklin" element={<Rocklin />} />
                       <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
                       <Route path="/pages/Product" element={<Product />} />
                       <Route path="/pages/Tournament" element={<Tournament />} />
+                      <Route path="/pages/Event" element={<Event/>} />
+                      <Route path="/pages/Sacramento" element={<Sacramento />} />
+                      <Route path="/pages/Calendar" element={<Calendar />} /> 
+
                     </Routes>
                   </MainLayout>
                 }

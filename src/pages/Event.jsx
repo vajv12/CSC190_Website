@@ -1,9 +1,9 @@
 import React from "react";
 
-function RocklinHours (){
+function Event (){
     return (
         <div>
         </div>
     )
 }
-export default RocklinHours
+export default Event

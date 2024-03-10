@@ -1,9 +1,9 @@
 import React from "react";
 
-function RocklinHours (){
+function SacramentoHours (){
     return (
         <div>
         </div>
     )
 }
-export default RocklinHours
+export default SacramentoHours
