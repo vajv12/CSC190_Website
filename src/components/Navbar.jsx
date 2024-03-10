@@ -8,7 +8,7 @@ import Dropdownlocations from "../helpers/DropdownLocations.jsx";
 //Icons install with npm install @mui/material @emotion/react @emotion/styled
 //and npm install @mui/icons-material
 import AccountBox from '@mui/icons-material/AccountBox';
-import PaymentIcon from '@mui/icons-material/Payment';
+//import PaymentIcon from '@mui/icons-material/Payment';
 import ReorderIcon from '@mui/icons-material/Reorder';
 
 function Navbar() {
@@ -93,9 +93,11 @@ function Navbar() {
                 <Link to='./pages/PrivateRooms'>Private Rooms</Link>
                 <Link to='./pages/About'>About</Link>
                 <Link to='./pages/Contact'>Contact</Link>
+                {/* no payment needed done on the page 
                 <Link to='./pages/Payment'>
                     <PaymentIcon alt="payment card" />
                 </Link>
+                    */}
                 <Link to='./pages/Login'>
                     <AccountBox alt="account icon" />
                 </Link>

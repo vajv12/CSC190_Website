@@ -43,7 +43,7 @@ function Home() {
             <div className="middleContainer">
                 <h1>Featured Items:</h1>
                 <div className="itemsContainer">
-                    {items.slice(0, 8).map((item) => (
+                    {items.slice(0, 10).map((item) => (
                         <ItemCard key={item.id} item={item} />
                     ))}
                 </div>

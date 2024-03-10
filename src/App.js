@@ -17,6 +17,7 @@ import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 import Tournament from './pages/Tournament.js';
+import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
 
 //**************************** Start of Firebase Initialization************************************* */
@@ -116,7 +117,8 @@ function App() {
                     </Routes>
                   </AdminLayout>
                 }
-              />
+              />  
+              <Route path="/product/:id" element={<MainLayout><ProductDetailPage /></MainLayout>}/>
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
