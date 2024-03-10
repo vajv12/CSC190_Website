@@ -1,210 +1,96 @@
 .home {
-    width: 100%;
-    height: auto;
-    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-  .headerContainer {
-    width: 100%;
-    height:40vh;
-
-    align-items: flex-start;
-  }
-  
-  .headerContainer h1 {
-    justify-content: center;
-    margin-left: 5%;
-    align-items: center;
-    font-size: 100px;
-    height: 60px;
-    font-weight: 50;
-    color: rgb(255, 255, 255);
-  }
-  
-  .headerContainer p {
-    padding: 0;
-    margin-left: 5%;
-    font-size: 40px;
-    font-weight: lighter;
-    color: rgb(255, 255, 255);
-  }
-  
-
-  
-  /*button hover color for buy now*/
-  .headerContainer button:hover {
-    background-color: #66B2B2;
-    cursor: pointer;
-    transition: 0.3s ease-in;
-  }
-  
-
-  @media only screen and (max-width: 1000px) {
-    .home {
-      justify-content: center;
-      align-items: center;
-    }
- 
-  
-    .headerContainer {
-      margin-left: 0px;
-      border-radius: 10px;
-      padding: 10px;
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background-color: #070707;
-      color: white;
-  
-    }
-  
-    .headerContainer h1 {
-      font-size: 40px;
-      height: 30px;
-      color: white;
-    }
-  
-    .headerContainer p {
-      font-size: 30px;
-      color: rgb(255, 255, 255);
-    }
-  
-    .headerContainer button {
-      background-color: rgb(129, 129, 129);
-      color: #fdfdfd;
-      margin-bottom: 30px;
-    }
-  
-    .headerContainer button:hover {
-      background-color: #66B2B2;
-
-      color: #ffffff;
-    }
-  
-    .bodyContainer{
-        align-items: center;
-        font-size: medium;
-        align-items: flex-start;
-        flex-direction: column;
-        background-position: center;
-      }
-      .bodyContainer .h2{
-        align-items: center;
-        font-size: medium;
-        align-items: flex-start;
-        flex-direction: column;
-        background-position: center;
-      }
-
-      
-
-  }
-
-  
-  /*Featured Games section*/
-  .MiddleContainer, .BottomContainer{
-    padding-left:20%;
-    padding-right:20%;
-    &>a{
-      margin:auto;
-    }
-    &>h2{
-      font-size:38px;
-    }
-  }
-  .FeaturedGames{
-    display:flex;
-    padding:20px;
-    &>div{
-      flex:1;
-      margin:20px;
-      margin-top:0;
-      background-color:rgb(233, 233, 233);
-      padding:4px;
-      border-radius:5px;
-    }
-    &>div img{
-      width:100%;
-    }
-    &>div div{
-      &>h3{
-        padding:5px;
-        font-size: 24px;
-        margin:0;
-        margin-top:5px;
-        margin-bottom:0;
-       }
-       &>div{
-        margin:5px;
-        margin-top:0px;
-        font-size:18px;
-       }
-    }
-    
-  }
-
-  .imageContainer{
-    width: 100%; 
-    max-width: 23vw; 
-    height: 0;
-    padding-top: 100%;
-    position: relative;
-    overflow: hidden; 
-  }
-  
-  .imageContainer img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-  }
- .buttonContainer {
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
-  align-items: center; 
-  height: 80px;
-  &>a button{
-    margin-top:-20px;
-  }
+  align-items: flex-start;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 40vh;
+  padding-bottom: 3%;
+  align-items: flex-start;
+}
+
+.middleContainer {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 3%;
+}
+
+.bottomContainer {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 3%;
+  width: 70%;
 }
 
 
-.UpcomingEvents{
-  &>div{
-    margin:40px;
-    background-color:rgb(233, 233, 233);
+@media only screen and (max-width: 1000px) {
+  .home {
+    justify-content: center;
+    align-items: center;
+  }
 
-    &>img{
-      max-width: 150px;
-      max-height: 150px;
-      display:inline-block;
-      float:left;
-      margin-right:15px;
-    }
-    &>div{
-      height:150px;
-      padding-right:10px;
-      &>h3{
-        font-size:24px;
-        margin-bottom:0;
-        padding-top:5px;
-      }
-      &>span{
-        font-size:20px;
-        font-weight:bold;
-      }
-      &>p{
-        font-size:18px;
-        margin-top:10px;
-      }
-    }
+
+
+
+  .headerContainer {
+    margin-left: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #070707;
+    color: white;
+
+  }
+
+  .headerContainer h1 {
+    font-size: 40px;
+    height: 30px;
+    color: white;
+  }
+
+  .headerContainer p {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+  }
+
+  .headerContainer button {
+    background-color: rgb(129, 129, 129);
+    color: #fdfdfd;
+    margin-bottom: 30px;
+  }
+
+  .headerContainer button:hover {
+    background-color: #66B2B2;
+
+    color: #ffffff;
+  }
+
+  .bodyContainer {
+    align-items: center;
+    font-size: medium;
+    align-items: flex-start;
+    flex-direction: column;
+    background-position: center;
+  }
+
+  .bodyContainer .h2 {
+    align-items: center;
+    font-size: medium;
+    align-items: flex-start;
+    flex-direction: column;
+    background-position: center;
   }
 }
