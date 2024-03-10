@@ -1,104 +1,72 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import BannerImage from '../assets/horse-forest.png';
+import React, { useEffect, useState, useContext } from "react";
+import { collection, getDocs } from "firebase/firestore";
+
+
 import '../styles/Home.css';
 import Slideshow from '../components/Slideshow';
 import '../styles/Slideshow.css'
+import ItemCard from '../components/ItemCard';
+import EventCard from "../components/EventCard";
 
 
-
-import picture1 from '../assets/sample-picture-1.jpg';
-import picture2 from '../assets/sample-picture-2.jpg';
-import picture3 from '../assets/sample-picture-3.jpg';
+import { FirebaseContext } from '../FirebaseContext';
 
 
-const images = [
-    picture1,
-    picture2,
-    picture3,
-];
-
-  
 function Home() {
+    const { db } = useContext(FirebaseContext); // Destructure db from context
+    const [items, setItems] = useState([]); // Initialize items state
+    const [events, setEvents] = useState([]); // Initialize events state
+
+    useEffect(() => {
+        // Fetch featured items and events from Firestore
+        const fetchData = async () => {
+            // Fetching items
+            const itemsCollectionRef = collection(db, "products");
+            const itemsData = await getDocs(itemsCollectionRef);
+            setItems(itemsData.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+
+            // Fetching events
+            const eventsCollectionRef = collection(db, "events"); // events are stored in a collection named "events"
+            const eventsData = await getDocs(eventsCollectionRef);
+            setEvents(eventsData.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+        };
+
+        fetchData();
+    }, [db]); // Dependency array includes db to re-run if db changes
+
     return (
-        <div className="home" >
-
+        <div className="home">
             <div className="headerContainer">
-                <Slideshow images={images} />
+                <Slideshow />
             </div>
 
-            <div className="MiddleContainer">
-                <h2>Featured Games</h2>
-                <div className="FeaturedGames">
-                    <div>
-                        <div className="imageContainer">
-                            <img src="https://static.wixstatic.com/media/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg/v1/fill/w_399,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg" />
-                        </div>
-                        <div>
-                            <h3>MtG: Lord of the Rings</h3>
-                            <div>
-                            Releases June 23rd.
-                            Pre-release events June 16th thru 18th.
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="imageContainer">
-                            <img src="https://static.wixstatic.com/media/21d03a_20fad69447784b43bbf87041ba1c6f72~mv2.jpg/v1/fill/w_335,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/21d03a_20fad69447784b43bbf87041ba1c6f72~mv2.jpg" />
-                        </div>
-                        <div>
-                            <h3>40K Leviathan</h3>
-                            <div>40K Leviathan 10th Edition Boxed Set. Pre-order yours now and get $50 towards a new codex!</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="imageContainer">
-                            <img src="https://static.wixstatic.com/media/21d03a_b435f11332af491380e1825cc62ead8e~mv2.jpg/v1/fill/w_399,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/21d03a_b435f11332af491380e1825cc62ead8e~mv2.jpg" />
-                        </div>
-                        <div>
-                            <h3>Lorcana</h3>
-                            <div>Lorcana CCG Coming August 2023!!!</div>
-                        </div>
-                    </div>
+            <div className="middleContainer">
+                <h1>Featured Items:</h1>
+                <div className="itemsContainer">
+                    {items.slice(0, 10).map((item) => (
+                        <ItemCard key={item.id} item={item} />
+                    ))}
                 </div>
-                <div className="buttonContainer"><a><button>Browse All Products</button></a></div>
-            </div>
-
-
-            <div className="BottomContainer">
-            <h2>Upcoming Events</h2>
-                <div className="UpcomingEvents">
-                    <div>
-                        <img src="https://static.wixstatic.com/media/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg/v1/fill/w_399,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg" />
-                            <div>
-                                <h3>MtG: Lord of the Rings Launch Tournament</h3>
-                                <span>June 16 &mdash; June 18 at Rocklin Location</span> <br />
-                                <p>Embark on an epic journey as magic and mythology collide in the MtG: Lord of the Rings Launch Tournament. Join fellow adventurers in an immersive duel of wits and strategy, where legendary creatures and powerful spells await at every turn.</p>
-                            </div>
-                    </div>
-                    <div>
-                        <img src="https://static.wixstatic.com/media/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg/v1/fill/w_399,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg" />
-                            <div>
-                                <h3>MtG: Lord of the Rings Launch Tournament</h3>
-                                <span>June 16 &mdash; June 18 at Rocklin Location</span> <br />
-                                <p>Embark on an epic journey as magic and mythology collide in the MtG: Lord of the Rings Launch Tournament. Join fellow adventurers in an immersive duel of wits and strategy, where legendary creatures and powerful spells await at every turn.</p>
-                            </div>
-                    </div>
-                    <div>
-                        <img src="https://static.wixstatic.com/media/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg/v1/fill/w_399,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/21d03a_b078d8cbcc4d4cbabdf88723c31b6b9e~mv2.jpg" />
-                            <div>
-                                <h3>MtG: Lord of the Rings Launch Tournament</h3>
-                                <span>June 16 &mdash; June 18 at Rocklin Location</span> <br />
-                                <p>Embark on an epic journey as magic and mythology collide in the MtG: Lord of the Rings Launch Tournament. Join fellow adventurers in an immersive duel of wits and strategy, where legendary creatures and powerful spells await at every turn.</p>
-                            </div>
-                    </div>
+                <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
+                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Products</button>
                 </div>
-                <div className="buttonContainer"><a><button>View All Rocklin Events</button></a> <a style={{ marginLeft: '20px' }}><button>View All Sacramento Events</button></a></div>
             </div>
 
+            <div className="bottomContainer">
+                <h1>Events:</h1>
+                <div className="itemsContainer">
+                    {/* Render EventCard for each event */}
+                    {events.map((event) => (
+                        <EventCard key={event.id} event={event} />
+                    ))}
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
+                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Rocklin Events</button>
+                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Sacramento Events</button>
+                </div>
+            </div>
         </div>
     );
-
 }
 
 export default Home;

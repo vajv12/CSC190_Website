@@ -1,4 +1,4 @@
-// src/UserAuth/AccountForm.js
+ // src/UserAuth/AccountForm.js
 import React, {Component} from 'react'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { collection, getFirestore,  query, where, doc, addDoc, setDoc, getDocs,getDoc} from 'firebase/firestore';
@@ -194,4 +194,4 @@ class AccountForm extends React.Component{
 	}
 }
 
-export default AccountForm
+export default AccountForm 
