@@ -106,7 +106,12 @@ function App() {
                     <Route path="/pages/Rocklin" element={<Rocklin />} />
                     <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
                     <Route path="/pages/Product" element={<Product />} />
-                    <Route path="/pages/Tournament" element={<Tournament />} />
+                    <Route path="/pages/Tournament" element={<Tournament />} />                    <Route path="/pages/Locations" element={<Locations />} />
+                    <Route path="/pages/Sacramento" element={<Sacramento />} />
+                    <Route path="/pages/Calendar" element={<Calendar />} />
+                    <Route path="/pages/Events" element={<Events />} />
+
+
                   </Routes>
                 </MainLayout>
               }
@@ -143,11 +148,16 @@ function App() {
               <Route path="/pages/About" element={<About />} />
               <Route path="/pages/Admin" element={<Admin />} />
               <Route path="/pages/Login" element={<Login />} />
-              <Route path="/pages/Locations" element={<Locations />}/>
               <Route path="/pages/Rocklin" element ={<Rocklin />}/>
               <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
               <Route path="/pages/Product" element ={<Product/>}/>
               <Route path="/pages/Tournament" element ={<Tournament/>}/>
+              <Route path="/pages/Sacramento" element={<Sacramento />} />
+              <Route path="/pages/Calendar" element={<Calendar />} />
+              <Route path="/pages/Events" element={<Events />} />
+
+
+
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
