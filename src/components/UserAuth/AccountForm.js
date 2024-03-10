@@ -28,13 +28,13 @@ class AccountForm extends React.Component{
 		this.addUsernameToFirestore = this.addUsernameToFirestore.bind(this)
 		this.doesUsernameExist = this.doesUsernameExist.bind(this)
 	}
-	
+
 	//can reuse this changehandler for all inputs
 	changeHandler(event){
 		const {name, value, type, checked } = event.target
 		type === "checkbox" ? this.setState((prevState)=>{ return{ [name]: checked }})	: this.setState({ [name]:value })
 	}
-	
+
 	handleSubmit(){
 		return null
 	}
@@ -95,7 +95,7 @@ class AccountForm extends React.Component{
 				this.addUsernameToFirestore(userCredential.user.uid, this.state.username);
 				//navigate back to home
 				window.location.href = '/pages/Home';
-				
+
 			})
 			.catch((error) => {
 				//any errors related to the email or password being in the wrong format get caught here, as well as other errors
@@ -105,7 +105,7 @@ class AccountForm extends React.Component{
 				console.log(error.message);
 				this.setState({ error: this.getReadableErrorMessage(errorCode) })
 			});
-			
+
   };
 
 	handleClickSignIn(){
@@ -140,7 +140,7 @@ class AccountForm extends React.Component{
             return errorMessage;
     }
 	}
-	
+
 	render(){
 		const style = {
 			color: this.state.favColor
@@ -148,15 +148,15 @@ class AccountForm extends React.Component{
 		let errorText = null
 		if(this.state.error != "")
 		{ errorText = <div id='errorContainer'><h4>{this.state.error}</h4></div> }
-		
+
 
 		return(
 			<>
-			
+
 				{this.state.type === "createAccount" ?
 					(
 						<form class="InputForm" onSubmit={this.handleSubmit}>
-							
+
 							<div className="input" >
 								<img src ={user_icon} alt =""/>
 								<input class="InputText" type="text" name="username" value={this.state.value} placeholder={this.props.usernamePlaceholder} onChange={this.changeHandler} />

@@ -24,11 +24,5 @@
         "firebase-debug.*.log"
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source":   "**",
-      "function": "app"
-    }
   ]
 }

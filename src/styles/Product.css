@@ -1,0 +1,131 @@
+.productsPage {
+  font-family: 'Arial', sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+  
+}
+
+.productsPage h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px; /* Adjust the gap between items as needed */
+  justify-content: center; /* This centers the grid itself */
+  padding: 10px; /* Add padding to ensure there's space around the items */
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product {
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Keep transitions for effects */
+}
+
+.product:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: scale(1.03); /* Scales up the box to 103% of its original size */
+}
+
+.product-image:hover {
+  transform: scale(1.1); /* Scales up the image to 110% of its original size */
+}
+
+.product-image {
+  width: 100%; /* Ensures the image is as wide as the container */
+  height: 250px; /* Fixed height; adjust as needed */
+  object-fit: cover; /* Resizes the image to cover the area, may crop the image */
+  border-radius: 4px; /* Optional: adds rounded corners to the image */
+  margin-bottom: 10px; /* Optional: adds space between the image and the text below */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the transform */
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-height: 3rem; /* Adjust the min-height as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Show 2 lines at most */
+  -webkit-box-orient: vertical;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #C00;
+  margin-top: 0.5rem;
+  min-height: 1.5rem; /* Adjust the min-height as needed */
+}
+
+/* Container for search and filter */
+.productsPage > input,
+.productsPage > select {
+  margin: 0.5rem; /* Adds some space around the elements */
+  padding: 0.5rem; /* Adds padding inside the elements for better text visibility */
+  border: 2px solid #ddd; /* Adds a border with a light color */
+  border-radius: 5px; /* Rounds the corners of the input and select */
+}
+
+/* Customizes the search input */
+.productsPage > input {
+  width: calc(100% - 2rem); /* Makes the input field wider */
+  max-width: 400px; /* Sets a max-width to avoid extremely wide fields */
+  font-size: 1rem; /* Increases the font size for better readability */
+  color: #333; /* Sets a darker color for the text */
+}
+
+/* Customizes the filter dropdown */
+.productsPage > select {
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  background-color: #f9f9f9; /* Sets a light background color */
+  font-size: 1rem; /* Matches the font size with the search input */
+  color: #555; /* Sets a slightly darker color for the dropdown text */
+}
+
+/* Hover effects */
+.productsPage > input:hover,
+.productsPage > select:hover {
+  border-color: #aaa; /* Darkens the border on hover for better focus */
+}
+
+/* Focus effects */
+.productsPage > input:focus,
+.productsPage > select:focus {
+  outline: none; /* Removes the default focus outline */
+  border-color: #007bff; /* Adds a blue border to indicate focus */
+  box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Adds a subtle shadow for a glowing effect */
+}
+
+/* Medium devices (tablets, less than 768px) */
+@media (max-width: 767px) {
+  .product {
+    flex: 0 0 33.333%; /* 3 items per row */
+  }
+}
+
+/* Small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+  .product {
+    flex: 0 0 50%; /* 2 items per row */
+  }
+}
+
+@media (max-width: 767px) {
+  .product-name, .product-price {
+    font-size: 1rem; /* Smaller screens */
+  }
+}
