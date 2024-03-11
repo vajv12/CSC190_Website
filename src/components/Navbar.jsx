@@ -41,26 +41,26 @@ function Navbar() {
         <div className="navbar" >
             <div className="leftSide" id={openLinks ? "open" : "close"}>
                 {/*logo icon can traceback to home page */}
-                <Link to='./pages/Home'>
+                <Link to='/pages/Home'>
                     <img src={Logo} alt="Great Escape Games Logo" />
                 </Link>
 
                 <div className="hiddenLinks">
-                    <Link to='./pages/Home'>Home</Link>
-                    <Link to='./pages/Product'>Product</Link>
+                    <Link to='/pages/Home'>Home</Link>
+                    <Link to='/pages/Product'>Product</Link>
 
                     {/* Use the Dropdown locations */}
                     < Dropdownlocations />
 
-                    <Link to='./pages/PrivateRooms'>Private Rooms</Link>
-                    <Link to='./pages/About'>About</Link>
-                    <Link to='./pages/Contact'>Contact</Link>
+                    <Link to='/pages/PrivateRooms'>Private Rooms</Link>
+                    <Link to='/pages/About'>About</Link>
+                    <Link to='/pages/Contact'>Contact</Link>
                 </div>
 
             </div>
             {/*pages link to respective spots. uses import page on top and link pages */}
             <div className="rightSide">
-                <Link to='./pages/Home'>Home</Link>
+                <Link to='/pages/Home'>Home</Link>
 
 
                 {/* The search bar */}
@@ -85,20 +85,20 @@ function Navbar() {
                     <button type="submit">Search</button>
                 </form>
                 
-                <Link to='./pages/Product'>Product</Link>
+                <Link to='/pages/Product'>Product</Link>
 
                 {/* Use the Dropdown locations*/}
                 < Dropdownlocations />
 
-                <Link to='./pages/PrivateRooms'>Private Rooms</Link>
-                <Link to='./pages/About'>About</Link>
-                <Link to='./pages/Contact'>Contact</Link>
+                <Link to='/pages/PrivateRooms'>Private Rooms</Link>
+                <Link to='/pages/About'>About</Link>
+                <Link to='/pages/Contact'>Contact</Link>
                 {/* no payment needed done on the page 
                 <Link to='./pages/Payment'>
                     <PaymentIcon alt="payment card" />
                 </Link>
                     */}
-                <Link to='./pages/Login'>
+                <Link to='/pages/Login'>
                     <AccountBox alt="account icon" />
                 </Link>
 

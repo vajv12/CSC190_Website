@@ -85,79 +85,55 @@ function App() {
           db={db} 
           isAuthenticated={isAuthenticated} 
           username={loggedInUser ? loggedInUser.displayName : ""}
-        />
+        >
           <BrowserRouter>
             <Routes>
               {/*uses the teal color for header for all pages */}
               
-            <Route
-              path="/pages/*"
-              element={
-                <MainLayout>
-                  {/* routes to pages in main */}
-                  <Routes>
-                    <Route path="/pages/Home" element={<Home />} />
-                    <Route path="/pages/Shop" element={<Shop />} />
-                    <Route path="/pages/Contact" element={<Contact />} />
-                    <Route path="/pages/About" element={<About />} />
-                    <Route path="/pages/Login" element={<Login />} />
-                    <Route path="/pages/Cart" element={<Cart />} />
-                    <Route path="/pages/Locations" element={<Locations />} />
-                    <Route path="/pages/Rocklin" element={<Rocklin />} />
-                    <Route path="/pages/PrivateRooms" element={<PrivateRooms />} />
-                    <Route path="/pages/Product" element={<Product />} />
-                    <Route path="/pages/Tournament" element={<Tournament />} />                    <Route path="/pages/Locations" element={<Locations />} />
-                    <Route path="/pages/Sacramento" element={<Sacramento />} />
-                    <Route path="/pages/Calendar" element={<Calendar />} />
-                    <Route path="/pages/Events" element={<Events />} />
+              <Route path="/" exact element={
+                  <MainLayout>
+                    <Home />
+                  </MainLayout>
+                } 
+              />
+              <Route
+                path="/pages/*"
+                element={
+                  <MainLayout>
+                    {/* routes to pages in main */}
+                    <Routes>
+                      <Route path="/Home" element={<Home />} />
+                      <Route path="/Shop" element={<Shop />} />
+                      <Route path="/Contact" element={<Contact />} />
+                      <Route path="/About" element={<About />} />
+                      <Route path="/Login" element={<Login />} />
+                      <Route path="/Cart" element={<Cart />} />
+                      <Route path="/Rocklin" element={<Rocklin />} />
+                      <Route path="/PrivateRooms" element={<PrivateRooms />} />
+                      <Route path="/Product" element={<Product />} />
+                      <Route path="/Tournament" element={<Tournament />} />
+                      <Route path="/Events" element={<Events/>} />
+                      <Route path="/Sacramento" element={<Sacramento />} />
+                      <Route path="/Calendar" element={<Calendar />} /> 
+                      <Route path="/Locations" element={<Locations />} />
 
-
-                  </Routes>
-                </MainLayout>
-              }
-            />
-            {/* changes header to grey and takes nav links  to distinguish change */}
-            <Route
-              path="/admin/Admin"
-              element={
-                <AdminLayout>
-                  <Routes>
-                    <Route path="/" element={<Admin />} />
-                 
-                  </Routes>
-                </AdminLayout>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-
-      <div className="content">
-      </div>
-        <FirebaseProvider 
-          auth={auth} 
-          db={db} 
-          isAuthenticated={isAuthenticated} 
-          username={loggedInUser ? loggedInUser.displayName : ""}
-        >
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/pages/Home" element={<Home />} />
-              <Route path="/pages/Shop" element={<Shop />} />
-              <Route path="/pages/Contact" element={<Contact />} />
-              <Route path="/pages/About" element={<About />} />
-              <Route path="/pages/Admin" element={<Admin />} />
-              <Route path="/pages/Login" element={<Login />} />
-              <Route path="/pages/Rocklin" element ={<Rocklin />}/>
-              <Route path="/pages/PrivateRooms" element ={<PrivateRooms />}/>
-              <Route path="/pages/Product" element ={<Product/>}/>
-              <Route path="/pages/Tournament" element ={<Tournament/>}/>
-              <Route path="/pages/Sacramento" element={<Sacramento />} />
-              <Route path="/pages/Calendar" element={<Calendar />} />
-              <Route path="/pages/Events" element={<Events />} />
-
-
-
+                    </Routes>
+                  </MainLayout>
+                }
+              />
+              {/* changes header to grey and takes nav links  to distinguish change */}
+              <Route
+                path="/admin/Admin"
+                element={
+                  <AdminLayout>
+                    <Routes>
+                      <Route path="/" element={<Admin />} />
+                  
+                    </Routes>
+                  </AdminLayout>
+                }
+              />  
+              <Route path="/product/:id" element={<MainLayout><ProductDetailPage /></MainLayout>}/>
             </Routes>
           </BrowserRouter>
         </FirebaseProvider>
