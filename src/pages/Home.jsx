@@ -7,6 +7,7 @@ import Slideshow from '../components/Slideshow';
 import '../styles/Slideshow.css'
 import ItemCard from '../components/ItemCard';
 import EventCard from "../components/EventCard";
+import { Link } from 'react-router-dom';
 
 
 import { FirebaseContext } from '../FirebaseContext';
@@ -35,7 +36,7 @@ function Home() {
     }, [db]); // Dependency array includes db to re-run if db changes
 
     return (
-        
+
 
         <div className="home">
             <div className="headerContainer">
@@ -49,10 +50,21 @@ function Home() {
                         <ItemCard key={item.id} item={item} />
                     ))}
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
-                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Products</button>
+
+
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', width: '100%' }}>
+
+                    <Link to='/pages/Product' style={{ textDecoration: 'none' }}>
+                        <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', position: 'relative' }}>View All Products</button>
+                    </Link>
+
                 </div>
+
+
             </div>
+
+
+
 
             <div className="bottomContainer">
                 <h1>Events:</h1>

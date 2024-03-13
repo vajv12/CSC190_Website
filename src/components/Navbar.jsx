@@ -47,7 +47,7 @@ function Navbar() {
 
                 <div className="hiddenLinks">
                     <Link to='/pages/Home'>Home</Link>
-                    <Link to='/pages/Product'>Product</Link>
+                    <Link to='/pages/Product'>Products</Link>
 
                     {/* Use the Dropdown locations */}
                     < Dropdownlocations />
@@ -85,7 +85,7 @@ function Navbar() {
                     <button type="submit">Search</button>
                 </form>
                 
-                <Link to='/pages/Product'>Product</Link>
+                <Link to='/pages/Product'>Products</Link>
 
                 {/* Use the Dropdown locations*/}
                 < Dropdownlocations />
