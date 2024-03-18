@@ -1,119 +1,71 @@
 .navbar {
-    width: 100%;
-    height: 120px;
-    background-color: #66B2B2;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .navbar .leftSide {
-    flex: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 150px;
-  }
-  
-  .navbar .leftSide img {
-    width: 130px;
-  }
-  
-  .navbar .rightSide {
-    flex: 50%;
-    font-size: x-large;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .navbar a, 
-  .NavIcon {
-    color: white;
-    text-decoration:none;
-    margin: 20px;
-  }
-  
-  .navbar .rightSide button {
-    background-color: transparent;
-    border: none;
-    color:white;
-    cursor: pointer;
-  }
-  
-  .navbar .rightSide svg {
-    font-size: 40px;
-  }
-
-  
-  .navbar .leftSide .hiddenLinks {
-    display: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(35, 52, 78); /* Blueish color with transparency */
+  backdrop-filter: blur(8px); /* Adds blur to the background */
+  color: white;
+  padding: 4px 20px; /* Slightly reduced vertical padding */
+  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 50%; /* Centering the navbar horizontally */
+  transform: translateX(-50%); /* Align center properly */
+  width: 90%; /* Reduced width to 80% */
+  z-index: 1000;
+  border-radius: 10px; /* Adds rounded corners to the navbar */
 }
 
-  /* when open logo disappears use # */
-  .navbar #open {
-    padding-left: 0px;
-  }
-  .navbar #open img {
+.navbar img {
+  max-height: 80px; /* Adjust based on your logo's aspect ratio to reduce navbar height */
+  width: auto; /* Adjust width automatically to keep the logo's aspect ratio */
+}
+
+.links a, .links form {
+  margin: 8px; /* Slightly reduced margin */
+  color: white;
+  text-decoration: none;
+  font-size: 21px; /* Adjusted for balance */
+  padding: 8px 15px; /* Reduced padding for less vertical space */
+  display: inline-block; /* Ensures padding is applied correctly */
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  background-color: rgba(0, 123, 255, 0.8); /* Apply transparency to dropdown */
+  backdrop-filter: blur(8px); /* Adds blur to the dropdown background */
+  width: 100%;
+  text-align: center;
+}
+
+input[type="search"], button {
+  padding: 10px 18px; /* Slightly reduced padding */
+  margin-right: 10px; /* Maintains spacing */
+  border: none;
+  border-radius: 15px;
+  font-size: 16px; /* Keeps text inside input and button comfortably large */
+  background-color: rgba(0, 0, 0, 0.2); /* Darker transparent background */
+  color: white; /* White text */
+}
+
+button {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .links {
     display: none;
   }
-  
-  .navbar .close img {
-    display: inherit;
+  .links.show {
+    display: block;
   }
-  
-  .navbar #open .hiddenLinks {
-    display: inherit;
-    font-size: medium;
-    margin-left: 30px;
-  }
-
-
-  .navbar .close .hiddenLinks {
-    display: inherit;
-
-  }
-  
-  .navbar #open a {
-    width: 70px;
-    margin: 5px;
-  }
-  
-  @media only screen and (max-width: 1250px) {
-    .navbar .rightSide a{
-      width: 70px;
-    }
-    .navbar .leftSide {
-      padding-left: 50px;
-    }
-    
-  }
-  
-  @media only screen and (max-width: 1250px) {
-    .navbar .rightSide a,
-    .navbar .rightSide .NavIcon {
-      display: none;
-    }
-  
-    .navbar .rightSide {
-      justify-content: flex-end;
-      padding-right: 50px;
-    }
-
-    .navbar .rightSide button {
-      display: inherit;
-    }
-  }
-  
-  /* control width size to show reorder button when below min width */
-  @media only screen and (min-width: 1250px) {
-    .navbar .rightSide button {
-      display: none;
-    }
-  
-    .hiddenLinks {
-      display: none;
-    }
-  
-  
-  }
+}
