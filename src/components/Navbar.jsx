@@ -1,22 +1,37 @@
-import React, { useState } from "react";
-import Logo from "../assets/GEG-white-logo.png";
-
-
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import Logo from "../assets/GEG-white-logo.png";
 import '../styles/Navbar.css';
 import Dropdownlocations from "../helpers/DropdownLocations.jsx";
 import AccountBox from '@mui/icons-material/AccountBox';
-import ReorderIcon from '@mui/icons-material/Reorder';
+
+
+import { useFirebase } from '../FirebaseContext';
 
 function Navbar() {
+    const { auth } = useFirebase(); // Use useFirebase hook to access auth
     const [searchTerm, setSearchTerm] = useState('');
+    const [user, setUser] = useState(null); // State to hold user data
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+            if (currentUser) {
+                // User is signed in
+                setUser(currentUser);
+            } else {
+                // User is signed out
+                setUser(null);
+            }
+        });
+
+        // Cleanup subscription on unmount
+        return () => unsubscribe();
+    }, [auth]); // Depend on auth object
 
     const handleSearchChange = (event) => {
         const newSearchTerm = event.target.value;
         setSearchTerm(newSearchTerm);
-        // Trigger your search logic here
         console.log('Search Term:', newSearchTerm);
-        // You might want to debounce this operation if it's expensive or makes API calls
     };
 
     return (
@@ -37,10 +52,13 @@ function Navbar() {
                     value={searchTerm}
                     onChange={handleSearchChange}
                 />
-                <Link to='/pages/Login'>
-                <AccountBox style={{ fontSize: '40px' }} alt="account icon" />
-                </Link> 
-                
+                {user ? (
+                    <div>Hi, {user.displayName || "User"}</div> // Display "Hi, [User Name]" if signed in
+                ) : (
+                    <Link to='/pages/Login'>
+                        <AccountBox style={{ fontSize: '40px' }} alt="account icon" />
+                    </Link>
+                )}
             </div>
         </div>
     );

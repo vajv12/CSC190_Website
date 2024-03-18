@@ -1,12 +1,14 @@
-// layout for every pages except admin
+// MainLayout component
 import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 
 const MainLayout = ({ children }) => (
-  <div>
+  <div className="main-layout">
     <Navbar />
-    {children}
+    <div className="content-wrapper">
+      {children}
+    </div>
     <Footer />
   </div>
 );
