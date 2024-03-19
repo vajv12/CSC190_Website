@@ -11,14 +11,43 @@
   top: 0;
   left: 50%; /* Centering the navbar horizontally */
   transform: translateX(-50%); /* Align center properly */
-  width: 90%; /* Reduced width to 80% */
+  width: 90%;
   z-index: 1000;
   border-radius: 10px; /* Adds rounded corners to the navbar */
 }
 
 .navbar img {
-  max-height: 80px; /* Adjust based on your logo's aspect ratio to reduce navbar height */
+  max-height: 80px; /* Adjust based on logo's aspect ratio to reduce navbar height */
   width: auto; /* Adjust width automatically to keep the logo's aspect ratio */
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.link-style {
+  background-color: transparent;
+  border: none;
+  font-size: 21px;
+  color: black;
+  box-shadow: none;
+  margin-top: 0px;
+  border-radius: 0px;
 }
 
 .links a, .links form {
@@ -61,6 +90,19 @@ button {
   cursor: pointer;
 }
 
+
+.dropdown-content div, .dropdown-content a, .dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content div:hover, .dropdown-content a:hover, .dropdown-content {
+  background-color: #f1f1f1;
+}
+
+
 @media screen and (max-width: 768px) {
   .links {
     display: none;
@@ -69,3 +111,4 @@ button {
     display: block;
   }
 }
+
