@@ -11,6 +11,10 @@
   background-repeat: no-repeat;
 }
 
+.content-wrapper {
+  padding-top: 120px; /* Adjust this value based on navbar's height */
+}
+
 .contact .rightSide {
   height: 100%;
   margin-top: 100px;

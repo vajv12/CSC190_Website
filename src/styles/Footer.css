@@ -13,7 +13,8 @@ html, body {
   display: flex;
 
   padding: 20px;
-  background-color: #66B2B2;
+  background-color: rgb(35, 52, 78); /* Blueish color with transparency */
+  backdrop-filter: blur(8px); /* Adds blur to the background */
   color: white;
 }
 
