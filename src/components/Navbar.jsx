@@ -6,26 +6,33 @@ import Dropdownlocations from "../helpers/DropdownLocations.jsx";
 import AccountBox from '@mui/icons-material/AccountBox';
 
 import { useFirebase } from '../FirebaseContext';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Navbar() {
     const { auth } = useFirebase(); // Use useFirebase hook to access auth
     const [searchTerm, setSearchTerm] = useState('');
     const [user, setUser] = useState(null); // State to hold user data
+    const navigate = useNavigate(); // Use the useNavigate hook
+
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
             if (currentUser) {
                 // User is signed in
                 setUser(currentUser);
+                
+                navigate('/'); // Use navigate to go to the home page
             } else {
                 // User is signed out
                 setUser(null);
             }
         });
-
-        // Cleanup subscription on unmount
+    
+        // Cleanup subscription on component unmount
         return () => unsubscribe();
-    }, [auth]); // Depend on auth object
+    }, [auth]); // Add 'auth' in dependency array if it's expected to change, otherwise it can be omitted
+    
+    
 
     const handleSearchChange = (event) => {
         const newSearchTerm = event.target.value;

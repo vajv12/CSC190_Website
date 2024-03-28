@@ -14,6 +14,7 @@ function Linkpages(){
         <Link to ='./pages/PrivateRooms'>Private Rooms</Link>
         <Link to ='./pages/About'>About</Link>
         <Link to ='./pages/Contact'>Contact</Link>
+        <Link to ='./pages/Profile'>Profile</Link>
     </div>
 
     );
