@@ -4,40 +4,56 @@ import Logo from "../assets/GEG-white-logo.png";
 import '../styles/Navbar.css';
 import Dropdownlocations from "../helpers/DropdownLocations.jsx";
 import AccountBox from '@mui/icons-material/AccountBox';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import { useFirebase } from '../FirebaseContext';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Navbar() {
-    const { auth } = useFirebase(); // Use useFirebase hook to access auth
+    const { auth, db } = useFirebase(); // Assuming db is the Firestore instance
     const [searchTerm, setSearchTerm] = useState('');
+
     const [user, setUser] = useState(null); // State to hold user data
     const navigate = useNavigate(); // Use the useNavigate hook
+    const [isAdmin, setIsAdmin] = useState(false);
 
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
             if (currentUser) {
-                // User is signed in
                 setUser(currentUser);
+
                 
                 navigate('/'); // Use navigate to go to the home page
+
+                // Use the modular syntax for Firestore queries
+                const usersRef = collection(db, 'usernames');
+                const q = query(usersRef, where("userId", "==", currentUser.uid));
+                getDocs(q).then((querySnapshot) => {
+                    if (!querySnapshot.empty) {
+                        const userDoc = querySnapshot.docs[0];
+                        setIsAdmin(userDoc.data().isAdmin === true);
+                    } else {
+                        setIsAdmin(false);
+                    }
+                }).catch((error) => {
+                    console.error("Error fetching user admin status:", error);
+                });
+
             } else {
-                // User is signed out
                 setUser(null);
+                setIsAdmin(false);
             }
         });
-    
-        // Cleanup subscription on component unmount
+
+
         return () => unsubscribe();
-    }, [auth]); // Add 'auth' in dependency array if it's expected to change, otherwise it can be omitted
-    
-    
+    }, [auth, db]);
+
 
     const handleSearchChange = (event) => {
-        const newSearchTerm = event.target.value;
-        setSearchTerm(newSearchTerm);
-        console.log('Search Term:', newSearchTerm);
+        setSearchTerm(event.target.value);
+        console.log('Search Term:', event.target.value);
     };
 
     const handleSignOut = () => {
@@ -72,14 +88,16 @@ function Navbar() {
                         Hi, {user.displayName || "User"}
                         <div className="dropdown-content">
                             <Link to="/pages/Profile" className="dropdown-item">Profile</Link>
+                            {isAdmin && <Link to="/admin/Admin" className="dropdown-item">Admin</Link>}
                             <Link to="/pages/MyOrders" className="dropdown-item">My Orders</Link>
                             <button onClick={handleSignOut} className="dropdown-item" style={{
                                 border: 'none',
-                                background: 'transparent', margin: '8px', boxShadow: 'none',
-                                fontWeight: 'normal', fontSize: '21px'
+                                background: 'transparent',
+                                margin: '8px',
+                                boxShadow: 'none',
+                                fontWeight: 'normal',
+                                fontSize: '21px'
                             }}>Sign Out</button>
-
-
                         </div>
                     </div>
                 ) : (
@@ -93,3 +111,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
