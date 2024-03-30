@@ -23,6 +23,7 @@ import Locations from './pages/Locations.jsx'
 import Events from './pages/Events.jsx';
 import Sacramento from './pages/Sacramento.jsx';
 import Calendar from './pages/Calendar.jsx';
+import Profile from './pages/Profile.jsx';
 
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
@@ -116,7 +117,7 @@ function App() {
                       <Route path="/Sacramento" element={<Sacramento />} />
                       <Route path="/Calendar" element={<Calendar />} /> 
                       <Route path="/Locations" element={<Locations />} />
-
+                      <Route path="/Profile" element={<Profile />} />
                     </Routes>
                   </MainLayout>
                 }

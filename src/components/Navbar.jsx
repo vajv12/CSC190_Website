@@ -7,17 +7,25 @@ import AccountBox from '@mui/icons-material/AccountBox';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import { useFirebase } from '../FirebaseContext';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Navbar() {
     const { auth, db } = useFirebase(); // Assuming db is the Firestore instance
     const [searchTerm, setSearchTerm] = useState('');
-    const [user, setUser] = useState(null);
+
+    const [user, setUser] = useState(null); // State to hold user data
+    const navigate = useNavigate(); // Use the useNavigate hook
     const [isAdmin, setIsAdmin] = useState(false);
+
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
             if (currentUser) {
                 setUser(currentUser);
+
+                
+                navigate('/'); // Use navigate to go to the home page
+
                 // Use the modular syntax for Firestore queries
                 const usersRef = collection(db, 'usernames');
                 const q = query(usersRef, where("userId", "==", currentUser.uid));
@@ -31,14 +39,17 @@ function Navbar() {
                 }).catch((error) => {
                     console.error("Error fetching user admin status:", error);
                 });
+
             } else {
                 setUser(null);
                 setIsAdmin(false);
             }
         });
 
+
         return () => unsubscribe();
     }, [auth, db]);
+
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
