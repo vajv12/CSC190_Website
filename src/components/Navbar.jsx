@@ -23,9 +23,8 @@ function Navbar() {
             if (currentUser) {
                 setUser(currentUser);
 
+                navigate('/'); // Navigate to the home page only if not on an admin page
                 
-                navigate('/'); // Use navigate to go to the home page
-
                 // Use the modular syntax for Firestore queries
                 const usersRef = collection(db, 'usernames');
                 const q = query(usersRef, where("userId", "==", currentUser.uid));

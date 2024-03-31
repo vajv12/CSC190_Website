@@ -1,0 +1,101 @@
+.adminContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.adminSide {
+  width: 200px;
+}
+
+.addProductForm {
+  flex-grow: 1;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group, .urlInputGroup {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjusts space between label and input */
+}
+
+.form-group label, .featuredProductLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type='text'],
+.form-group input[type='number'],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.addProductForm input[type='text'],
+.addProductForm input[type='number'],
+.addProductForm textarea,
+.addProductForm button {
+  width: 100%; /* Ensures full width within parent container */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
+
+.removeImageButton {
+  background-color: #5e1a1c;
+  color: white;
+  cursor: pointer;
+}
+
+.addImageButton {
+  background-color: #203f61;
+  color: white;
+  cursor: pointer;
+}
+
+.addProductForm button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .adminContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .adminSide, .addProductForm {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.addProductForm label {
+  color: black; /* This will apply to all labels within .addProductForm */
+}
+
+.addProductForm h2 {
+  color: #000000; /* Example color: dark blue */
+  margin-bottom: 20px; /* Adds some space between the title and the form */
+  text-align: center; /* Centers the title, if desired */
+  font-size: 50px;
+  /* Add more styling as needed */
+}
