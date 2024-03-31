@@ -14,7 +14,7 @@ import Cart from './pages/Cart.jsx';
 import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
-import Tournament from './pages/Tournament.js';
+
 import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
 import actionCodeSet from './helpers/actioncodeSet.js'
@@ -115,7 +115,7 @@ function App() {
                       <Route path="/Rocklin" element={<Rocklin />} />
                       <Route path="/PrivateRooms" element={<PrivateRooms />} />
                       <Route path="/Product" element={<Product />} />
-                      <Route path="/Tournament" element={<Tournament />} />
+
                       <Route path="/Events" element={<Events/>} />
                       <Route path="/Sacramento" element={<Sacramento />} />
                       <Route path="/Calendar" element={<Calendar />} /> 
