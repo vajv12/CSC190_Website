@@ -1,6 +1,6 @@
 /* Scoped to only affect elements within .my-reservations */
 .my-reservations table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
     margin-top: 20px; /* Keeps the top margin for separation */
     margin-bottom: 30px; /* Adds bottom margin for spacing below the table */
