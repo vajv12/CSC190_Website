@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { collection, addDoc, query, where, getDocs, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { useFirebase } from '../FirebaseContext';
 import "../styles/PrivateRooms.css";
 
@@ -15,6 +15,17 @@ function PrivateRooms() {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const { db } = useFirebase();
+
+    async function addReservationToFirestore(formData) {
+        try {
+            const docRef = await addDoc(collection(db, 'roomReservations'), formData);
+            console.log("Reservation added with ID: ", docRef.id);
+            return docRef;
+        } catch (error) {
+            console.error("Error adding reservation to Firestore: ", error);
+            throw error;
+        }
+    }
 
     // Function to handle form submission
     const handleSubmit = async (e) => {
@@ -34,13 +45,34 @@ function PrivateRooms() {
             return;
         }
 
+        const formData = {
+            selectedDate,
+            selectedRoom,
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            paid: false,
+            reservationRequest: serverTimestamp(), // Add the current date
+        };
+
         // Proceed with reservation
         try {
-            await addDoc(reservationsCollection, { roomName: selectedRoom, date: selectedDate, firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNumber});
             setShowPaymentSection(true); // Show payment section after successful reservation
-            const stripeLink = `https://buy.stripe.com/00gcQI8IK4l77yEbIJ`; 
+            const reservationDocRef = await addReservationToFirestore(formData);
+
+            // Generate a unique client reference ID using the reservation document ID
+            const clientReferenceId = reservationDocRef.id;
+
+            await updateDoc(reservationDocRef, { clientReferenceId });
+
+            
+
+            // Set the Stripe link with the client reference ID
+            const stripeLink = `https://buy.stripe.com/test_6oE18ae9QeHo9VecMM?client_reference_id=${clientReferenceId}`;
             setStripeLink(stripeLink);
-            alert("Reservation successful!");
+
+            alert("Proceed to Payment to book reservation!");
         } catch (error) {
             console.error("Error creating reservation:", error);
             alert("An error occurred. Please try again.");
