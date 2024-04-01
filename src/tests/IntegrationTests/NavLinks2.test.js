@@ -2,7 +2,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
-import App from '../../src/App'; 
+import App from '../../App'; 
 
 // jest.setTimeout(13000); // Set timeout to 13000 milliseconds for all tests in this file
 afterEach(() => {

@@ -6,7 +6,7 @@ import LoginSignUp from '../../../pages/LoginSignUp';
 import * as FirebaseContext from '../../../FirebaseContext';
 
 // Mock the Firebase services and context
-jest.mock('../FirebaseContext', () => ({
+jest.mock('../../../FirebaseContext', () => ({
   useFirebase: jest.fn(),
 }));
 
@@ -45,11 +45,10 @@ describe('LoginSignUp Component', () => {
     render(<LoginSignUp />);
     const user = userEvent.setup();
     const loginButton = screen.getByText('Login');
-    console.log(loginButton);
     await user.click(loginButton);
-    await waitFor(() => {
-      expect(screen.getByText('Forgot Password?')).toBeInTheDocument();
-    });
+      
+    const testElement = await screen.getByText('Forgot Password?');
+    expect(testElement).toBeInTheDocument();
   });
 
   test('creates a new account with too short of a username', async () => {
@@ -76,9 +75,8 @@ describe('LoginSignUp Component', () => {
     await user.click(submitButton);
 
     // Wait for the username to appear on the page, which means account was created successfully
-    await waitFor(() => {
-      expect(screen.getByText("Username must be more than 4 characters.")).toBeInTheDocument();
-    });
+    const testElement = await screen.getByText('Username must be more than 4 characters.');
+    expect(testElement).toBeInTheDocument();
   });
   
   test('creates a new account with too long of a username', async () => {
@@ -103,8 +101,9 @@ describe('LoginSignUp Component', () => {
     await user.click(submitButton);
 
     // Wait for the username to appear on the page, which means account was created successfully
-    await waitFor(() => {
-      expect(screen.getByText("Username must be 12 characters or less.")).toBeInTheDocument();
-    });
+    const testElement = await screen.getByText('Username must be 12 characters or less.');
+    expect(testElement).toBeInTheDocument();
   });
+  
+  
 });
