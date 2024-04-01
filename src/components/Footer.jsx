@@ -7,27 +7,9 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import '../styles/Footer.css';
 import DiscordIcon from '../assets/discord.png';
+import NewsLetter from '../helpers/Newsletter';
 
 function Footer() {
-
-  /*set email listing */
-  // Set email listing
-  // const [email, setEmail] = useState('');
-
-  // const handleEmailChange = (event) => {
-  //   setEmail(event.target.value);
-  // };
-
-  // const handleSubscribe = (event) => {
-  //   event.preventDefault();
-  //   // Add logic here to handle the subscription, e.g., send the email to your server
-
-  //   // For demonstration purposes, log the email to the console
-  //   console.log(`Subscribed with email: ${email}`);
-
-  //   // Reset the email input
-  //   setEmail('');
-  // };
 
   return (
     <footer className="footer">
@@ -60,6 +42,12 @@ function Footer() {
             <a href="https://www.youtube.com/channel/UCLXZYz1W28wHGWhjYSmiPtQ/videos" target="_blank" rel="noopener noreferrer"><YouTubeIcon /> </a>
           </div>
         </div>
+      </div>
+
+{/*email listing */}
+      <div className="footer-column">
+        
+       <NewsLetter />
       </div>
 
       <div className="footer-column">
