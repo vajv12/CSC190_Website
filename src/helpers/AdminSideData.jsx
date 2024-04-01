@@ -14,47 +14,47 @@ export const AdminSideData =[
     {
         title:"Home",
         icon: <HomeIcon />,
-        link:"pages/pages/Home"
+        link:"/pages/Home"
     },
 
     {
         title:"Product",
         icon:<InventoryIcon />,
-        link:"/pages/pages/product"
+        link:"/admin/Adproduct"
     },
 
     {
         title:"Store Info",
         icon:<InfoIcon />,
-        link:"/Sacramento"
+        link:"/pages/Home"
     },
 
     {
         title:"Location Hours",
         icon:<EditLocationAltIcon />,
-        link:"/pages/pages/Locations"
+        link:"/pages/Home"
     },
     {
         title:"About",
         icon:<EditIcon />,
-        link:"pages/pages/About"
+        link:"/pages/Home"
     },
     {
         title:"Accounts",
         icon:<AccountBoxIcon />,
-        link:"pages/pages/Login"
+        link:"/pages/Home"
     },
 
     {
         title:"Email",
         icon:<EmailIcon />,
-        link:"pages/pages/Contact"
+        link:"/pages/Home"
     },
    
     {
-        title:"logout",
+        title:"Back to Home",
         icon:<LogoutIcon />,
-        link:"pages/pages/Login"
+        link:"/pages/Home"
     },
 
 ]

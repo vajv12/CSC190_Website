@@ -26,7 +26,55 @@
     background-color: #66B2B2;
     color: white;
   }
+  .star {
+    color: goldenrod;
+    font-size: 25px;
+  }
+  .star-rating-container {
+    display: flex;
+    flex-direction: row; /* This ensures horizontal layout */
+    justify-content: center; /* Centers the stars within the container if you want */
+    gap: 5px; /* Optional: adds space between stars */
+  }
   
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 20px;
+  }
+  
+  .rating-container,
+  .review-text-container {
+    margin-bottom: 15px;
+  }
+  
+  .review-text-container textarea {
+    width: 100%; /* Adjust based on your layout */
+    height: 100px;
+    margin-top: 5px;
+  }
+  
+  .submit-review-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .submit-review-btn:hover {
+    background-color: #0056b3;
+  }
+  button.on .star {
+    color: goldenrod;
+  }
+  
+  button.off .star {
+    color: #ccc;
+  }
+
   .product-detail-image {
     width: 100%;
     max-width: 300px;

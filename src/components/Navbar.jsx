@@ -7,17 +7,24 @@ import AccountBox from '@mui/icons-material/AccountBox';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import { useFirebase } from '../FirebaseContext';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Navbar() {
     const { auth, db } = useFirebase(); // Assuming db is the Firestore instance
     const [searchTerm, setSearchTerm] = useState('');
-    const [user, setUser] = useState(null);
+
+    const [user, setUser] = useState(null); // State to hold user data
+    const navigate = useNavigate(); // Use the useNavigate hook
     const [isAdmin, setIsAdmin] = useState(false);
+
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((currentUser) => {
             if (currentUser) {
                 setUser(currentUser);
+
+                navigate('/'); // Navigate to the home page only if not on an admin page
+                
                 // Use the modular syntax for Firestore queries
                 const usersRef = collection(db, 'usernames');
                 const q = query(usersRef, where("userId", "==", currentUser.uid));
@@ -31,14 +38,17 @@ function Navbar() {
                 }).catch((error) => {
                     console.error("Error fetching user admin status:", error);
                 });
+
             } else {
                 setUser(null);
                 setIsAdmin(false);
             }
         });
 
+
         return () => unsubscribe();
     }, [auth, db]);
+
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
@@ -78,7 +88,7 @@ function Navbar() {
                         <div className="dropdown-content">
                             <Link to="/pages/Profile" className="dropdown-item">Profile</Link>
                             {isAdmin && <Link to="/admin/Admin" className="dropdown-item">Admin</Link>}
-                            <Link to="/pages/MyOrders" className="dropdown-item">My Orders</Link>
+                            <Link to="/pages/MyOrders" className="dropdown-item">My Reservations</Link>
                             <button onClick={handleSignOut} className="dropdown-item" style={{
                                 border: 'none',
                                 background: 'transparent',

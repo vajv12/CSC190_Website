@@ -9,13 +9,12 @@ import Home from './pages/Home.jsx';
 import Shop from './pages/Product.jsx';
 import Contact from './pages/Contact.jsx';
 import About from './pages/About.jsx';
-import Admin from './admin/Admin.jsx';
 import Login from './pages/LoginSignUp.jsx';
 import Cart from './pages/Cart.jsx';
 import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
-import Tournament from './pages/Tournament.js';
+
 import ProductDetailPage from './pages/ProductDetail';
 import { FirebaseProvider } from './FirebaseContext.js'; 
 import actionCodeSet from './helpers/actioncodeSet.js'
@@ -23,6 +22,11 @@ import Locations from './pages/Locations.jsx'
 import Events from './pages/Events.jsx';
 import Sacramento from './pages/Sacramento.jsx';
 import Calendar from './pages/Calendar.jsx';
+import Profile from './pages/Profile.jsx';
+
+//Admin pages
+import AddProductForm from './admin/Adproduct.jsx';
+import Admin from './admin/Admin.jsx';
 
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
@@ -111,24 +115,24 @@ function App() {
                       <Route path="/Rocklin" element={<Rocklin />} />
                       <Route path="/PrivateRooms" element={<PrivateRooms />} />
                       <Route path="/Product" element={<Product />} />
-                      <Route path="/Tournament" element={<Tournament />} />
+
                       <Route path="/Events" element={<Events/>} />
                       <Route path="/Sacramento" element={<Sacramento />} />
                       <Route path="/Calendar" element={<Calendar />} /> 
                       <Route path="/Locations" element={<Locations />} />
-
+                      <Route path="/Profile" element={<Profile />} />
                     </Routes>
                   </MainLayout>
                 }
               />
               {/* changes header to grey and takes nav links  to distinguish change */}
               <Route
-                path="/admin/Admin"
+                path="/admin/*"
                 element={
                   <AdminLayout>
                     <Routes>
-                      <Route path="/" element={<Admin />} />
-                  
+                      <Route path="/Admin" element={<Admin />} />
+                      <Route path="/Adproduct" element={<AddProductForm />} />
                     </Routes>
                   </AdminLayout>
                 }

@@ -5,23 +5,21 @@ import { Link } from 'react-router-dom';
 import "../styles/Product.css";
 
 // Product Component
-const Product = ({ id, name, price, image, reviews }) => (
-   // Link component to navigate to product detail page
+// Adjusted Product component to include ratings
+const Product = ({ id, name, price, image, reviewsCount, averageRating }) => (
   <Link to={`/product/${id}`} className="product-link">
     <div className="product">
-        {/* Display product image */}
       <img src={image} alt={name} className="product-image" />
-       {/* Display product name */}
       <h3 className="product-name">{name}</h3>
-       {/* Container for product reviews */}
       <div className="product-reviews">
-         {/* Generate star icons for ratings */}
+        {/* Example way to display average rating as stars */}
         {Array.from({ length: 5 }, (_, i) => (
-          <span className="star" key={i}>&#9733;</span>
+          <span className="star" key={i}>
+            {i < averageRating ? '★' : '☆'}
+          </span>
         ))}
-        <span className="reviews-count">{reviews} reviews</span>
+        <span className="reviews-count">{reviewsCount} reviews</span>
       </div>
-        {/* Display product price */}
       <p className="product-price">${price} USD</p>
     </div>
   </Link>
@@ -36,19 +34,39 @@ const ProductPage = () => {
 
   // useEffect hook to fetch products on component mount
   useEffect(() => {
+    // Function to fetch reviews for a single product
+    const fetchReviewsSummary = async (productId) => {
+      const reviewsCollection = collection(db, `products/${productId}/reviews`);
+      const reviewSnapshot = await getDocs(reviewsCollection);
+
+      const reviews = reviewSnapshot.docs.map(doc => doc.data());
+      const reviewsCount = reviews.length;
+      const averageRating = reviews.reduce((acc, { rating }) => acc + rating, 0) / reviewsCount || 0;
+
+      return { reviewsCount, averageRating };
+    };
+
+    // Modify your fetchProducts to incorporate this
     const fetchProducts = async () => {
-       // Reference to 'products' collection in Firestore
       const productsCollection = collection(db, 'products');
-       // Snapshot of documents in the collection
       const productSnapshot = await getDocs(productsCollection);
-       // Map documents to objects with id and data
-      const productList = productSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-        // Update state with fetched products
+
+      const productListPromises = productSnapshot.docs.map(async doc => {
+        const productData = doc.data();
+        const { reviewsCount, averageRating } = await fetchReviewsSummary(doc.id);
+
+        return {
+          id: doc.id,
+          ...productData,
+          reviewsCount,
+          averageRating
+        };
+      });
+
+      const productList = await Promise.all(productListPromises);
       setProducts(productList);
     };
+
 
     fetchProducts();
   }, [db]);
@@ -64,10 +82,10 @@ const ProductPage = () => {
   // Filter products based on search term and selected filter
   const filteredProducts = products.filter(product => {
     return product.name.toLowerCase().includes(searchTerm) &&
-           (filter === 'all' || product.category === filter); 
+      (filter === 'all' || product.category === filter);
   });
 
-   // Render the product page
+  // Render the product page
   return (
     <div className="productsPage">
       <h1>Products</h1>

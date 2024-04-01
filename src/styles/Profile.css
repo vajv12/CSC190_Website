@@ -1,35 +1,75 @@
-body{
-  color: #8e9194;
-  background-color: #f4f6f9;
+/* Profile.css */
+
+.profile-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
-.avatar-xl img {
-  width: 110px;
+
+.profile-info img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.rounded-circle {
-  border-radius: 50% !important;
+
+.profile-info {
+  text-align: center;
+  margin-bottom: 20px;
 }
-img {
-  vertical-align: middle;
-  border-style: none;
+
+.profile-info h2 {
+  margin: 10px 0;
 }
-.text-muted {
-  color: #aeb0b4 !important;
-}
-.text-muted {
-  font-weight: 300;
-}
-.form-control {
-  display: block;
+
+input[type="text"],
+textarea,
+input[type="number"] {
   width: 100%;
-  height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #4d5154;
-  background-color: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid #eef0f3;
-  border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Makes sure padding does not affect overall width */
+}
+
+textarea {
+  resize: vertical; /* Allows vertical resizing, good for 'About Me' */
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Adjustments for the tournaments table */
+.tournaments-table {
+  margin-top: 20px;
+}
+
+.tournaments-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tournaments-table th,
+.tournaments-table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tournaments-table th {
+  background-color: #f2f2f2;
 }
