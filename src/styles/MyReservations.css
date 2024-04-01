@@ -1,0 +1,49 @@
+/* Scoped to only affect elements within .my-reservations */
+.my-reservations table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Keeps the top margin for separation */
+    margin-bottom: 30px; /* Adds bottom margin for spacing below the table */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 16px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .my-reservations th, .my-reservations td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .my-reservations th {
+    background-color: #f2f2f2;
+  }
+  
+  .my-reservations tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .my-reservations td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .my-reservations th {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .my-reservations div {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .my-reservations h1 {
+    color: #333;
+    padding-bottom: 20px;
+    margin-top: 0; /* Adjust as needed, removes default top margin */
+    margin-bottom: 30px; /* Adds bottom margin for spacing below the h1 */
+        margin-left: 5%;
+    margin-right: 5%;
+  }
+  

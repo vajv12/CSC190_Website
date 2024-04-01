@@ -88,7 +88,7 @@ function Navbar() {
                         <div className="dropdown-content">
                             <Link to="/pages/Profile" className="dropdown-item">Profile</Link>
                             {isAdmin && <Link to="/admin/Admin" className="dropdown-item">Admin</Link>}
-                            <Link to="/pages/MyOrders" className="dropdown-item">My Reservations</Link>
+                            <Link to="/pages/MyReservations" className="dropdown-item">My Reservations</Link>
                             <button onClick={handleSignOut} className="dropdown-item" style={{
                                 border: 'none',
                                 background: 'transparent',

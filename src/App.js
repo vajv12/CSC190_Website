@@ -34,6 +34,8 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getAuth, sendEmailVerification} from "firebase/auth";
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
+import MyReservations from './pages/MyReservations.jsx';
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -121,6 +123,7 @@ function App() {
                       <Route path="/Calendar" element={<Calendar />} /> 
                       <Route path="/Locations" element={<Locations />} />
                       <Route path="/Profile" element={<Profile />} />
+                      <Route path="/MyReservations" element={<MyReservations />} />
                     </Routes>
                   </MainLayout>
                 }
