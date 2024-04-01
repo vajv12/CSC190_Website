@@ -48,7 +48,7 @@ function PrivateRooms() {
     };
 
     return (
-        <div className="booking-form">
+        <div className="booking-form" data-testid="private-rooms-page">
             <h2>Private Room Reservations</h2>
             <form onSubmit={handleSubmit}>
                 <div>

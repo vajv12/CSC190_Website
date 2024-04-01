@@ -38,7 +38,7 @@ function Home() {
     return (
 
 
-        <div className="home">
+        <div className="home" data-testid="home-page">
             <div className="headerContainer">
                 <Slideshow />
             </div>
@@ -75,8 +75,8 @@ function Home() {
                     ))}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
-                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Rocklin Events</button>
-                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Sacramento Events</button>
+                    <Link to='/pages/Sacramento'><button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Sacramento Events</button></Link>
+                    <Link to='/pages/Rocklin'><button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Rocklin Events</button></Link>
                 </div>
             </div>
         </div>

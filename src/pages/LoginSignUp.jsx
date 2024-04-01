@@ -60,7 +60,7 @@ const LoginSignUp = () => {
   };
 
   return (
-    <div className={`container ${isAuthenticated}`}>
+    <div className={`container ${isAuthenticated}`} data-testid="signin-page">
       <div className="header">
         <div className="text reset-password">{resetPassword ? 'Reset Password' : action}</div>
         <div className="underline"></div>
@@ -133,7 +133,7 @@ const LoginSignUp = () => {
               password: '',
               username: '',
             });
-          }}> Login</div>
+          }}>Login</div>
         </div>
       )}
     </div>

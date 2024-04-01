@@ -7,7 +7,7 @@ import {Media1,Media2} from '../components/Media';
 function About() {
   return (
     
-    <div className ='about'>
+    <div className ='about' data-testid="about-page">
            <div className='icon'>
              <img src ={GEGLogo} alt ="GEG logo" />
              </div>
