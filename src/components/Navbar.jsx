@@ -130,22 +130,32 @@ function Navbar() {
                     <input
                         type="search"
                         placeholder="Search..."
+                        
                         onChange={handleSearchChange}
                     />
                     {searchTerm.trim() && searchResults.length > 0 && (
                         <div className="search-results-dropdown">
                             {searchResults.map((item) => (
-                                <Link key={item.id} to={`/product/${item.id}`} className="search-result-item">
+                                // Wrap the Link component to handle the click event
+                                <div
+                                    key={item.id}
+                                    onClick={() => {
+                                        setSearchTerm('');
+                                        // Programmatically navigate to prevent default Link behavior
+                                        navigate(`/product/${item.id}`);
+                                    }}
+                                    className="search-result-item"
+                                >
                                     <img src={item.image} alt={item.name} className="search-result-image" />
                                     <div className="search-result-text">
                                         <div className="search-result-name">{item.name}</div>
                                         <div className="search-result-description">{item.description}</div>
                                     </div>
-                                </Link>
+                                </div>
                             ))}
-
                         </div>
                     )}
+
                 </div>
                 {user ? (
                     <div className="user-dropdown">
