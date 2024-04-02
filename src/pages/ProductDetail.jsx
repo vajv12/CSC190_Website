@@ -107,12 +107,13 @@ const ProductDetailPage = () => {
         ))}
         {!hasReviewed && user ? (
           <form onSubmit={handleSubmitReview} className="review-form">
-            <div className="rating-container">
-              <StarRating rating={userReview.rating} setRating={(rating) => setUserReview({ ...userReview, rating })} />
-            </div>
             <div className="review-text-container">
               <textarea value={userReview.text} onChange={e => setUserReview({ ...userReview, text: e.target.value })} />
             </div>
+            <div className="rating-container">
+              <StarRating rating={userReview.rating} setRating={(rating) => setUserReview({ ...userReview, rating })} />
+            </div>
+            
             <button type="submit" className="submit-review-btn">Submit Review</button>
           </form>
         ) : <p>{!user ? "Sign in to leave a review." : "You have already reviewed this product."}</p>}
