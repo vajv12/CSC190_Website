@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from 'react-router-dom';
 
 
 import '../styles/Home.css';
@@ -17,7 +18,7 @@ function Home() {
     const { db } = useContext(FirebaseContext); // Destructure db from context
     const [items, setItems] = useState([]); // Initialize items state
     const [events, setEvents] = useState([]); // Initialize events state
-
+    const navigate = useNavigate();
     useEffect(() => {
         // Fetch featured items and events from Firestore
         const fetchData = async () => {
@@ -62,10 +63,6 @@ function Home() {
 
 
             </div>
-
-
-
-
             <div className="bottomContainer">
                 <h1>Events:</h1>
                 <div className="itemsContainer">
@@ -75,8 +72,20 @@ function Home() {
                     ))}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
-                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Rocklin Events</button>
-                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Sacramento Events</button>
+                <button
+                        onClick={() => navigate('/pages/Rocklin')}
+                        style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}
+                    >
+                        View Rocklin Events
+                    </button>
+                    
+                    <button
+                        onClick={() => navigate('/pages/Sacramento')}
+                        style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}
+                    >
+                        View Sacramento Events
+                    </button>
+
                 </div>
             </div>
         </div>
