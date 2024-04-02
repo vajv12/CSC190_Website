@@ -1,3 +1,4 @@
+
 .navbar {
   display: flex;
   align-items: center;
@@ -63,6 +64,69 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.search-results-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  z-index: 1000;
+  width: calc(100% - 20px); /* Adjust width to account for padding */
+  max-height: 300px;
+  overflow-y: auto;
+  top: 100%; /* Ensure dropdown starts right below the input field */
+  left: 0;
+  margin: 0 10px; /* Add some margin if needed */
+}
+
+.search-result-item {
+  background-color: rgb(35, 52, 78);
+  display: flex;
+  align-items: stretch; /* Align items to stretch to fill the container */
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-result-item:hover {
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.search-result-image {
+  flex: 0 0 50px; /* Fixed width, don't grow or shrink */
+  height: auto; /* Adjust height automatically */
+  object-fit: cover; /* Adjust the display of the image */
+  margin-right: 10px;
+}
+
+.search-result-text {
+  flex-grow: 1; /* Allow the text container to take up remaining space */
+  display: flex;
+  flex-direction: column; /* Stack name and description vertically */
+}
+
+.search-result-name {
+  font-weight: bold; /* Make the name stand out */
+  margin-bottom: 5px; /* Space between name and description */
+}
+
+.search-result-description {
+  font-size: 0.8rem; /* Smaller font size for descriptions */
+  color: #fff; /* Set color to white */
+}
+.search-result-item:hover {
+  background-color: #f7f7f7; /* Adjust if you want a different background on hover */
+  color: #000; /* Black text color on hover for visibility */
+}
+
+/* If you have specific hover color requirements for name or description */
+.search-result-item:hover .search-result-name,
+.search-result-item:hover .search-result-description {
+  color: #000; /* Ensuring visibility against a lighter background */
 }
 
 .links.show {
