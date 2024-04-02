@@ -1,4 +1,4 @@
-const StarRating = ({ rating, setRating }) => {
+const StarRating = ({ rating, setRating, readOnly = false }) => {
   return (
     <div className="star-rating-container">
       {[...Array(5)].map((_, index) => {
@@ -7,8 +7,9 @@ const StarRating = ({ rating, setRating }) => {
           <button
             key={ratingValue}
             className={`star ${ratingValue <= rating ? "on" : "off"}`}
-            onClick={() => setRating(ratingValue)}
+            onClick={() => !readOnly && setRating(ratingValue)}
             style={{ background: "none", border: "none", cursor: "pointer" }}
+            disabled={readOnly}
           >
             <span className="star">&#9733;</span>
           </button>
