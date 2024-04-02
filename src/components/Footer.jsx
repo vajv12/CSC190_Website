@@ -15,11 +15,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer-column">
         <nav className="footer-nav">
-          <a href="/products">Products</a>
-          <a href="/about">About</a>
+          <a href="pages/products">Products</a>
+          <a href="pages/about">About</a>
           <a href="https://greatescapegamesllc.tcgplayerpro.com/">Card Finder</a>
-          <a href="/support">Support</a>
-          <a href="/feedback">Feedback</a>
+          <a href="/pages/Contact">Support</a>
+          <a href="/pages/Contact">Feedback</a>
         </nav>
         <div className="social">
 
