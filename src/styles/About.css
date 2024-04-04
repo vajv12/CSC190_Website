@@ -9,15 +9,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
   
   .about .icon img {
     max-width: 500px; /* Set the maximum width of the image */
     width: auto; 
     height: auto; 
-    display: block;
+    display: flex;
     margin: 0 auto;
-    padding: 5px; /* Smaller padding */
+    padding: 0px; /* Smaller padding */
   }
   
   

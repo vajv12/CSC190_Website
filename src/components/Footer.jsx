@@ -2,6 +2,7 @@ import React from 'react';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FaceBookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,11 +34,11 @@ function Footer() {
     <footer className="footer">
       <div className="footer-column">
         <nav className="footer-nav">
-          <a href="/products">Products</a>
-          <a href="/about">About</a>
+          <Link to='/pages/Product'>Products</Link>
+          <Link to='/pages/About'>About</Link>
           <a href="https://greatescapegamesllc.tcgplayerpro.com/">Card Finder</a>
-          <a href="/support">Support</a>
-          <a href="/feedback">Feedback</a>
+          <Link to='/pages/Contact'>Contact Us</Link>
+          <Link to='/pages/Contact'>Feedback</Link>
         </nav>
         <div className="social">
 

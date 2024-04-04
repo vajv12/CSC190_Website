@@ -75,8 +75,13 @@ function Home() {
                     ))}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
-                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Rocklin Events</button>
-                    <button style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}>View All Sacramento Events</button>
+
+                    <Link to='/pages/Rocklin' style={{ textDecoration: 'none' }}>
+                        <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', position: 'relative' }}>Veiw all Rocklin Events</button>
+                    </Link>
+                    <Link to='/pages/Sacramento' style={{ textDecoration: 'none' }}>
+                        <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', position: 'relative' }}>Veiw all Sacramento Events</button>
+                    </Link>
                 </div>
             </div>
         </div>
