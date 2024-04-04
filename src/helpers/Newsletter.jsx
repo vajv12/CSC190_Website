@@ -61,14 +61,14 @@ function NewsLetter() {
 
   return (
     <div className="news-letter">
-      <h1>Join our newsletter</h1>
+      <h2>Join our newsletter</h2>
       <form id="subscribe" onSubmit={handleSubscribe}>
-        <label htmlFor="email">Email:</label>
+        
         <input
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="XYZ@email.com"
+          placeholder="@email.com"
           type="email"
           required
           disabled={loader}

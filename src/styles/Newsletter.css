@@ -5,9 +5,9 @@
 
   }
   
-  .news-letter h1 {
+  .news-letter h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 0px;
   }
   
   .news-letter form {
@@ -29,11 +29,13 @@
   .news-letter button[type="submit"] {
     font-size: medium;
     padding: 3px 5px;
-    background-color: #007bff;
+    background-color: rgba(0, 0, 0, 0.5);
+   
     color: #fff;
     border: none;
     border-radius: 2px;
     cursor:pointer;
+    width: 100%;
   }
   
   .news-letter button[type="submit"]:hover {
