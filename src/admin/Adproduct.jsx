@@ -14,6 +14,7 @@ const AddProductForm = () => {
     description: '',
     image: [''], // Store image URLs in an array
     isFeatured: false,
+    isSlideShow: false,
   });
 
   const handleChange = (e, index) => {
@@ -56,6 +57,7 @@ const AddProductForm = () => {
         price: Number(product.price), // Convert price to a number
         image: imageUrls, // Store the image URLs array
         isFeatured: product.isFeatured,
+        isSlideShow: product.isSlideShow,
       });
       alert('Product added successfully!');
       setProduct({
@@ -65,6 +67,7 @@ const AddProductForm = () => {
         description: '',
         image: [''],
         isFeatured: false,
+        isSlideShow: false,
       });
     } catch (error) {
       console.error("Error adding product: ", error);
@@ -115,13 +118,17 @@ const AddProductForm = () => {
             </div>
             <div className="form-group">
               <label htmlFor="productCategory">Category</label>
-              <input
+              <select
                 id="productCategory"
                 name="category"
                 value={product.category}
                 onChange={handleChange}
                 required
-              />
+              >
+                <option value="">Select a category</option>
+                <option value="pokemon">Pokemon</option>
+                <option value="warhammmer">Warhammer</option>
+              </select>
             </div>
             <div className="form-group">
               <label htmlFor="productDescription">Product Description</label>
@@ -161,16 +168,29 @@ const AddProductForm = () => {
             >
               Add Another Image
             </button>
-            <div className="form-group">
-              <label className="featuredProductLabel">
-                Featured Product:
+            <div className="form-group checkbox-container">
+              <label htmlFor="isFeatured" className="featuredProductLabel">
+                Featured Product
+              </label>
                 <input
+                  id ="isFeatured"
                   name="isFeatured"
                   type="checkbox"
                   checked={product.isFeatured}
                   onChange={handleChange}
                 />
+            </div>
+            <div className="form-group checkbox-container">
+              <label htmlFor="isSlideShow" className="slideShowLabel">
+                SlideShow Featured
               </label>
+                <input
+                  id ="isSlideShow"
+                  name="isSlideShow"
+                  type="checkbox"
+                  checked={product.isSlideShow}
+                  onChange={handleChange}
+                />
             </div>
             <button type="submit">Add Product</button>
           </form>
