@@ -14,6 +14,8 @@ const ProductDetailPage = () => {
   const { db, auth } = useFirebase();
   const [mainImage, setMainImage] = useState('');
   const [user, setUser] = useState(null);
+  const [averageRating, setAverageRating] = useState(0);
+
 
   // Use the StarRating component for the rating input
   const renderStarRating = () => (
@@ -51,10 +53,22 @@ const ProductDetailPage = () => {
           setHasReviewed(true);
         }
       }
+
+
     };
 
     fetchProductAndReviews();
-  }, [id, db, auth.currentUser]);
+    // Calculate average rating after reviews are fetched
+    const calculateAverageRating = () => {
+      const sum = reviews.reduce((accumulator, review) => accumulator + review.rating, 0);
+      const avg = reviews.length > 0 ? sum / reviews.length : 0;
+      setAverageRating(avg);
+    };
+
+    if (reviews.length) {
+      calculateAverageRating();
+    }
+  }, [id, db, auth.currentUser, reviews]);
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
@@ -94,12 +108,18 @@ const ProductDetailPage = () => {
         </div>
       </div>
       <div className="product-info">
+        {/* Display the average rating using StarRating component */}
+        <div>
+
+          <StarRating rating={averageRating} readOnly={true} />
+        </div>
         <h2 className="product-detail-name">{product.name}</h2>
         <p className="product-detail-description">{product.description}</p>
         <p className="product-detail-price">${product.price} USD</p>
       </div>
       <div className="product-reviews">
         <h3>Reviews</h3>
+
         {reviews.map((review, index) => (
           <div key={index}>
             <p>{review.userName}: {review.text} ({review.rating} stars)</p>
@@ -107,12 +127,13 @@ const ProductDetailPage = () => {
         ))}
         {!hasReviewed && user ? (
           <form onSubmit={handleSubmitReview} className="review-form">
-            <div className="rating-container">
-              <StarRating rating={userReview.rating} setRating={(rating) => setUserReview({ ...userReview, rating })} />
-            </div>
             <div className="review-text-container">
               <textarea value={userReview.text} onChange={e => setUserReview({ ...userReview, text: e.target.value })} />
             </div>
+            <div className="rating-container">
+              <StarRating rating={userReview.rating} setRating={(rating) => setUserReview({ ...userReview, rating })} />
+            </div>
+
             <button type="submit" className="submit-review-btn">Submit Review</button>
           </form>
         ) : <p>{!user ? "Sign in to leave a review." : "You have already reviewed this product."}</p>}

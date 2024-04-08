@@ -1,21 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from "../assets/GEG-white-logo.png";
 import '../styles/Navbar.css';
 import Dropdownlocations from "../helpers/DropdownLocations.jsx";
 import AccountBox from '@mui/icons-material/AccountBox';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-
 import { useFirebase } from '../FirebaseContext';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
+// Debounce function
+function debounce(func, wait) {
+    let timeout;
+
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 function Navbar() {
-    const { auth, db } = useFirebase(); // Assuming db is the Firestore instance
+    const { auth, db } = useFirebase();
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
-
-    const [user, setUser] = useState(null); // State to hold user data
-    const navigate = useNavigate(); // Use the useNavigate hook
+    const [searchResults, setSearchResults] = useState([]);
+    const [user, setUser] = useState(null);
     const [isAdmin, setIsAdmin] = useState(false);
+
+    const debouncedSearch = debounce((nextValue) => {
+        console.log("Searching for:", nextValue); // Check if this logs when typing
+        setSearchTerm(nextValue);
+    }, 500);
+
 
 
     useEffect(() => {
@@ -23,9 +46,11 @@ function Navbar() {
             if (currentUser) {
                 setUser(currentUser);
 
-                navigate('/'); // Navigate to the home page only if not on an admin page
-                
-                // Use the modular syntax for Firestore queries
+                // Redirecting logic might be adjusted based on actual routing and requirements
+                if (window.location.pathname.includes('/admin') && !isAdmin) {
+                    navigate('/'); // Navigate to the home page
+                }
+
                 const usersRef = collection(db, 'usernames');
                 const q = query(usersRef, where("userId", "==", currentUser.uid));
                 getDocs(q).then((querySnapshot) => {
@@ -45,14 +70,39 @@ function Navbar() {
             }
         });
 
-
         return () => unsubscribe();
-    }, [auth, db]);
+    }, [auth, db, isAdmin, navigate]);
+
+    useEffect(() => {
+        if (searchTerm.trim() === '') {
+            setSearchResults([]);
+            return;
+        }
+
+        // Capitalize the first letter of the search term
+        const formattedSearchTerm = capitalizeFirstLetter(searchTerm);
+
+        console.log(`Firestore query for: ${formattedSearchTerm}`);
+
+        const productsRef = collection(db, 'products');
+        const q = query(productsRef, where("name", ">=", formattedSearchTerm), where("name", "<=", formattedSearchTerm + '\uf8ff'));
+
+        getDocs(q).then(querySnapshot => {
+            console.log(`Query returned ${querySnapshot.docs.length} documents`);
+            const items = querySnapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setSearchResults(items);
+        }).catch(error => {
+            console.error("Error searching products:", error);
+        });
+    }, [searchTerm, db]);
 
 
     const handleSearchChange = (event) => {
-        setSearchTerm(event.target.value);
-        console.log('Search Term:', event.target.value);
+        // Pass the event's value to the debounced function
+        debouncedSearch(event.target.value);
     };
 
     const handleSignOut = () => {
@@ -76,27 +126,47 @@ function Navbar() {
                 <Link to='/pages/PrivateRooms'>Private Rooms</Link>
                 <Link to='/pages/About'>About</Link>
                 <Link to='/pages/Contact'>Contact</Link>
-                <input
-                    type="search"
-                    placeholder="Search..."
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                />
+                <div className="search-bar-container">
+                    <input
+                        type="search"
+                        placeholder="Search..."
+                        
+                        onChange={handleSearchChange}
+                    />
+                    {searchTerm.trim() && searchResults.length > 0 && (
+                        <div className="search-results-dropdown">
+                            {searchResults.map((item) => (
+                                // Wrap the Link component to handle the click event
+                                <div
+                                    key={item.id}
+                                    onClick={() => {
+                                        setSearchTerm('');
+                                        // Programmatically navigate to prevent default Link behavior
+                                        navigate(`/product/${item.id}`);
+                                    }}
+                                    className="search-result-item"
+                                >
+                                    <img src={item.image} alt={item.name} className="search-result-image" />
+                                    <div className="search-result-text">
+                                        <div className="search-result-name">{item.name}</div>
+                                        <div className="search-result-name">Price: ${item.price}</div>
+                                        <div className="search-result-description">{item.description}</div>
+                                        
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                </div>
                 {user ? (
                     <div className="user-dropdown">
                         Hi, {user.displayName || "User"}
                         <div className="dropdown-content">
                             <Link to="/pages/Profile" className="dropdown-item">Profile</Link>
                             {isAdmin && <Link to="/admin/Admin" className="dropdown-item">Admin</Link>}
-                            <Link to="/pages/MyOrders" className="dropdown-item">My Reservations</Link>
-                            <button onClick={handleSignOut} className="dropdown-item" style={{
-                                border: 'none',
-                                background: 'transparent',
-                                margin: '8px',
-                                boxShadow: 'none',
-                                fontWeight: 'normal',
-                                fontSize: '21px'
-                            }}>Sign Out</button>
+                            <Link to="/pages/MyReservations" className="dropdown-item">My Reservations</Link>
+                            <button onClick={handleSignOut} className="dropdown-item">Sign Out</button>
                         </div>
                     </div>
                 ) : (
@@ -110,4 +180,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

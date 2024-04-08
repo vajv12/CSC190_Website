@@ -16,8 +16,13 @@
     "ejs": "^3.1.9",
     "firebase-admin": "^11.8.0",
     "firebase-functions": "^4.3.1",
+<<<<<<< HEAD
+    "stripe": "^14.15.0",
+    "axios": "^1.6.8"
+=======
     "nodemailer": "^6.9.13",
     "stripe": "^14.15.0"
+>>>>>>> 9e5091e1b5e39571798e7bbbead66a35737c1dd5
   },
   "devDependencies": {
     "firebase-functions-test": "^3.1.0"

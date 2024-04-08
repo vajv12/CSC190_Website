@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "csc190-w"
-  }
+    "default": "csc190-w",
+    "newsletterRequest": "csc190-w"
+  },
+  "targets": {},
+  "etags": {}
 }
