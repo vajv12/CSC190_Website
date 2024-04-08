@@ -31,6 +31,14 @@ function PrivateRooms() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const currentDate = new Date(); // Get the current date
+        const selectedDateTime = new Date(selectedDate); // Convert selected date to a Date object
+
+        if (selectedDateTime < currentDate) {
+            alert("You cannot book for past dates.");
+            return;
+        }
+
         if (!selectedDate || !selectedLocation || !selectedRoom || !firstName || !lastName || !email || !phoneNumber) {
             alert("Please fill in all required fields.");
             return;
@@ -38,13 +46,20 @@ function PrivateRooms() {
 
         // Check if reservation already exists
         const reservationsCollection = collection(db, 'roomReservations');
-        const q = query(reservationsCollection, where('roomName', '==', selectedRoom), where('date', '==', selectedDate));
+        const q = query(reservationsCollection, where('selectedRoom', '==', selectedRoom), where('selectedDate', '==', selectedDate));
         const querySnapshot = await getDocs(q);
-        if (!querySnapshot.empty) {
-            alert("This room is already reserved for the selected date.");
-            return;
-        }
 
+        // Check if there are existing reservations
+        if (!querySnapshot.empty) {
+            const existingReservations = querySnapshot.docs;
+            const PaidReservation = existingReservations.some(doc => doc.data().paid === true);
+            if (PaidReservation) {
+                // An existing reservation for the selected date has been paid for, prevent booking
+                alert("There is already a reservation paid for on the selected date.");
+                return;
+            }
+        }
+        
         const formData = {
             selectedDate,
             selectedRoom,

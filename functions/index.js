@@ -6,36 +6,40 @@ const stripe = require('stripe')('sk_test_51OfAn1IHfTroUmcjRLjz2Fb41rjIwTbClLbtO
 
 admin.initializeApp();
 
+exports.handleStripeWebhook = functions.https.onRequest(async (req, res) => {
+    const event = req.body;
 
-exports.deleteUnpaidReservations = functions.pubsub.schedule('every 24 hours').onRun(async (context) => {
-    const now = admin.firestore.Timestamp.now();
-    const twoDaysAgo = new Date(now.toMillis() - 2 * 24 * 60 * 60 * 1000);
+    if (event.type === 'checkout.session.completed') {
+        const session = event.data.object;
+        console.log(session.client_reference_id);
+        const clientReferenceId = session.client_reference_id;
+        
+        try {
+            console.log('Client Reference ID:', clientReferenceId);
 
-    const unpaidReservationsRef = admin.firestore().collection('roomReservations')
-        .where('paid', '==', false)
-        .where('reservationRequest', '<', twoDaysAgo);
+            const docRef = admin.firestore().collection('roomReservations').doc(clientReferenceId);
+            const doc = await docRef.get();
 
-    const unpaidReservationsSnapshot = await unpaidReservationsRef.get();
+            if (doc.exists) {
+                console.log('Document data:', doc.data());
+                await docRef.update({ paid: true });
 
-    const batch = admin.firestore().batch();
+                await sendEmailReceipt(doc.data());
 
-    unpaidReservationsSnapshot.forEach((doc) => {
-        batch.delete(doc.ref);
-    });
-
-    await batch.commit();
-
-    return null;
+                res.status(200).send('Webhook Received');
+            } else {
+                res.status(404).send('Document Not Found');
+            }
+        } catch (error) {
+            console.error('Error handling webhook:', error);
+            res.status(500).send('Internal Server Error');
+        }
+    } else {
+        res.status(200).send('Webhook Received');
+    }
 });
 
-
-exports.sendEmailReceipt = functions.firestore.document('roomReservations/{reservationId}')
-    .onCreate((snap, context) => {
-        const data = snap.data();
-        return sendReceiptEmail(data);
-    });
-
-const sendReceiptEmail = async (data) => {
+const sendEmailReceipt = async (data) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -108,9 +112,11 @@ const sendReceiptEmail = async (data) => {
                     <h1>Reservation Receipt</h1>
                     <p>Thank you for reserving a room with us!</p>
                     <div class="reservation-details">
+                    <p><strong>First Name:</strong> ${data.firstName}</p>
+                    <p><strong>Last Name:</strong> ${data.lastName}</p>
                     <p><strong>Date:</strong> ${data.selectedDate}</p>
                     <p><strong>Room:</strong> ${data.selectedRoom}</p>
-                    <p><strong>Total Price:</strong> $15}</p>
+                    <p><strong>Total Price:</strong> $15</p>
                 </div>
                     <p>We look forward to seeing you!</p>
                     <p class="footer">This email was sent from <strong>Great Escape Games</strong>. Please do not reply to this email.</p>
@@ -127,33 +133,3 @@ const sendReceiptEmail = async (data) => {
         console.error('Error sending receipt email:', error);
     }
 };
-
-exports.handleStripeWebhook = functions.https.onRequest(async (req, res) => {
-    const event = req.body;
-
-    if (event.type === 'checkout.session.completed') {
-        const session = event.data.object;
-        console.log(session.client_reference_id);
-        const clientReferenceId = session.client_reference_id;
-        
-
-        try {
-            console.log('Client Reference ID:', clientReferenceId);
-
-            const docRef = admin.firestore().collection('roomReservations').doc(clientReferenceId);
-            const doc = await docRef.get();
-
-            if (doc.exists) {
-                console.log('Document data:', doc.data());
-                await doc.update({ paid: true });
-                res.status(200).send('Webhook Received');
-            } else {
-                res.status(404).send('Document Not Found');
-            }
-        } catch (error) {
-            res.status(500).send('Internal Server Error');
-        }
-    } else {
-        res.status(200).send('Webhook Received');
-    }
-});
