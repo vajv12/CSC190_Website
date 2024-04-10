@@ -72,19 +72,13 @@ function Home() {
                     ))}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', justifyContent: 'space-evenly' }}>
-                <button
-                        onClick={() => navigate('/pages/Rocklin')}
-                        style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}
-                    >
-                        View Rocklin Events
-                    </button>
-                    
-                    <button
-                        onClick={() => navigate('/pages/Sacramento')}
-                        style={{ padding: '10px 20px', fontSize: '16px', width: '25%' }}
-                    >
-                        View Sacramento Events
-                    </button>
+
+                    <Link to='/pages/Rocklin' style={{ textDecoration: 'none' }}>
+                        <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', position: 'relative' }}>Veiw all Rocklin Events</button>
+                    </Link>
+                    <Link to='/pages/Sacramento' style={{ textDecoration: 'none' }}>
+                        <button style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', position: 'relative' }}>Veiw all Sacramento Events</button>
+                    </Link>
 
                 </div>
             </div>

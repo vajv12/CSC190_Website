@@ -8,14 +8,15 @@ function About() {
   return (
     
     <div className ='about'>
-           <div className='icon'>
-             <img src ={GEGLogo} alt ="GEG logo" />
-             </div>
-
+        
+           
       {/* after image everthing is aboutBottom
       Gives content of what the store is about */}
+      
       <div className="aboutBottom">
+      <img src ={GEGLogo} alt ="GEG logo" height = {500} width={500} style={{ alignSelf: 'center'}} /> 
         <h1> ABOUT US</h1>
+         
         <p>
             Welcome to Great Escape Games, your go-to destination for all things table-top games!
             We are passionate about bringing people together through the magic of role-playing with our
