@@ -1,45 +1,45 @@
-[debug] [2024-03-09T14:42:57.842Z] ----------------------------------------------------------------------
-[debug] [2024-03-09T14:42:57.844Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2024-03-09T14:42:57.844Z] CLI Version:   13.4.1
-[debug] [2024-03-09T14:42:57.844Z] Platform:      win32
-[debug] [2024-03-09T14:42:57.844Z] Node Version:  v19.6.0
-[debug] [2024-03-09T14:42:57.844Z] Time:          Sat Mar 09 2024 06:42:57 GMT-0800 (Pacific Standard Time)
-[debug] [2024-03-09T14:42:57.844Z] ----------------------------------------------------------------------
+[debug] [2024-04-08T06:21:52.389Z] ----------------------------------------------------------------------
+[debug] [2024-04-08T06:21:52.391Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2024-04-08T06:21:52.391Z] CLI Version:   13.6.0
+[debug] [2024-04-08T06:21:52.391Z] Platform:      win32
+[debug] [2024-04-08T06:21:52.391Z] Node Version:  v19.6.0
+[debug] [2024-04-08T06:21:52.391Z] Time:          Sun Apr 07 2024 23:21:52 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-04-08T06:21:52.391Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-03-09T14:42:57.897Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-03-09T14:42:57.898Z] > authorizing via signed-in user (achouhan0114@gmail.com)
-[debug] [2024-03-09T14:42:57.898Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
-[debug] [2024-03-09T14:42:57.899Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
-[debug] [2024-03-09T14:42:57.899Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
-[debug] [2024-03-09T14:42:57.899Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2024-03-09T14:42:58.041Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
-[debug] [2024-03-09T14:42:58.041Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2024-03-09T14:42:58.042Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
-[debug] [2024-03-09T14:42:58.439Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
-[debug] [2024-03-09T14:42:58.439Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb"},"state":"ACTIVE","etag":"1_7054efce-89e0-48ac-9875-f58c3361299e"}
+[debug] [2024-04-08T06:21:52.447Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-08T06:21:52.448Z] > authorizing via signed-in user (achouhan0114@gmail.com)
+[debug] [2024-04-08T06:21:52.448Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
+[debug] [2024-04-08T06:21:52.449Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
+[debug] [2024-04-08T06:21:52.449Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
+[debug] [2024-04-08T06:21:52.449Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:21:52.559Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
+[debug] [2024-04-08T06:21:52.559Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:21:52.560Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:21:52.948Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:21:52.949Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
 [info] 
 [info] === Serving from 'C:\Users\Tel\CSC190_Website'...
 [info] 
-[debug] [2024-03-09T14:42:58.445Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
-[debug] [2024-03-09T14:42:58.446Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
-[debug] [2024-03-09T14:42:58.448Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
-[debug] [2024-03-09T14:42:58.449Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
-[debug] [2024-03-09T14:42:58.824Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
-[debug] [2024-03-09T14:42:58.825Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com"}
-[debug] [2024-03-09T14:42:58.937Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
-[debug] [2024-03-09T14:42:58.937Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
-[debug] [2024-03-09T14:42:58.937Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
-[debug] [2024-03-09T14:42:59.178Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config 200
-[debug] [2024-03-09T14:42:59.178Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config {"projectId":"csc190-w","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","apiKey":"AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M","authDomain":"csc190-w.firebaseapp.com","messagingSenderId":"59153071763","measurementId":"G-KYZHBDYFBR"}
-[debug] [2024-03-09T14:42:59.181Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
-[debug] [2024-03-09T14:42:59.492Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
-[debug] [2024-03-09T14:42:59.492Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb"},"state":"ACTIVE","etag":"1_7054efce-89e0-48ac-9875-f58c3361299e"}
+[debug] [2024-04-08T06:21:52.952Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
+[debug] [2024-04-08T06:21:52.953Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
+[debug] [2024-04-08T06:21:52.954Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-08T06:21:52.954Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
+[debug] [2024-04-08T06:21:53.395Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
+[debug] [2024-04-08T06:21:53.395Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central"}
+[debug] [2024-04-08T06:21:53.443Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
+[debug] [2024-04-08T06:21:53.443Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-08T06:21:53.444Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
+[debug] [2024-04-08T06:21:53.840Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config 200
+[debug] [2024-04-08T06:21:53.840Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config {"projectId":"csc190-w","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central","apiKey":"AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M","authDomain":"csc190-w.firebaseapp.com","messagingSenderId":"59153071763","measurementId":"G-KYZHBDYFBR"}
+[debug] [2024-04-08T06:21:53.846Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:21:54.107Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:21:54.107Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
 [info] i  functions: Watching "C:\Users\Tel\CSC190_Website\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Tel\\CSC190_Website\\functions\" for Cloud Functions..."}}
 [info] i  hosting[csc190-w]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
 [info] +  hosting[csc190-w]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
-[debug] [2024-03-09T14:42:59.501Z] Validating nodejs source
+[debug] [2024-04-08T06:21:54.120Z] Validating nodejs source
 [warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
-[debug] [2024-03-09T14:43:00.186Z] > [functions] package.json contents: {
+[debug] [2024-04-08T06:21:54.846Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -54,8 +54,10 @@
   },
   "main": "index.js",
   "dependencies": {
+    "ejs": "^3.1.9",
     "firebase-admin": "^11.8.0",
     "firebase-functions": "^4.3.1",
+    "nodemailer": "^6.9.13",
     "stripe": "^14.15.0"
   },
   "devDependencies": {
@@ -63,12 +65,346 @@
   },
   "private": true
 }
-[debug] [2024-03-09T14:43:00.186Z] Building nodejs source
-[debug] [2024-03-09T14:43:00.187Z] Failed to find version of module node: reached end of search path C:\Users\Tel\CSC190_Website\functions\node_modules
+[debug] [2024-04-08T06:21:54.846Z] Building nodejs source
+[debug] [2024-04-08T06:21:54.846Z] Failed to find version of module node: reached end of search path C:\Users\Tel\CSC190_Website\functions\node_modules
 [warn] !  functions: Your requested "node" version "18" doesn't match your global version "19". Using node@19 from host. 
-[debug] [2024-03-09T14:43:00.188Z] Could not find functions.yaml. Must use http discovery
-[debug] [2024-03-09T14:43:00.192Z] Found firebase-functions binary at 'C:\Users\Tel\CSC190_Website\functions\node_modules\.bin\firebase-functions'
-[info] Serving at port 8732
+[debug] [2024-04-08T06:21:54.848Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-08T06:21:54.851Z] Found firebase-functions binary at 'C:\Users\Tel\CSC190_Website\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8690
 
-[debug] [2024-03-09T14:43:00.303Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
-[info] +  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[debug] [2024-04-08T06:21:55.136Z] Got response from /__/functions.yaml {"endpoints":{"handleStripeWebhook":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"handleStripeWebhook"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: handleStripeWebhook. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: handleStripeWebhook."}}
+[info] +  functions[us-central1-handleStripeWebhook]: http function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook)."}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:22:07 +0000] "GET / HTTP/1.1" 200 774 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:22:07 +0000] \"GET / HTTP/1.1\" 200 774 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:22:07 +0000] "GET /static/css/main.08bfbed3.css HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:22:07 +0000] \"GET /static/css/main.08bfbed3.css HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:22:08 +0000] "GET /static/js/main.8114470a.js HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:22:08 +0000] \"GET /static/js/main.8114470a.js HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:22:08 +0000] "GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1" 200 1363422 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:22:08 +0000] \"GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1\" 200 1363422 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:22:08 +0000] "GET /GEG-logo.png HTTP/1.1" 200 3519503 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:22:08 +0000] \"GET /GEG-logo.png HTTP/1.1\" 200 3519503 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:24:07 +0000] "GET / HTTP/1.1" 200 774 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:24:07 +0000] \"GET / HTTP/1.1\" 200 774 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:24:07 +0000] "GET /static/css/main.08bfbed3.css HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:24:07 +0000] \"GET /static/css/main.08bfbed3.css HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:24:07 +0000] "GET /static/js/main.8114470a.js HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:24:07 +0000] \"GET /static/js/main.8114470a.js HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:24:07 +0000] "GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1" 200 1363422 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:24:07 +0000] \"GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1\" 200 1363422 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[debug] [2024-04-08T06:29:07.951Z] ----------------------------------------------------------------------
+[debug] [2024-04-08T06:29:07.952Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2024-04-08T06:29:07.952Z] CLI Version:   13.6.0
+[debug] [2024-04-08T06:29:07.952Z] Platform:      win32
+[debug] [2024-04-08T06:29:07.952Z] Node Version:  v19.6.0
+[debug] [2024-04-08T06:29:07.953Z] Time:          Sun Apr 07 2024 23:29:07 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-04-08T06:29:07.953Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-08T06:29:08.008Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-08T06:29:08.009Z] > authorizing via signed-in user (achouhan0114@gmail.com)
+[debug] [2024-04-08T06:29:08.009Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
+[debug] [2024-04-08T06:29:08.010Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
+[debug] [2024-04-08T06:29:08.010Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
+[debug] [2024-04-08T06:29:08.010Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:29:08.168Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
+[debug] [2024-04-08T06:29:08.169Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:29:08.169Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:29:08.536Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:29:08.536Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] 
+[info] === Serving from 'C:\Users\Tel\CSC190_Website'...
+[info] 
+[debug] [2024-04-08T06:29:08.539Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
+[debug] [2024-04-08T06:29:08.540Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
+[debug] [2024-04-08T06:29:08.541Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-08T06:29:08.541Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
+[debug] [2024-04-08T06:29:08.970Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
+[debug] [2024-04-08T06:29:08.970Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central"}
+[debug] [2024-04-08T06:29:09.057Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
+[debug] [2024-04-08T06:29:09.057Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-08T06:29:09.057Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
+[debug] [2024-04-08T06:29:09.412Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config 200
+[debug] [2024-04-08T06:29:09.412Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config {"projectId":"csc190-w","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central","apiKey":"AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M","authDomain":"csc190-w.firebaseapp.com","messagingSenderId":"59153071763","measurementId":"G-KYZHBDYFBR"}
+[debug] [2024-04-08T06:29:09.416Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:29:09.664Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:29:09.664Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] i  functions: Watching "C:\Users\Tel\CSC190_Website\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Tel\\CSC190_Website\\functions\" for Cloud Functions..."}}
+[info] i  hosting[csc190-w]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[csc190-w]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-04-08T06:29:09.673Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-04-08T06:29:10.525Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "nodemailer": "^6.9.13",
+    "stripe": "^14.15.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-08T06:29:10.525Z] Building nodejs source
+[debug] [2024-04-08T06:29:10.525Z] Failed to find version of module node: reached end of search path C:\Users\Tel\CSC190_Website\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "19". Using node@19 from host. 
+[debug] [2024-04-08T06:29:10.526Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-08T06:29:10.530Z] Found firebase-functions binary at 'C:\Users\Tel\CSC190_Website\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8740
+
+[debug] [2024-04-08T06:29:10.805Z] Got response from /__/functions.yaml {"endpoints":{"handleStripeWebhook":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"handleStripeWebhook"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: handleStripeWebhook. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: handleStripeWebhook."}}
+[info] +  functions[us-central1-handleStripeWebhook]: http function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook)."}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:29:30 +0000] "GET / HTTP/1.1" 200 774 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:29:30 +0000] \"GET / HTTP/1.1\" 200 774 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:29:30 +0000] "GET /static/css/main.08bfbed3.css HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:29:30 +0000] \"GET /static/css/main.08bfbed3.css HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:29:30 +0000] "GET /static/js/main.8114470a.js HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:29:30 +0000] \"GET /static/js/main.8114470a.js HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:29:30 +0000] "GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1" 200 1363422 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:29:30 +0000] \"GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1\" 200 1363422 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[debug] [2024-04-08T06:36:05.159Z] ----------------------------------------------------------------------
+[debug] [2024-04-08T06:36:05.161Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2024-04-08T06:36:05.161Z] CLI Version:   13.6.0
+[debug] [2024-04-08T06:36:05.161Z] Platform:      win32
+[debug] [2024-04-08T06:36:05.161Z] Node Version:  v19.6.0
+[debug] [2024-04-08T06:36:05.161Z] Time:          Sun Apr 07 2024 23:36:05 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-04-08T06:36:05.161Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-08T06:36:05.217Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-08T06:36:05.217Z] > authorizing via signed-in user (achouhan0114@gmail.com)
+[debug] [2024-04-08T06:36:05.217Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
+[debug] [2024-04-08T06:36:05.218Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
+[debug] [2024-04-08T06:36:05.218Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
+[debug] [2024-04-08T06:36:05.218Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:36:05.462Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
+[debug] [2024-04-08T06:36:05.462Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:36:05.463Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:36:05.884Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:36:05.885Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] 
+[info] === Serving from 'C:\Users\Tel\CSC190_Website'...
+[info] 
+[debug] [2024-04-08T06:36:05.889Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
+[debug] [2024-04-08T06:36:05.889Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
+[debug] [2024-04-08T06:36:05.890Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-08T06:36:05.891Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
+[debug] [2024-04-08T06:36:06.402Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
+[debug] [2024-04-08T06:36:06.402Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-08T06:36:06.402Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
+[debug] [2024-04-08T06:36:06.405Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
+[debug] [2024-04-08T06:36:06.405Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central"}
+[debug] [2024-04-08T06:36:06.988Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config 200
+[debug] [2024-04-08T06:36:06.988Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config {"projectId":"csc190-w","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central","apiKey":"AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M","authDomain":"csc190-w.firebaseapp.com","messagingSenderId":"59153071763","measurementId":"G-KYZHBDYFBR"}
+[debug] [2024-04-08T06:36:06.992Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:36:07.352Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:36:07.352Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] i  functions: Watching "C:\Users\Tel\CSC190_Website\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Tel\\CSC190_Website\\functions\" for Cloud Functions..."}}
+[info] i  hosting[csc190-w]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[csc190-w]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-04-08T06:36:07.363Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-04-08T06:36:08.095Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "nodemailer": "^6.9.13",
+    "stripe": "^14.15.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-08T06:36:08.095Z] Building nodejs source
+[debug] [2024-04-08T06:36:08.096Z] Failed to find version of module node: reached end of search path C:\Users\Tel\CSC190_Website\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "19". Using node@19 from host. 
+[debug] [2024-04-08T06:36:08.097Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-08T06:36:08.100Z] Found firebase-functions binary at 'C:\Users\Tel\CSC190_Website\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8693
+
+[debug] [2024-04-08T06:36:08.393Z] Got response from /__/functions.yaml {"endpoints":{"handleStripeWebhook":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"handleStripeWebhook"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: handleStripeWebhook. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: handleStripeWebhook."}}
+[info] +  functions[us-central1-handleStripeWebhook]: http function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook)."}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:36:18 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:36:18 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:36:25 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:36:25 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:36:25 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:36:25 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:36:26 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:36:26 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:36:26 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:36:26 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:36:26 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:36:26 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:36:26 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:36:26 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[debug] [2024-04-08T06:36:49.198Z] ----------------------------------------------------------------------
+[debug] [2024-04-08T06:36:49.200Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2024-04-08T06:36:49.200Z] CLI Version:   13.6.0
+[debug] [2024-04-08T06:36:49.200Z] Platform:      win32
+[debug] [2024-04-08T06:36:49.200Z] Node Version:  v19.6.0
+[debug] [2024-04-08T06:36:49.200Z] Time:          Sun Apr 07 2024 23:36:49 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-04-08T06:36:49.200Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-08T06:36:49.259Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-08T06:36:49.259Z] > authorizing via signed-in user (achouhan0114@gmail.com)
+[debug] [2024-04-08T06:36:49.259Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
+[debug] [2024-04-08T06:36:49.260Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
+[debug] [2024-04-08T06:36:49.260Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
+[debug] [2024-04-08T06:36:49.260Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:36:49.461Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
+[debug] [2024-04-08T06:36:49.461Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:36:49.461Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:36:49.884Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:36:49.884Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] 
+[info] === Serving from 'C:\Users\Tel\CSC190_Website'...
+[info] 
+[debug] [2024-04-08T06:36:49.889Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
+[debug] [2024-04-08T06:36:49.889Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
+[debug] [2024-04-08T06:36:49.890Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-08T06:36:49.891Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
+[debug] [2024-04-08T06:36:50.334Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
+[debug] [2024-04-08T06:36:50.334Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central"}
+[debug] [2024-04-08T06:36:50.355Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
+[debug] [2024-04-08T06:36:50.355Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-08T06:36:50.355Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
+[debug] [2024-04-08T06:36:50.823Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config 200
+[debug] [2024-04-08T06:36:50.823Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config {"projectId":"csc190-w","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central","apiKey":"AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M","authDomain":"csc190-w.firebaseapp.com","messagingSenderId":"59153071763","measurementId":"G-KYZHBDYFBR"}
+[debug] [2024-04-08T06:36:50.827Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:36:50.979Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:36:50.979Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] i  functions: Watching "C:\Users\Tel\CSC190_Website\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Tel\\CSC190_Website\\functions\" for Cloud Functions..."}}
+[info] i  hosting[csc190-w]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[csc190-w]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-04-08T06:36:50.988Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-04-08T06:36:51.774Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "nodemailer": "^6.9.13",
+    "stripe": "^14.15.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-08T06:36:51.774Z] Building nodejs source
+[debug] [2024-04-08T06:36:51.775Z] Failed to find version of module node: reached end of search path C:\Users\Tel\CSC190_Website\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "19". Using node@19 from host. 
+[debug] [2024-04-08T06:36:51.776Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-08T06:36:51.781Z] Found firebase-functions binary at 'C:\Users\Tel\CSC190_Website\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8886
+
+[debug] [2024-04-08T06:36:52.077Z] Got response from /__/functions.yaml {"endpoints":{"handleStripeWebhook":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"handleStripeWebhook"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: handleStripeWebhook. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: handleStripeWebhook."}}
+[info] +  functions[us-central1-handleStripeWebhook]: http function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook)."}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:37:21 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:37:21 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[debug] [2024-04-08T06:39:13.173Z] ----------------------------------------------------------------------
+[debug] [2024-04-08T06:39:13.175Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2024-04-08T06:39:13.175Z] CLI Version:   13.6.0
+[debug] [2024-04-08T06:39:13.175Z] Platform:      win32
+[debug] [2024-04-08T06:39:13.175Z] Node Version:  v19.6.0
+[debug] [2024-04-08T06:39:13.175Z] Time:          Sun Apr 07 2024 23:39:13 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-04-08T06:39:13.175Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-08T06:39:13.233Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-08T06:39:13.233Z] > authorizing via signed-in user (achouhan0114@gmail.com)
+[debug] [2024-04-08T06:39:13.233Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
+[debug] [2024-04-08T06:39:13.234Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
+[debug] [2024-04-08T06:39:13.234Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
+[debug] [2024-04-08T06:39:13.234Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:39:13.361Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
+[debug] [2024-04-08T06:39:13.361Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-08T06:39:13.361Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:39:13.549Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:39:13.549Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] 
+[info] === Serving from 'C:\Users\Tel\CSC190_Website'...
+[info] 
+[debug] [2024-04-08T06:39:13.553Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
+[debug] [2024-04-08T06:39:13.554Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
+[debug] [2024-04-08T06:39:13.555Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-08T06:39:13.555Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
+[debug] [2024-04-08T06:39:13.990Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
+[debug] [2024-04-08T06:39:13.990Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central"}
+[debug] [2024-04-08T06:39:14.035Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
+[debug] [2024-04-08T06:39:14.036Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-08T06:39:14.036Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
+[debug] [2024-04-08T06:39:14.473Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config 200
+[debug] [2024-04-08T06:39:14.473Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config {"projectId":"csc190-w","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central","apiKey":"AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M","authDomain":"csc190-w.firebaseapp.com","messagingSenderId":"59153071763","measurementId":"G-KYZHBDYFBR"}
+[debug] [2024-04-08T06:39:14.477Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-08T06:39:14.738Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-08T06:39:14.738Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] i  functions: Watching "C:\Users\Tel\CSC190_Website\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Tel\\CSC190_Website\\functions\" for Cloud Functions..."}}
+[info] i  hosting[csc190-w]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[csc190-w]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2024-04-08T06:39:14.747Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2024-04-08T06:39:15.460Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "nodemailer": "^6.9.13",
+    "stripe": "^14.15.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-08T06:39:15.460Z] Building nodejs source
+[debug] [2024-04-08T06:39:15.460Z] Failed to find version of module node: reached end of search path C:\Users\Tel\CSC190_Website\functions\node_modules
+[warn] !  functions: Your requested "node" version "18" doesn't match your global version "19". Using node@19 from host. 
+[debug] [2024-04-08T06:39:15.462Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-08T06:39:15.466Z] Found firebase-functions binary at 'C:\Users\Tel\CSC190_Website\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8475
+
+[debug] [2024-04-08T06:39:15.744Z] Got response from /__/functions.yaml {"endpoints":{"handleStripeWebhook":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"handleStripeWebhook"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] +  functions: Loaded functions definitions from source: handleStripeWebhook. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: handleStripeWebhook."}}
+[info] +  functions[us-central1-handleStripeWebhook]: http function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/csc190-w/us-central1/handleStripeWebhook)."}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:41:05 +0000] "GET / HTTP/1.1" 200 774 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:41:05 +0000] \"GET / HTTP/1.1\" 200 774 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:41:05 +0000] "GET /static/css/main.08bfbed3.css HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:41:05 +0000] \"GET /static/css/main.08bfbed3.css HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:41:05 +0000] "GET /static/js/main.4808f364.js HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:41:05 +0000] \"GET /static/js/main.4808f364.js HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
+[info] i  hosting: ::1 - - [08/Apr/2024:06:41:05 +0000] "GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1" 200 1363422 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [08/Apr/2024:06:41:05 +0000] \"GET /static/media/GEG-white-logo.2c9dca6d24bb86d2da10.png HTTP/1.1\" 200 1363422 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0\""}}
