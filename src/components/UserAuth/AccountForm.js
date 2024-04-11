@@ -61,13 +61,12 @@ class AccountForm extends React.Component{
 
 	//creates a user account using an email and password
 	async handleClickCreateAccount(){
-		const auth = getAuth();
 		this.setState({ error: "" })
 		//check if the username is at least 4 characters long
     if (this.state.username.length < 4) {
-			console.error("Username must be more than 4 characters");
+			console.error("Username must be more than 4 characters.");
 			// Update the state or show an error message to the user
-			this.setState({ error: "Username must be more than 4 characters" });
+			this.setState({ error: "Username must be more than 4 characters." });
 			return; // Stop the function here
 		}
 		//check if the username is 12 characters or less
@@ -83,6 +82,8 @@ class AccountForm extends React.Component{
 			this.setState({ error: "Username already taken. Try something else." })
 			return; // Stop the function here
 		}
+		
+		const auth = getAuth();
 		//attempt to create a user account
 		createUserWithEmailAndPassword(this.props.auth, this.state.email, this.state.password)
 			.then((userCredential) => {

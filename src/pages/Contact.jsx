@@ -90,7 +90,7 @@ function Contact() {
   };
 
   return (
-    <div className="contact">
+    <div className="contact" data-testid="contact-page">
       <div
         className="leftSide"
         style={{ backgroundImage: `url(${leftMap})` }}

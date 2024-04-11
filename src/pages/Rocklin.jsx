@@ -43,7 +43,7 @@ function EventCalendar() {
   };
 
   return (
-    <div className='calendar'>
+    <div className='calendar' data-testid="rocklin-page">
       <h2>Event Calendar</h2>
       <Slider {...settings}>
         {events.map((event, index) => (

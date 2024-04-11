@@ -39,7 +39,7 @@ function Home() {
     return (
 
 
-        <div className="home">
+        <div className="home" data-testid="home-page">
             <div className="headerContainer">
                 <Slideshow />
             </div>

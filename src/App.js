@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AppRouter from './components/AppRouter'; 
 import MainLayout from './layouts/MainLayout.jsx';
 import AdminLayout from './layouts/AdminLayout.jsx';
 import Navbar from './components/Navbar.jsx';
@@ -52,11 +53,23 @@ const firebaseConfig = {
   appId: "1:59153071763:web:dbb5fd713ef03b6353d766",
   measurementId: "G-KYZHBDYFBR"
 };
+//credentials used for automated testing 
+const firebaseConfigTesting = {
+  apiKey: "AIzaSyCN9yQePlCERgMX-_Tv5yvNUDAgbhd98Hg",
+  authDomain: "testauth-6568e.firebaseapp.com",
+  databaseURL: "https://testauth-6568e-default-rtdb.firebaseio.com/",
+  projectId: "testauth-6568e",
+  storageBucket: "testauth-6568e.appspot.com",
+  messagingSenderId: "847970275207",
+  appId: "1:847970275207:web:aed2a521ffd8c704648d22"
+};
+//use test config during jest tests
+let fbconfig = process.env.NODE_ENV === "test" ? firebaseConfigTesting : firebaseConfig;
 
 // Initialize Firebase
 let isAuthenticated = false;
 let loggedInUser;
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(fbconfig);
 const db = getFirestore(app);
 const auth = getAuth();
 
@@ -92,7 +105,7 @@ function App() {
           isAuthenticated={isAuthenticated} 
           username={loggedInUser ? loggedInUser.displayName : ""}
         >
-          <BrowserRouter>
+          <AppRouter>
             <Routes>
               {/*uses the teal color for header for all pages */}
               
@@ -142,7 +155,7 @@ function App() {
               />  
               <Route path="/product/:id" element={<MainLayout><ProductDetailPage /></MainLayout>}/>
             </Routes>
-          </BrowserRouter>
+          </AppRouter>
         </FirebaseProvider>
       
     </div>
