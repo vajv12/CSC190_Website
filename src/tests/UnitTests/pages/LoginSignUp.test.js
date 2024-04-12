@@ -2,47 +2,41 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+//Firebase Imports - Can be added to all tests that have components that use firebase, 
+//then just wrap the component in <FirebaseProvider></FirebaseProvider>
+import { db, auth, analytics,
+  addDoc, collection, query, where, getDocs, updateDoc, serverTimestamp,
+  onAuthStateChanged, sendEmailVerification } from '../../../firebaseSetup';
+import { FirebaseProvider } from '../../../FirebaseContext.js';
+
+//Component Imports
 import LoginSignUp from '../../../pages/LoginSignUp';
-import * as FirebaseContext from '../../../FirebaseContext';
 
-// Mock the Firebase services and context
-jest.mock('../../../FirebaseContext', () => ({
-  useFirebase: jest.fn(),
-}));
-
-const mockSendPasswordResetEmail = jest.fn();
-const mockCreateUserWithEmailAndPassword = jest.fn();
-const mockSignInWithEmailAndPassword = jest.fn();
-const mockSetDoc = jest.fn();
-
-beforeEach(() => {
-  // Reset mock calls before each test
-  mockSendPasswordResetEmail.mockReset();
-  mockCreateUserWithEmailAndPassword.mockReset();
-  mockSignInWithEmailAndPassword.mockReset();
-  mockSetDoc.mockReset();
-
-  // Setup default implementation
-  FirebaseContext.useFirebase.mockImplementation(() => ({
-    auth: {}, // Mock the auth object as needed
-    db: {}, // Mock the db object as needed
-    isAuthenticated: false, // Adjust based on tests
-    sendPasswordResetEmail: mockSendPasswordResetEmail,
-    createUserWithEmailAndPassword: mockCreateUserWithEmailAndPassword,
-    signInWithEmailAndPassword: mockSignInWithEmailAndPassword,
-    setDoc: mockSetDoc,
-  }));
-});
 
 describe('LoginSignUp Component', () => {
   test('renders and defaults to Sign Up action', () => {
-    render(<LoginSignUp />);
+    render(<FirebaseProvider 
+      auth={auth} 
+      db={db} 
+      isAuthenticated={false} 
+      username={""}
+    >
+      <LoginSignUp />
+    </FirebaseProvider>);
     expect(screen.getByText('Create Account')).toBeInTheDocument();
     expect(screen.queryByText('Forgot Password')).not.toBeInTheDocument();
   });
 
   test('toggles to Login view when Login is clicked', async () => {
-    render(<LoginSignUp />);
+    render(<FirebaseProvider 
+      auth={auth} 
+      db={db} 
+      isAuthenticated={false} 
+      username={""}
+    >
+      <LoginSignUp />
+    </FirebaseProvider>);
     const user = userEvent.setup();
     const loginButton = screen.getByText('Login');
     await user.click(loginButton);
@@ -58,7 +52,14 @@ describe('LoginSignUp Component', () => {
     const email = `${username}@gmail.com`;
     const password = 'password';
 
-    render(<LoginSignUp />);
+    render(<FirebaseProvider 
+      auth={auth} 
+      db={db} 
+      isAuthenticated={false} 
+      username={""}
+    >
+      <LoginSignUp />
+    </FirebaseProvider>);
     const user = userEvent.setup();
 
     const usernameInput = screen.getByPlaceholderText('Username');
@@ -84,7 +85,14 @@ describe('LoginSignUp Component', () => {
     const email = `${username}@gmail.com`;
     const password = 'password';
 
-    render(<LoginSignUp />);
+    render(<FirebaseProvider 
+      auth={auth} 
+      db={db} 
+      isAuthenticated={false} 
+      username={""}
+    >
+      <LoginSignUp />
+    </FirebaseProvider>);
     const user = userEvent.setup();
 
     const usernameInput = screen.getByPlaceholderText('Username');

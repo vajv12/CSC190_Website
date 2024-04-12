@@ -5,9 +5,9 @@ import { MemoryRouter } from 'react-router-dom';
 import App from '../../App'; 
 
 // jest.setTimeout(13000); // Set timeout to 13000 milliseconds for all tests in this file
-afterEach(() => {
-  jest.resetModules();
-});
+// afterEach(() => {
+//   jest.resetModules();
+// });
 
 test('finds Login link and navigates to signup/signin page', async () => {
   render(<App />);

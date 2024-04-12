@@ -17,61 +17,29 @@ import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 
 import ProductDetailPage from './pages/ProductDetail';
-import { FirebaseProvider } from './FirebaseContext.js'; 
 import actionCodeSet from './helpers/actioncodeSet.js'
 import Locations from './pages/Locations.jsx'
 import Events from './pages/Events.jsx';
 import Sacramento from './pages/Sacramento.jsx';
 import Calendar from './pages/Calendar.jsx';
 import Profile from './pages/Profile.jsx';
+import MyReservations from './pages/MyReservations.jsx';
 
 //Admin pages
 import AddProductForm from './admin/Adproduct.jsx';
 import Admin from './admin/Admin.jsx';
 
 //**************************** Start of Firebase Initialization************************************* */
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { getAuth, sendEmailVerification} from "firebase/auth";
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
-import MyReservations from './pages/MyReservations.jsx';
-
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M",
-  authDomain: "csc190-w.firebaseapp.com",
-  databaseURL: "https://csc190-w-default-rtdb.firebaseio.com",
-  projectId: "csc190-w",
-  storageBucket: "csc190-w.appspot.com",
-  messagingSenderId: "59153071763",
-  appId: "1:59153071763:web:dbb5fd713ef03b6353d766",
-  measurementId: "G-KYZHBDYFBR"
-};
-//credentials used for automated testing 
-const firebaseConfigTesting = {
-  apiKey: "AIzaSyCN9yQePlCERgMX-_Tv5yvNUDAgbhd98Hg",
-  authDomain: "testauth-6568e.firebaseapp.com",
-  databaseURL: "https://testauth-6568e-default-rtdb.firebaseio.com/",
-  projectId: "testauth-6568e",
-  storageBucket: "testauth-6568e.appspot.com",
-  messagingSenderId: "847970275207",
-  appId: "1:847970275207:web:aed2a521ffd8c704648d22"
-};
-//use test config during jest tests
-let fbconfig = process.env.NODE_ENV === "test" ? firebaseConfigTesting : firebaseConfig;
+import { db, auth, analytics,
+  addDoc, collection, query, where, getDocs, updateDoc, serverTimestamp,
+  onAuthStateChanged, sendEmailVerification } from './firebaseSetup';
+import { FirebaseProvider } from './FirebaseContext.js'; 
 
 // Initialize Firebase
 let isAuthenticated = false;
 let loggedInUser;
-const app = initializeApp(fbconfig);
-const db = getFirestore(app);
-const auth = getAuth();
 
 //observer that gets called when user logs in or logs out
 auth.onAuthStateChanged((user) => {
@@ -93,7 +61,6 @@ auth.onAuthStateChanged((user) => {
 });
 
 //**************************** End of Firebase Initialization************************************* */
-const analytics = getAnalytics(app);
 
 
 function App() {
