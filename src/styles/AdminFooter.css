@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Ensures the page content is flexibly displayed */
+  .page-content {
+    flex: 1 0 auto;
+  }
+  
+  .Admin-footer {
+  
+    display: flex;
+    padding: 20px;
+    background-color: #bdbdbd; /* Blueish color with transparency */
+    backdrop-filter: blur(8px); /* Adds blur to the background */
+    color: white;
+  }
+  
+  .footer-column {
+    display: flex; 
+    flex: 1; /* This ensures that each column takes up equal space */
+    padding: 0 20px; 
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Ensures text within is also centered */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: space-between; /* Adjusts vertical distribution */
+  
+    
+  }
+  
+  
+  .footer-nav{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows these containers to grow and take available space */
+    justify-content: center; /* Center items vertically within each container */
+  }
+  
+  .social-icons {
+    display: flex; /* Ensures icons are in a flex container */
+    justify-content: center; /* Centers icons horizontally */
+    flex-wrap: wrap; /* Allows icons to wrap if space is insufficient */
+   
+  }
+  
+  .Admin-footer a {
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Removes underline from links */
+  }
+  
+  
+  .Admin-footer a:hover {
+    color: #cccccc; /* Light grey color for hover */
+  }
+  
+  .Admin-footer p{
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+  }
+  
+  .Admin-footer a {
+    padding: 10px; 
+  }
+  

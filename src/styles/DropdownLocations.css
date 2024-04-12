@@ -32,4 +32,13 @@
 .dropdownlocations:hover .dropdown-content {
   display: block;
 }
+
+/*Admin Dropdown*/
+.product-title {
+  color: red; 
+}
+
+.dropdown-trigger:hover .product-title {
+  color: white; 
   
+}

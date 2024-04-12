@@ -1,92 +1,49 @@
-.admin {
-    width: 100vw;
-    height: 100vh;
-    padding: 0%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-}
-
-.adminSide{
+  /* Admin page layout */
+  .admin {
     display: flex;
-    flex-direction: row;
-}
-
-.adminSide .SidebarLeft {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar styles */
+  .adminSide .SidebarLeft {
     padding: 1.3%;
-    margin-left: 20px;
     width: 200px;
-    height: auto;
     background-color: #bdbdbd;
-}
-
-.adminSide .SidebarLeft .row {
+  }
+  
+  /* Styles for the list items */
+  .adminSide .SidebarLeft .row {
     height: 70px;
-    list-style-type: none;
-    margin: 0%;
-    display: flex;
-    flex-direction: row;
-    color: rgb(0, 0, 0);
+    list-style: none;
+    color: #000;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.adminSide .SidebarLeft .row:hover {
+  }
+  
+  /* Interactivity */
+  .adminSide .SidebarLeft .row:hover,
+  .SidebarLeft .dropdown-item:hover {
     cursor: pointer;
-    background-color:  rgb(131, 202, 210);
-}
-
-.adminSide .SidebarLeft #active {
     background-color: rgb(131, 202, 210);
-}
-
-/*changes for logout */
-.SidebarLeft .row.logout:hover {
+  }
+  
+  /* Active link styling */
+  .adminSide .SidebarLeft #active {
+    background-color: rgb(131, 202, 210);
+  }
+  
+  /* Logout specific styles */
+  .SidebarLeft .row.logout:hover {
     background-color: red;
     color: #ffffff;
-    cursor: pointer; 
   }
-  .SidebarLeft .row.logout{
-    margin-top: 100px;
-    margin-bottom: 5px;
-  }
-.adminSide .SidebarLeft .row #icon {
-    flex: 30%;
-    display: grid;
-    place-items: center;
-}
-
-.SidebarLeft .row #title {
-    flex: 70%;
-}
-
-.adminRightSide {
+  
+  /* Right side where the component will be displayed */
+  .adminRightSide {
     flex: 1;
     padding: 20px;
-    background-color: #ffffff;
-}
-/*dropdown to right for location and info */
-
-.SidebarLeft .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    height: auto;
+    width: 100%;
   }
   
-.SidebarLeft .dropdown-item {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    color: #000;
-  }
-  
- .SidebarLeft .dropdown-item:hover {
-    background-color: #ddd;
-  }

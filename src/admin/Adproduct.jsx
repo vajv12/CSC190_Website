@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { useFirebase } from "../FirebaseContext";
-import { Link } from "react-router-dom";
-import { AdminSideData } from "../helpers/AdminSideData";
 import "../styles/Addproduct.css";
 
 const AddProductForm = () => {
@@ -16,6 +14,7 @@ const AddProductForm = () => {
     isFeatured: false,
     isSlideShow: false,
   });
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
   const handleChange = (e, index) => {
     const { name, value, checked, type } = e.target;
@@ -48,14 +47,18 @@ const AddProductForm = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+   const handleSubmit = (e) => {
     e.preventDefault();
+    setShowConfirmationModal(true); // Show confirmation modal
+  };
+
+  const handleConfirmAdd = async () => {
     const imageUrls = product.image.filter(url => url.trim() !== '');
     try {
       await addDoc(collection(db, 'products'), {
         ...product,
         price: Number(product.price), // Convert price to a number
-        image: imageUrls, // Store the image URLs array
+        image: imageUrls,
         isFeatured: product.isFeatured,
         isSlideShow: product.isSlideShow,
       });
@@ -73,25 +76,10 @@ const AddProductForm = () => {
       console.error("Error adding product: ", error);
       alert('Error adding product, please try again.');
     }
+    setShowConfirmationModal(false); // Hide confirmation modal
   };
 
-  return (
-    <>
-    <div className="adminContainer">
-    <div className="adminSide">
-      <ul className="SidebarLeft">
-        <p>Select an option to edit:</p>
-        {AdminSideData.map((val, key) => (
-          <li key={key} className={`row ${val.title === "logout" ? "logout" : ""}`}>
-            <Link to={val.link}>
-              <div id="icon">{val.icon}</div>
-              <div id="title">{val.title}</div>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-    
+  return (  
     <div className="addProductForm">
           <h2>Adding Products to the Website</h2>
           <form onSubmit={handleSubmit}>
@@ -194,9 +182,17 @@ const AddProductForm = () => {
             </div>
             <button type="submit">Add Product</button>
           </form>
+          {showConfirmationModal && (
+        <div className="modal-backdrop">
+          <div className="modal-content">
+            <h2>Confirm Product Addition</h2>
+            <p>Are you sure you want to add this product?</p>
+            <button onClick={handleConfirmAdd} className="confirm-button">Confirm</button>
+            <button onClick={() => setShowConfirmationModal(false)} className="cancel-button">Cancel</button>
+          </div>
         </div>
-      </div>
-    </>
+      )}
+        </div>
   );
 };
 

@@ -1,7 +1,7 @@
 // layout for admin only
 import React from 'react';
 import AdminNavbar from '../components/AdminNavbar';
-import Footer from '../components/Footer.jsx';
+import AdminFooter from '../components/AdminFooter.jsx';
 
 
 const AdminLayout = ({ children }) => {
@@ -11,7 +11,7 @@ const AdminLayout = ({ children }) => {
   <div>
    <AdminNavbar />
     {children}
-    <Footer />
+    <AdminFooter />
   </div>
   );
 };
