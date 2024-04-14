@@ -5,7 +5,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Link } from 'react-router-dom';
 
 
-
+import PrivacyPolicyPDF from '../assets/WebsitePrivacyPolicy.pdf'
 import '../styles/Footer.css';
 import DiscordIcon from '../assets/discord.png';
 import NewsLetter from '../helpers/Newsletter';
@@ -21,6 +21,8 @@ function Footer() {
           <a href="https://greatescapegamesllc.tcgplayerpro.com/">Card Finder</a>
           <Link to='/pages/Contact'>Contact Us</Link>
           <Link to='/pages/Contact'>Feedback</Link>
+          <Link to='/pages/TermsConditions'>Terms and Conditions</Link>
+          <a href={PrivacyPolicyPDF} download="MyPrivacyPolicy" target='_blank'>Download Privacy Policy</a>
 
         </nav>
         <div className="social">
