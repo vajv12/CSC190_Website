@@ -1,38 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { useFirebase } from '../FirebaseContext';
 import '../styles/SacRock.css';
 
 // RocklinEvent component
 function RocklinEvent({ event }) {
   return (
     <div className='event-box'>
-      <div className='event'>
-        <p>{event.title}</p>
-        <p>{event.date}</p>
-        <p>{event.time}</p>
-        <h3>Requirements:</h3>
-        <ul>
-          <li>Valid ID proof</li>
-          <li>Confirmation email</li>
-        </ul>
-        <h3>Prohibited Items:</h3>
-        <ul>
-          <li>Outside food and drinks</li>
-          <li>Weapons or dangerous items</li>
-        </ul>
-      </div>
+      <h3>{event.title}</h3>
+      <p>Date: {event.date}</p>
+      <p>Description: {event.description}</p>
+      <p>Location: {event.location}</p>
+      <img src={event.image} alt={event.title} />
     </div>
   );
 }
 
 // EventCalendar component with Carousel
 function EventCalendar() {
-  const events = [
-    { title: 'Event 1', date: '2024-02-27', time: '10:00 AM' },
-    { title: 'Event 2', date: '2024-02-28', time: '2:00 PM' },
-  ];
+  const { db } = useFirebase();
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const q = query(collection(db, 'events'), where('category', '==', 'Rocklin'));
+        const querySnapshot = await getDocs(q);
+        const fetchedEvents = [];
+        querySnapshot.forEach((doc) => {
+          fetchedEvents.push(doc.data());
+        });
+        setEvents(fetchedEvents);
+      } catch (error) {
+        console.error('Error fetching events: ', error);
+      }
+    };
+
+    fetchEvents();
+  }, [db]);
 
   const settings = {
     dots: true,

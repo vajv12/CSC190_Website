@@ -22,6 +22,11 @@ export const AdminSideData =[
         icon:<InventoryIcon />,
         link:"/admin/Adproduct"
     },
+    {
+        title:"Events",
+        icon:<LogoutIcon />,
+        link:"/admin/Addevents"
+    },
 
     {
         title:"Store Info",
@@ -32,12 +37,12 @@ export const AdminSideData =[
     {
         title:"Location Hours",
         icon:<EditLocationAltIcon />,
-        link:"/pages/Home"
+        link:"/pages/About"
     },
     {
         title:"About",
         icon:<EditIcon />,
-        link:"/pages/Home"
+        link:"/pages/About"
     },
     {
         title:"Accounts",

@@ -27,6 +27,8 @@ import Profile from './pages/Profile.jsx';
 //Admin pages
 import AddProductForm from './admin/Adproduct.jsx';
 import Admin from './admin/Admin.jsx';
+import AddEventForm from './admin/Addevents.jsx';
+
 
 //**************************** Start of Firebase Initialization************************************* */
 import { initializeApp } from 'firebase/app';
@@ -136,6 +138,7 @@ function App() {
                     <Routes>
                       <Route path="/Admin" element={<Admin />} />
                       <Route path="/Adproduct" element={<AddProductForm />} />
+                      <Route path="/Addevents" element={<AddEventForm />} />
                     </Routes>
                   </AdminLayout>
                 }
