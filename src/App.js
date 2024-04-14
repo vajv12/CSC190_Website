@@ -59,7 +59,6 @@ auth.onAuthStateChanged((user) => {
     loggedInUser = null;
   }
 });
-
 //**************************** End of Firebase Initialization************************************* */
 
 

@@ -5,7 +5,7 @@ const EventCard = ({ event }) => {
   const { date, name, image, detailUrl } = event;
 
   return (
-    <div className="eventCard">
+    <div className="eventCard" data-testid="event-card">
       <div className="eventDate">{date}</div>
       <div className="eventTitle">{name}</div>
       <div className="eventImageContainer">

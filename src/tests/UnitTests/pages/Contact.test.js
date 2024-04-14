@@ -1,21 +1,24 @@
+//Default Testing Imports - Can be added to all tests
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Contact from '../../../pages/Contact';
 
-
+//Firebase Imports - Can be added to all tests that have components that use firebase, 
+//then just wrap the component in <FirebaseProvider></FirebaseProvider>
 import { db, auth, analytics,
   addDoc, collection, query, where, getDocs, updateDoc, serverTimestamp,
   onAuthStateChanged, sendEmailVerification } from '../../../firebaseSetup';
 import { FirebaseProvider } from '../../../FirebaseContext.js'; 
+
+//Component Imports
+import Contact from '../../../pages/Contact';
+
 beforeAll(() => {
   // Mock the Email object on the global object used by Node (which Jest uses)
   global.Email = {
     send: jest.fn().mockResolvedValue('Email sent successfully!'),
   };
 });
-
-
 
 describe('Contact Component', () => {
   it('sends an email when the form is submitted', async () => {

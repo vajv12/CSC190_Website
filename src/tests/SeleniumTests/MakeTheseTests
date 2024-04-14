@@ -1,0 +1,24 @@
+Selenium IDE Integration Tests:
+Profile gets user info
+Admin Layout Displays if logged in with Admin Account
+Newsletter sign up
+Add Product
+
+Jest Unit Tests:
+/admin
+Admin.jsx
+AdProduct.jsx
+
+/helpers
+Newsletter.jsx
+
+/components
+AccountForm.js
+AppRouter.jsx
+EventCard.jsx
+Footer.jsx
+ItemCard.jsx
+Media.js
+Navbar.jsx
+Slideshow.jsx
+StarRating.jsx

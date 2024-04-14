@@ -8,7 +8,7 @@ const ItemCard = ({ item }) => {
   
     return (
       <Link to={`/product/${id}`} className="itemCardLink"> 
-        <div className="itemCard" style={{ backgroundImage: `url(${image})` }}>
+        <div className="itemCard" style={{ backgroundImage: `url(${image})` }}  data-testid="item-card">
           <div className="itemInfo">
             <h3 className="itemName">{name}</h3>
             <p className="itemDescription">{description}</p>
