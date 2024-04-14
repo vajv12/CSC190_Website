@@ -16,6 +16,7 @@ import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 
+
 import ProductDetailPage from './pages/ProductDetail';
 import actionCodeSet from './helpers/actioncodeSet.js'
 import Locations from './pages/Locations.jsx'
@@ -37,6 +38,7 @@ import { db, auth, analytics,
   addDoc, collection, query, where, getDocs, updateDoc, serverTimestamp,
   onAuthStateChanged, sendEmailVerification } from './firebaseSetup';
 import { FirebaseProvider } from './FirebaseContext.js'; 
+import TermsConditions from './pages/TermsConditions.jsx';
 
 // Initialize Firebase
 let isAuthenticated = false;
@@ -104,6 +106,8 @@ function App() {
                       <Route path="/Locations" element={<Locations />} />
                       <Route path="/Profile" element={<Profile />} />
                       <Route path="/MyReservations" element={<MyReservations />} />
+                      <Route path="/TermsConditions" element={<TermsConditions />} />
+                      
                     </Routes>
                   </MainLayout>
                 }
