@@ -87,7 +87,7 @@ const ProductPage = () => {
 
   // Render the product page
   return (
-    <div className="productsPage">
+    <div className="productsPage"  data-testid="products-page">
       <h1>Products</h1>
       <input
         type="text"

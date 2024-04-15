@@ -7,9 +7,8 @@ import {Media1,Media2} from '../components/Media';
 function About() {
   return (
     
-    <div className ='about'>
+    <div className ='about'  data-testid="about-page">
         
-           
       {/* after image everthing is aboutBottom
       Gives content of what the store is about */}
       

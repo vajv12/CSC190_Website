@@ -68,7 +68,7 @@ function Slideshow() {
       {/* Slide controls for navigation */}
       <div className="slide-controls">
         {slidesData.map((_, idx) => (
-          <span key={idx} className={`dot ${idx === activeIndex ? 'active' : ''}`} onClick={() => setActiveIndex(idx)}></span>
+          <span key={idx} className={`dot ${idx === activeIndex ? 'active' : ''}`} onClick={() => setActiveIndex(idx)} role="button" aria-label={`Go to slide ${idx + 1}`}></span>
         ))}
       </div>
     </div>

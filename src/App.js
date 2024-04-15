@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AppRouter from './components/AppRouter'; 
 import MainLayout from './layouts/MainLayout.jsx';
 import AdminLayout from './layouts/AdminLayout.jsx';
 import Navbar from './components/Navbar.jsx';
@@ -15,50 +16,33 @@ import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
 
+
 import ProductDetailPage from './pages/ProductDetail';
-import { FirebaseProvider } from './FirebaseContext.js'; 
 import actionCodeSet from './helpers/actioncodeSet.js'
 import Locations from './pages/Locations.jsx'
 import Events from './pages/Events.jsx';
 import Sacramento from './pages/Sacramento.jsx';
 import Calendar from './pages/Calendar.jsx';
 import Profile from './pages/Profile.jsx';
+import MyReservations from './pages/MyReservations.jsx';
 
 //Admin pages
 import AddProductForm from './admin/Adproduct.jsx';
 import Admin from './admin/Admin.jsx';
+import DeleteProductPage from './admin/Deleteproduct.jsx'
 
 //**************************** Start of Firebase Initialization************************************* */
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { getAuth, sendEmailVerification} from "firebase/auth";
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
-import MyReservations from './pages/MyReservations.jsx';
-
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M",
-  authDomain: "csc190-w.firebaseapp.com",
-  databaseURL: "https://csc190-w-default-rtdb.firebaseio.com",
-  projectId: "csc190-w",
-  storageBucket: "csc190-w.appspot.com",
-  messagingSenderId: "59153071763",
-  appId: "1:59153071763:web:dbb5fd713ef03b6353d766",
-  measurementId: "G-KYZHBDYFBR"
-};
+import { db, auth, analytics,
+  addDoc, collection, query, where, getDocs, updateDoc, serverTimestamp,
+  onAuthStateChanged, sendEmailVerification } from './firebaseSetup';
+import { FirebaseProvider } from './FirebaseContext.js'; 
+import TermsConditions from './pages/TermsConditions.jsx';
 
 // Initialize Firebase
 let isAuthenticated = false;
 let loggedInUser;
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth();
 
 //observer that gets called when user logs in or logs out
 auth.onAuthStateChanged((user) => {
@@ -78,9 +62,7 @@ auth.onAuthStateChanged((user) => {
     loggedInUser = null;
   }
 });
-
 //**************************** End of Firebase Initialization************************************* */
-const analytics = getAnalytics(app);
 
 
 function App() {
@@ -92,7 +74,7 @@ function App() {
           isAuthenticated={isAuthenticated} 
           username={loggedInUser ? loggedInUser.displayName : ""}
         >
-          <BrowserRouter>
+          <AppRouter>
             <Routes>
               {/*uses the teal color for header for all pages */}
               
@@ -124,6 +106,8 @@ function App() {
                       <Route path="/Locations" element={<Locations />} />
                       <Route path="/Profile" element={<Profile />} />
                       <Route path="/MyReservations" element={<MyReservations />} />
+                      <Route path="/TermsConditions" element={<TermsConditions />} />
+                      
                     </Routes>
                   </MainLayout>
                 }
@@ -136,13 +120,14 @@ function App() {
                     <Routes>
                       <Route path="/Admin" element={<Admin />} />
                       <Route path="/Adproduct" element={<AddProductForm />} />
+                      <Route path="/Deleteproduct" element={<DeleteProductPage />} />
                     </Routes>
                   </AdminLayout>
                 }
               />  
               <Route path="/product/:id" element={<MainLayout><ProductDetailPage /></MainLayout>}/>
             </Routes>
-          </BrowserRouter>
+          </AppRouter>
         </FirebaseProvider>
       
     </div>
