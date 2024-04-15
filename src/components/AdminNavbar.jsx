@@ -3,6 +3,7 @@ import Logo from "../assets/GEG-white.png";
 import {Link}  from 'react-router-dom';
 import '../styles/AdminNavbar.css';
 import DropdownAdminProduct from "../helpers/DropdownAdminProduct";
+import AddEventForm from "../admin/AddEvents";
 
 function AdminNavbar() {
 
@@ -19,6 +20,7 @@ return (
      {/*pages link to respective spots. uses import page on top and link images */}
         <div className="rightSide">
         <DropdownAdminProduct />
+        <Link to ="/admin/AddEvents" className="admin-link">Events</Link>
         <Link to ="/pages/Home" className="admin-link">Exit</Link>
 
         </div>

@@ -30,6 +30,8 @@ import MyReservations from './pages/MyReservations.jsx';
 import AddProductForm from './admin/Adproduct.jsx';
 import Admin from './admin/Admin.jsx';
 import DeleteProductPage from './admin/Deleteproduct.jsx'
+import AddEventForm from './admin/AddEvents.jsx';
+
 
 //**************************** Start of Firebase Initialization************************************* */
 // Import the functions you need from the SDKs you nee
@@ -120,6 +122,7 @@ function App() {
                     <Routes>
                       <Route path="/Admin" element={<Admin />} />
                       <Route path="/Adproduct" element={<AddProductForm />} />
+                      <Route path="/AddEvents" element={<AddEventForm />} />
                       <Route path="/Deleteproduct" element={<DeleteProductPage />} />
                     </Routes>
                   </AdminLayout>
