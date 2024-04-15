@@ -1,41 +1,50 @@
 import React, { useState, useEffect } from 'react';
+
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import '../styles/Slideshow.css';
 
-const slidesData = [
-  {
-    id: 1,
-    title: "Slide 1",
-    description: "Description for Slide 1",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/test-5ab39.appspot.com/o/MTGOTJ_EN_BndlOtrBx_1_1.png?alt=media&token=d84f3ce7-2a97-46fc-810b-24a35027fafe",
-  },
-  {
-    id: 2,
-    title: "Slide 2",
-    description: "Description for Slide 2",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/test-5ab39.appspot.com/o/MTGACR_EN_BndlOtrBx_01_03.png?alt=media&token=df5f0d00-661d-4fb5-abf5-fb668d0049a9",
-  },
-  {
-    id: 3,
-    title: "Slide 3",
-    description: "Description for Slide 3",
-    imageUrl: "https://cdn-onslaught.mortalkombat.com/home/home-fighters.webp",
-  },
-  
-];
+import { useFirebase } from '../FirebaseContext';
+import { useNavigate } from 'react-router-dom';
+
 
 function Slideshow() {
+  const [slidesData, setSlidesData] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const { db } = useFirebase();
+  const navigate = useNavigate(); // Instantiate the useNavigate hook
 
   useEffect(() => {
+    const fetchData = async () => {
+      const q = query(collection(db, "products"), where("isSlideShow", "==", true));
+      const querySnapshot = await getDocs(q);
+      const slides = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        title: doc.data().name,
+        description: doc.data().description,
+        imageUrl: doc.data().image,
+      }));
+      setSlidesData(slides);
+    };
+
+    fetchData();
+
     const interval = setInterval(() => {
       setActiveIndex((current) => (current === slidesData.length - 1 ? 0 : current + 1));
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slidesData.length]);
 
+  const formatTitle = (title) => {
+    const words = title.split(' ');
+    return words.length > 3 ? `${words.slice(0, 3).join(' ')}\n${words.slice(3).join(' ')}` : title;
+  };
 
-  // Function to compute the previous, next, and overflow slides
+  const formatDescription = (description) => {
+    const words = description.split(' ');
+    return words.length > 4 ? `${words.slice(0, 5).join(' ')}...` : description;
+  };
+
   const getSlidePosition = (index) => {
     const totalSlides = slidesData.length;
     if (index === activeIndex) return 'active';
@@ -44,6 +53,10 @@ function Slideshow() {
     return 'hidden';
   };
 
+   // Function to handle navigation
+   const goToProductPage = (id) => {
+    navigate(`/product/${id}`);
+  };
 
   return (
     <div className="slideshow-wrapper">
@@ -54,18 +67,16 @@ function Slideshow() {
             className={`slide ${getSlidePosition(index)}`}
             style={{ backgroundImage: `url(${slide.imageUrl})` }}
           >
-            {/* Conditional rendering for active slide content */}
             {(getSlidePosition(index) === 'active') && (
               <div className="slide-content">
-                <h2>{slide.title}</h2>
-                <p>{slide.description}</p>
-                <button>Learn More</button>
+                <h2 style={{ whiteSpace: 'pre-wrap' }}>{formatTitle(slide.title)}</h2>
+                <p>{formatDescription(slide.description)}</p>
+                <button onClick={() => goToProductPage(slide.id)}>Learn More</button>
               </div>
             )}
           </div>
         ))}
       </div>
-      {/* Slide controls for navigation */}
       <div className="slide-controls">
         {slidesData.map((_, idx) => (
           <span key={idx} className={`dot ${idx === activeIndex ? 'active' : ''}`} onClick={() => setActiveIndex(idx)} role="button" aria-label={`Go to slide ${idx + 1}`}></span>

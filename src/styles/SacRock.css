@@ -6,6 +6,8 @@
     border: 2px solid #ccc;
     padding: 20px;
     border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 5%;
   }
   
   /* Use BEM (Block Element Modifier) naming convention for clarity */
