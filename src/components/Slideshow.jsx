@@ -42,7 +42,7 @@ function Slideshow() {
 
   const formatDescription = (description) => {
     const words = description.split(' ');
-    return words.length > 4 ? `${words.slice(0, 4).join(' ')}...` : description;
+    return words.length > 4 ? `${words.slice(0, 5).join(' ')}...` : description;
   };
 
   const getSlidePosition = (index) => {
