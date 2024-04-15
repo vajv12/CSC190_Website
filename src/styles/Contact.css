@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   display: flex;
+  margin-top: 5%;
 }
 
 .contact .leftSide {
@@ -11,7 +12,7 @@
   background-repeat: no-repeat;
 }
 
-.content-wrapper {
+.contact .content-wrapper {
   padding-top: 120px; /* Adjust this value based on navbar's height */
 }
 
@@ -32,7 +33,7 @@
   margin-left: 30px;
 }
 
-form {
+.contact form {
   display: flex;
   flex-direction: column;
   width: auto;
@@ -40,7 +41,7 @@ form {
   font-size: large;
 }
 
-form input {
+.contact form input {
   height: 40px;
   width: 80%;
   font-size: xx-large;
@@ -49,7 +50,7 @@ form input {
   color: rgb(0, 0, 0);
 }
 
-form textarea {
+.contact form textarea {
   margin-top: 15px;
   height:auto;
   width: 80%;
