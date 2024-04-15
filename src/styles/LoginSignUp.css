@@ -133,3 +133,23 @@
     width: 100px;
 
 }
+
+.google-signin {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+  }
+  
+  .google-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; /* Adjust spacing between icon and text */
+  }
+  
+  .google-text {
+    font-size: 16px; /* Adjust font size */
+    line-height: 24px; /* Align text vertically with icon */
+    display: flex;
+    align-items: center; /* Center text vertically */
+  }
+  

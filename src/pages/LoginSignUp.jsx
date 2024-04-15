@@ -2,8 +2,17 @@ import React, { useState } from 'react';
 import '../styles/LoginSignUp.css';
 import AccountForm from '../components/UserAuth/AccountForm';
 import { useFirebase } from '../FirebaseContext';
-import { sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
+import { sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {  signInWithPopup, signInWithPhoneNumber, PhoneAuthProvider, signInWithCredential } from 'firebase/auth';
+
+
+
+import { GoogleAuthProvider } from 'firebase/auth';
+
+
+
+
 
 const LoginSignUp = () => {
   const { auth, db, isAuthenticated } = useFirebase();
@@ -14,6 +23,22 @@ const LoginSignUp = () => {
     username: '',
   });
   const [resetPassword, setResetPassword] = useState(false);
+
+  
+  
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      // Handle user data or navigate as needed
+      //window.location.href = 'http://localhost:3000/pages/Home';
+    } catch (error) {
+      console.error('Google Sign-In Error:', error.message);
+    }
+  };
+
+  
 
   function handlePasswordReset() {
     const actionCodeSettings = {
@@ -59,6 +84,9 @@ const LoginSignUp = () => {
     setResetPassword(true);
   };
 
+  
+
+
   return (
     <div className={`container ${isAuthenticated}`}>
       <div className="header">
@@ -66,6 +94,7 @@ const LoginSignUp = () => {
         <div className="underline"></div>
       </div>
       <div className="inputs">
+      
         {resetPassword ? (
           <form onSubmit={handlePasswordReset}>
             <div className="email-input">
@@ -115,6 +144,7 @@ const LoginSignUp = () => {
             }
           </>
         )}
+        
       </div>
       {!resetPassword && (
         <div className="submit-container">
@@ -134,8 +164,18 @@ const LoginSignUp = () => {
               username: '',
             });
           }}> Login</div>
+
         </div>
       )}
+      
+      {!resetPassword && (
+     
+      <button className="google-signin" onClick={handleGoogleSignIn}>
+        <img src="/image/google-icon.png" alt="Google Icon" className="google-icon" />
+        <span className="google-text">Sign in with Google</span>
+      </button>
+    )}
+    
     </div>
   );
 };
