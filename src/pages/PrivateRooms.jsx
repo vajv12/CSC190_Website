@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { collection, addDoc, query, where, getDocs, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, query, where, getDocs, updateDoc, serverTimestamp, doc, getDoc } from 'firebase/firestore';
 import { useFirebase } from '../FirebaseContext';
 import "../styles/PrivateRooms.css";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -17,25 +17,32 @@ function PrivateRooms() {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const { db } = useFirebase();
-    // Assuming you have the user's UID from the auth state listener
     const [userUid, setUserUid] = useState(null);
 
-
-// You might fetch the user's UID like this, depending on your app structure
-useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-        if (user) {
-            setUserUid(user.uid); // Store the user's UID in state
-            console.log("User UID:", user.uid); // Add for debugging
-        } else {
-            setUserUid(null);
-        }
-    });
-
-    return () => unsubscribe();
-}, []);
-
+    useEffect(() => {
+        const auth = getAuth();
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                setUserUid(user.uid);
+                const userDocRef = doc(db, "users", user.uid);
+                const userDocSnap = await getDoc(userDocRef);
+                if (userDocSnap.exists()) {
+                    const userData = userDocSnap.data();
+                    const fullName = userData.name;
+                    if (fullName) {
+                        const [first, ...last] = fullName.split(" ");
+                        setFirstName(first || "");
+                        setLastName(last.join(" ") || "");
+                    }
+                    setEmail(user.email || "");
+                }
+            } else {
+                setUserUid(null);
+            }
+        });
+        return () => unsubscribe();
+    }, []);
+    
 
 
     async function addReservationToFirestore(formData) {
@@ -48,10 +55,14 @@ useEffect(() => {
             throw error;
         }
     }
-    const addUserReservation = async (formData, userId) => {
+    
+
+    const addUserReservation = async (formData, userUid, clientReferenceId) => {
         try {
-            console.log(`Attempting to add reservation for user ${userId}`); // Debugging
-            const userReservationsRef = collection(db, `users/${userId}/reservations`);
+            console.log(`Attempting to add reservation for user ${userUid}`); // Debugging
+            const userReservationsRef = collection(db, `users/${userUid}/reservations`);
+            formData.userUid = userUid; 
+            formData.clientReferenceId = clientReferenceId; 
             const docRef = await addDoc(userReservationsRef, formData);
             console.log("User reservation added with ID: ", docRef.id);
         } catch (error) {
@@ -59,6 +70,7 @@ useEffect(() => {
             throw error;
         }
     };
+    
 
 
     // Function to handle form submission
@@ -110,14 +122,13 @@ useEffect(() => {
             setShowPaymentSection(true); // Show payment section after successful reservation
             const reservationDocRef = await addReservationToFirestore(formData);
 
-            // Generate a unique client reference ID using the reservation document ID
             const clientReferenceId = reservationDocRef.id;
+
+            await updateDoc(reservationDocRef, { userUid });
 
             await updateDoc(reservationDocRef, { clientReferenceId });
 
-            // Add the reservation to the user's Firestore collection using the user's UID
-            await addUserReservation(formData, userUid);
-
+            await addUserReservation(formData, userUid, clientReferenceId);
 
             // Set the Stripe link with the client reference ID
             const stripeLink = `https://buy.stripe.com/test_6oE18ae9QeHo9VecMM?client_reference_id=${clientReferenceId}`;
@@ -131,7 +142,7 @@ useEffect(() => {
     };
 
     return (
-        <div className="booking-form" data-testid="private-rooms-page">
+        <div className="booking-form">
             <h2>Private Room Reservations</h2>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -174,11 +185,10 @@ useEffect(() => {
 
             {showPaymentSection && (
                 <>
-                    <div className="pricing-information">
-                        <h2>Pricing Information</h2>
+                    <div className="payment-information">
+                        <h2>Pricing & Payment</h2>
                         <p>Total Price: ${totalPrice}</p>
                     </div>
-
                     <div className="payment-section">
                         <h2>Payment Section</h2>
                         <button onClick={() => window.location.href = stripeLink}>Proceed to Payment</button>

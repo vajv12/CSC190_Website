@@ -1,0 +1,38 @@
+[debug] [2024-04-15T01:30:10.170Z] ----------------------------------------------------------------------
+[debug] [2024-04-15T01:30:10.172Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2024-04-15T01:30:10.172Z] CLI Version:   13.7.2
+[debug] [2024-04-15T01:30:10.172Z] Platform:      win32
+[debug] [2024-04-15T01:30:10.172Z] Node Version:  v19.6.0
+[debug] [2024-04-15T01:30:10.172Z] Time:          Sun Apr 14 2024 18:30:10 GMT-0700 (Pacific Daylight Time)
+[debug] [2024-04-15T01:30:10.172Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-15T01:30:10.227Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-15T01:30:10.227Z] > authorizing via signed-in user (achouhan0114@gmail.com)
+[debug] [2024-04-15T01:30:10.227Z] [iam] checking project csc190-w for permissions ["firebase.projects.get"]
+[debug] [2024-04-15T01:30:10.228Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions [none]
+[debug] [2024-04-15T01:30:10.228Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions x-goog-quota-user=projects/csc190-w
+[debug] [2024-04-15T01:30:10.228Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-15T01:30:10.445Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions 200
+[debug] [2024-04-15T01:30:10.445Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/csc190-w:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-15T01:30:10.445Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w [none]
+[debug] [2024-04-15T01:30:10.662Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w 200
+[debug] [2024-04-15T01:30:10.662Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w {"projectId":"csc190-w","projectNumber":"59153071763","displayName":"CSC190-Website","name":"projects/csc190-w","resources":{"hostingSite":"csc190-w","realtimeDatabaseInstance":"csc190-w-default-rtdb","storageBucket":"csc190-w.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_69d89083-7839-48d4-9288-d3ee88f30270"}
+[info] 
+[info] === Serving from 'C:\Users\Tel\CSC190_Website'...
+[info] 
+[debug] [2024-04-15T01:30:10.666Z] defaultcredentials: writing to file C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json
+[debug] [2024-04-15T01:30:10.666Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 
+[debug] [2024-04-15T01:30:10.667Z] Setting GAC to C:\Users\Tel\AppData\Roaming\firebase\achouhan0114_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Tel\\AppData\\Roaming\\firebase\\achouhan0114_gmail_com_application_default_credentials.json"}}
+[debug] [2024-04-15T01:30:10.668Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig [none]
+[debug] [2024-04-15T01:30:10.996Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig 200
+[debug] [2024-04-15T01:30:10.996Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/adminSdkConfig {"projectId":"csc190-w","databaseURL":"https://csc190-w-default-rtdb.firebaseio.com","storageBucket":"csc190-w.appspot.com","locationId":"us-central"}
+[debug] [2024-04-15T01:30:11.003Z] Error: listen EADDRINUSE: address already in use ::1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1740:16)
+    at listenInCluster (node:net:1788:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:1937:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-04-15T01:30:11.164Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites 200
+[debug] [2024-04-15T01:30:11.164Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/csc190-w/sites {"sites":[{"name":"projects/csc190-w/sites/csc190-w","defaultUrl":"https://csc190-w.web.app","appId":"1:59153071763:web:dbb5fd713ef03b6353d766","type":"DEFAULT_SITE"}]}
+[debug] [2024-04-15T01:30:11.164Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/csc190-w/webApps/1:59153071763:web:dbb5fd713ef03b6353d766/config [none]
