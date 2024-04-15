@@ -130,7 +130,7 @@ function Navbar() {
                     <input
                         type="search"
                         placeholder="Search..."
-                        
+
                         onChange={handleSearchChange}
                     />
                     {searchTerm.trim() && searchResults.length > 0 && (
@@ -151,7 +151,7 @@ function Navbar() {
                                         <div className="search-result-name">{item.name}</div>
                                         <div className="search-result-name">Price: ${item.price}</div>
                                         <div className="search-result-description">{item.description}</div>
-                                        
+
                                     </div>
                                 </div>
                             ))}
@@ -166,7 +166,19 @@ function Navbar() {
                             <Link to="/pages/Profile" className="dropdown-item">Profile</Link>
                             {isAdmin && <Link to="/admin/Admin" className="dropdown-item">Admin</Link>}
                             <Link to="/pages/MyReservations" className="dropdown-item">My Reservations</Link>
-                            <button onClick={handleSignOut} className="dropdown-item">Sign Out</button>
+                            <button 
+  onClick={handleSignOut} 
+  className="dropdown-item"
+  style={{
+    backgroundColor: 'white', 
+    fontSize: '1.2rem', 
+    border: 'none',  // Removes the border
+    boxShadow: 'none',
+    margin: '8px'  // Removes any shadow effects
+  }}
+>
+  Sign Out
+</button>
                         </div>
                     </div>
                 ) : (
