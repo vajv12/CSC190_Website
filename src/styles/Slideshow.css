@@ -9,14 +9,12 @@
 
 
 }
-
 .slideshow-container p,
 .slideshow-container h1,
 .slideshow-container h2 {
   color: black;
 
 }
-
 .slideshow-container {
   display: flex;
   flex-wrap: nowrap;
@@ -55,7 +53,7 @@
 
 .slide-content {
   position: absolute;
-  left: 20%;
+  left: 25%;
   bottom: 20px;
   transform: translateX(-50%);
   color: white;

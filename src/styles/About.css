@@ -1,11 +1,13 @@
 /* About.css */
-
+.about{
+  margin-top: 10%;
+}
 /* Container styles */
-.title {
+.about .title {
     text-align: center;
     margin-top: 20px;
   }
-  .about.icon {
+  .about .icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +25,7 @@
   
   
   /* Flex container for map sections */
-  .maps-container {
+  .about .maps-container {
     display: flex;
     justify-content: space-around; /* Adjust as needed */
     margin-top: 20px;
@@ -42,12 +44,12 @@
   }
   
   /* Location icon styles */
-  .location img {
+  .about .location img {
     width: 20px; 
     height: auto; /* Maintain aspect ratio */
   }
   
-  .location {
+  .about .location {
     margin-top: 10px;
   }
   
@@ -75,17 +77,17 @@
   }
   
   /* Adjustable values */
-  :root {
+  .about :root {
     --margin-top: 20px;
     --icon-width: 20px;
   }
-  .apps {
+  .about .apps {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .apps img {
+  .about .apps img {
     width: 20px; /* Adjust the width to make the icons smaller */
     height: 20px; /* Adjust the height proportionally */
     margin: 0 5px;
