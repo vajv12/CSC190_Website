@@ -5,7 +5,7 @@ const stripe = require('stripe')('sk_test_51OfAn1IHfTroUmcjRLjz2Fb41rjIwTbClLbtO
 
 admin.initializeApp();
 
-exports.handleStripeWebhook = functions.https.onRequest(async (req, res) => {
+exports.handleStripeWebhookForEvents = functions.https.onRequest(async (req, res) => {
     const event = req.body;
 
     if (event.type === 'checkout.session.completed') {
@@ -16,29 +16,13 @@ exports.handleStripeWebhook = functions.https.onRequest(async (req, res) => {
         try {
             console.log('Client Reference ID:', clientReferenceId);
 
-            const docRef = admin.firestore().collection('roomReservations').doc(clientReferenceId);
+            const docRef = admin.firestore().collection('tournamentSpots').doc(clientReferenceId);
             const doc = await docRef.get();
             if (doc.exists) {
                 console.log('Document data:', doc.data());
                 await docRef.update({ paid: true });
 
-                await sendEmailReceipt(doc.data());
-
-                const userUid = doc.data().userUid; // Retrieve the userUid from the roomReservation document
-
-                const userReservationsRef = admin.firestore().collection('users').doc(userUid).collection('reservations');
-                const userReservationsSnapshot = await userReservationsRef.where('clientReferenceId', '==', clientReferenceId).get();
-
-                if (!userReservationsSnapshot.empty) {
-                    const userReservationDoc = userReservationsSnapshot.docs[0];
-                    await userReservationDoc.ref.update({ paid: true }); // Corrected from userReservationSnapshot to userReservationsSnapshot
-                    console.log('Reservation updated successfully');
-                } else {
-                    console.error('No matching reservation found for clientReferenceId:', clientReferenceId);
-                }
-                
-                await sendEmailReceipt(doc.data());
-
+                await sendEmailConfirmationReceipt(doc.data());
                 res.status(200).send('Webhook Received');
             } else {
                 res.status(404).send('Document Not Found');
@@ -52,7 +36,7 @@ exports.handleStripeWebhook = functions.https.onRequest(async (req, res) => {
     }
 });
 
-const sendEmailReceipt = async (data) => {
+const sendEmailConfirmationReceipt = async (data) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -64,7 +48,7 @@ const sendEmailReceipt = async (data) => {
     const mailOptions = {
         from: 'examplegreatescape@gmail.com',
         to: data.email,
-        subject: 'Reservation Confirmation',
+        subject: 'Event Signup Confirmation',
         html: `
         <!DOCTYPE html>
         <html lang="en">
@@ -93,7 +77,7 @@ const sendEmailReceipt = async (data) => {
                     margin: 0 auto;
                     max-width: 100%;
                     height: auto;
-                    max-height: 100px; /* Adjust the maximum height as needed */
+                    max-height: 100px; 
                 }
                 h1 {
                     color: #333;
@@ -115,34 +99,34 @@ const sendEmailReceipt = async (data) => {
                     color: #999;
                     font-size: 12px;
                 }
-            </style>
-            </head>
-            <body>
-                <div class="container">
-                    <div class="header">
-                        <img src="https://csc190-w.web.app/static/media/GEG-logo.f666891fecaab69ecb4f.png" alt="Company Logo">
+                </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">
+                            <img src="https://csc190-w.web.app/static/media/GEG-logo.f666891fecaab69ecb4f.png" alt="Company Logo">
+                        </div>
+                        <h1>Event Signup Confirmation</h1>
+                        <p>Thank you for signing up for ${data.eventName} on ${data.eventDate}!</p> 
+                        <div class="Event-details">
+                            <h2>Event signup details</h2>
+                            <p><strong>First Name:</strong> ${data.firstName}</p>
+                            <p><strong>Last Name:</strong> ${data.lastName}</p>
+                            <p><strong>Event:</strong> ${data.eventName}</p>
+                            <p><strong>Date:</strong> ${data.eventDate}</p>
+                            <p><strong>Price:</strong> ${data.price}</p>
+                        </div>
+                        <p>We look forward to seeing you!</p>
+                        <p class="footer">This email was sent from <strong>Great Escape Games</strong>. Please do not reply to this email.</p>
                     </div>
-                    <h1>Reservation Receipt</h1>
-                    <p>Thank you for reserving a room with us!</p>
-                    <div class="reservation-details">
-                    <p><strong>First Name:</strong> ${data.firstName}</p>
-                    <p><strong>Last Name:</strong> ${data.lastName}</p>
-                    <p><strong>Date:</strong> ${data.selectedDate}</p>
-                    <p><strong>Room:</strong> ${data.selectedRoom}</p>
-                    <p><strong>Total Price:</strong> $15</p>
-                </div>
-                    <p>We look forward to seeing you!</p>
-                    <p class="footer">This email was sent from <strong>Great Escape Games</strong>. Please do not reply to this email.</p>
-                </div>
-            </body>
+                </body>
             </html>
-        `
-    };
-
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log('Receipt email sent successfully');
-    } catch (error) {
-        console.error('Error sending receipt email:', error);
-    }
+            `
+        };
+        try {
+            await transporter.sendMail(mailOptions);
+            console.log('Receipt email sent successfully');
+        } catch (error) {
+            console.error('Error sending receipt email:', error);
+        }
 };

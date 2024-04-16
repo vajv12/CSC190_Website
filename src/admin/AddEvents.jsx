@@ -12,6 +12,8 @@ const AddEventForm = () => {
     description: "",
     location: "Sacramento", // Default location
     image: "", // Single image URL
+    stripeLink: "", // Stripe payment link
+    price: "",
   });
   const [events, setEvents] = useState([]);
 
@@ -54,6 +56,8 @@ const AddEventForm = () => {
         description: "",
         location: "Sacramento", // Reset location to default
         image: "",
+        stripeLink: "", // Reset stripe link
+        price: "",
       });
     } catch (error) {
       console.error("Error adding event: ", error);
@@ -131,6 +135,26 @@ const AddEventForm = () => {
                 name="image"
                 type="url"
                 value={event.image}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="stripeLink">Stripe Payment Link (Optional)</label>
+              <input
+                id="stripeLink"
+                name="stripeLink"
+                type="url"
+                value={event.stripeLink}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="price">Price (Optional)</label>
+              <input
+                id="price"
+                name="price"
+                type="integer"
+                value={event.price}
                 onChange={handleChange}
               />
             </div>
