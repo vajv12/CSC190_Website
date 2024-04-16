@@ -31,7 +31,7 @@ import AddProductForm from './admin/Adproduct.jsx';
 import Admin from './admin/Admin.jsx';
 import DeleteProductPage from './admin/Deleteproduct.jsx'
 import AddEventForm from './admin/AddEvents.jsx';
-
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 //**************************** Start of Firebase Initialization************************************* */
 // Import the functions you need from the SDKs you nee
@@ -101,7 +101,6 @@ function App() {
                       <Route path="/Rocklin" element={<Rocklin />} />
                       <Route path="/PrivateRooms" element={<PrivateRooms />} />
                       <Route path="/Product" element={<Product />} />
-
                       <Route path="/Events" element={<Events/>} />
                       <Route path="/Sacramento" element={<Sacramento />} />
                       <Route path="/Calendar" element={<Calendar />} /> 
@@ -119,12 +118,14 @@ function App() {
                 path="/admin/*"
                 element={
                   <AdminLayout>
+                    <ProtectedRoute>
                     <Routes>
                       <Route path="/Admin" element={<Admin />} />
                       <Route path="/Adproduct" element={<AddProductForm />} />
                       <Route path="/AddEvents" element={<AddEventForm />} />
                       <Route path="/Deleteproduct" element={<DeleteProductPage />} />
                     </Routes>
+                    </ProtectedRoute>
                   </AdminLayout>
                 }
               />  
