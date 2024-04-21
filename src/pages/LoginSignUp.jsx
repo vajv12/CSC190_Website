@@ -2,12 +2,8 @@ import React, { useState } from 'react';
 import '../styles/LoginSignUp.css';
 import AccountForm from '../components/UserAuth/AccountForm';
 import { useFirebase } from '../FirebaseContext';
-import { setDoc, doc } from 'firebase/firestore';
-import { sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import {  signInWithPopup, signInWithPhoneNumber, PhoneAuthProvider, signInWithCredential } from 'firebase/auth';
-
-
-
+import { sendPasswordResetEmail} from 'firebase/auth';
+import {  signInWithPopup} from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 
 
@@ -32,7 +28,7 @@ const LoginSignUp = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       // Handle user data or navigate as needed
-      //window.location.href = 'http://localhost:3000/pages/Home';
+      window.location.href = 'http://localhost:3000/pages/Home';
     } catch (error) {
       console.error('Google Sign-In Error:', error.message);
     }
@@ -56,29 +52,7 @@ const LoginSignUp = () => {
       });
   }
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const { email, password, username } = userCredentials;
-
-    try {
-      if (action === 'Sign Up') {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        const user = userCredential.user;
-        await setDoc(doc(db, 'users', user.uid), {
-          username,
-          email,
-        });
-      } else if (action === 'Login') {
-        await signInWithEmailAndPassword(auth, email, password);
-      }
-    } catch (error) {
-      console.error('Authentication Error:', error.message);
-    }
-  };
+  
 
   const handleResetPassword = () => {
     setResetPassword(true);
