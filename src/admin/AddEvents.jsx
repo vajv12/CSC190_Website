@@ -45,18 +45,22 @@ const AddEventForm = () => {
     try {
       const eventData = {
         ...event,
-        // Adding category based on the selected location
         category: event.location === "Sacramento" ? "Sacramento" : "Rocklin",
       };
       await addDoc(collection(db, "events"), eventData);
       alert("Event added successfully!");
+  
+      // Update events state using a function form of setEvents
+      setEvents(prevEvents => [...prevEvents, eventData]);
+  
+      // Reset event state
       setEvent({
         title: "",
         date: "",
         description: "",
-        location: "Sacramento", // Reset location to default
+        location: "Sacramento",
         image: "",
-        stripeLink: "", // Reset stripe link
+        stripeLink: "",
         price: "",
       });
     } catch (error) {
@@ -64,6 +68,9 @@ const AddEventForm = () => {
       alert("Error adding event, please try again.");
     }
   };
+  
+  
+  
 
   const handleDelete = async (eventId) => {
     try {

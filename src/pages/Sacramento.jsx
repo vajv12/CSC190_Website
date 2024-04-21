@@ -104,7 +104,7 @@ function SacramentoEvent({ event }) {
       <p>Description: {event.description}</p>
       <p>Location: {event.location}</p>
       {event.price && <p>Price: {event.price}</p>} {/* Render price if it exists */}
-      <img src={event.image} alt={event.title} />
+      <img src={event.image}  />
       {!showSignup ? (
         <button onClick={handleSignUp}>Sign Up</button>
       ) : (
