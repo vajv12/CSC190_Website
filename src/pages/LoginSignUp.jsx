@@ -59,7 +59,7 @@ const LoginSignUp = () => {
 
   
   return (
-    <div className={`container ${isAuthenticated}`}>
+    <div className={`container ${isAuthenticated}`} style={{marginTop:'100px'}}>
       <div className="header">
         <div className="text reset-password">{resetPassword ? 'Reset Password' : action}</div>
         <div className="underline"></div>
