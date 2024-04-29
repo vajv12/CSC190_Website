@@ -32,6 +32,9 @@ import DeleteProductPage from './admin/Deleteproduct.jsx'
 import AddEventForm from './admin/AddEvents.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 
+import { useEffect } from 'react';
+import { GlobalDebug } from './helpers/remove-consoles.js';
+
 //**************************** Start of Firebase Initialization************************************* */
 // Import the functions you need from the SDKs you nee
 import { getAnalytics } from "firebase/analytics";
@@ -67,7 +70,17 @@ auth.onAuthStateChanged((user) => {
 
 
 function App() {
+
+  useEffect(() => {
+    (process.env.NODE_ENV === "production" ||
+     process.env.REACT_APP_ENV === "STAGING") &&
+      GlobalDebug(false);
+  }, []);
   return (
+    //Remove Consoles
+   
+
+
     <div className="App">
         <FirebaseProvider 
           auth={auth} 
