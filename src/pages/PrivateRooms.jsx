@@ -9,8 +9,9 @@ function PrivateRooms() {
     const [selectedDate, setSelectedDate] = useState("");
     const [selectedLocation, setSelectedLocation] = useState("rocklin");
     const [selectedRoom, setSelectedRoom] = useState("");
-    const [totalPrice] = useState(15); // Base price $15 per hour
-    const [showPaymentSection, setShowPaymentSection] = useState(false);
+    const [selectedHours, setSelectedHours] = useState("");
+    const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
+    const [totalPrice, setTotalPrice] = useState("");
     const [stripeLink, setStripeLink] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -42,8 +43,6 @@ function PrivateRooms() {
         });
         return () => unsubscribe();
     }, []);
-    
-
 
     async function addReservationToFirestore(formData) {
         try {
@@ -55,14 +54,13 @@ function PrivateRooms() {
             throw error;
         }
     }
-    
 
     const addUserReservation = async (formData, userUid, clientReferenceId) => {
         try {
-            console.log(`Attempting to add reservation for user ${userUid}`); // Debugging
+            console.log(`Attempting to add reservation for user ${userUid}`);
             const userReservationsRef = collection(db, `users/${userUid}/reservations`);
-            formData.userUid = userUid; 
-            formData.clientReferenceId = clientReferenceId; 
+            formData.userUid = userUid;
+            formData.clientReferenceId = clientReferenceId;
             const docRef = await addDoc(userReservationsRef, formData);
             console.log("User reservation added with ID: ", docRef.id);
         } catch (error) {
@@ -70,15 +68,39 @@ function PrivateRooms() {
             throw error;
         }
     };
+
+    const calculateTotalPrice = () => {
+        const roomPrices = {
+            Dragon: 15,
+            Wolf: 15,
+            Party: 25
+        };
+    
+        const selectedRoomPrice = roomPrices[selectedRoom];
+    
+        if (selectedRoomPrice === undefined) {
+            console.error("Invalid room selection");
+            return;
+        }
+    
+        if (selectedRoom === 'Dragon' || selectedRoom === 'Wolf') {
+            setTotalPrice(selectedRoomPrice.toFixed(2));
+        } else if (selectedRoom === 'Party') {
+            const totalPrice = selectedHours === 1 ? selectedRoomPrice : selectedRoomPrice * selectedHours; 
+            setTotalPrice(totalPrice.toFixed(2));
+        }
+    };
     
 
+    useEffect(() => {
+        calculateTotalPrice();
+    },[selectedRoom, selectedHours]);
 
-    // Function to handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const currentDate = new Date(); // Get the current date
-        const selectedDateTime = new Date(selectedDate); // Convert selected date to a Date object
+        const currentDate = new Date(); 
+        const selectedDateTime = new Date(selectedDate); 
 
         if (selectedDateTime < currentDate) {
             alert("You cannot book for past dates.");
@@ -105,21 +127,23 @@ function PrivateRooms() {
                 return;
             }
         }
-        
+
         const formData = {
             selectedDate,
             selectedRoom,
+            selectedTimeSlot,
+            hours: selectedHours, 
             firstName,
             lastName,
             email,
             phoneNumber,
+            price: totalPrice,
             paid: false,
             reservationRequest: serverTimestamp(), // Add the current date
         };
 
         // Proceed with reservation
         try {
-            setShowPaymentSection(true); // Show payment section after successful reservation
             const reservationDocRef = await addReservationToFirestore(formData);
 
             const clientReferenceId = reservationDocRef.id;
@@ -130,8 +154,13 @@ function PrivateRooms() {
 
             await addUserReservation(formData, userUid, clientReferenceId);
 
-            // Set the Stripe link with the client reference ID
-            const stripeLink = `https://buy.stripe.com/test_6oE18ae9QeHo9VecMM?client_reference_id=${clientReferenceId}`;
+            let stripeLink;
+            if (selectedRoom === 'Party') {
+                stripeLink = `https://buy.stripe.com/4gw9Ds2uk0Eu5ri28b?client_reference_id=${clientReferenceId}`;
+                alert("During Stripe Payment: Please Select Correct Number Of Hours to Buy!");
+            } else {
+                stripeLink = `https://buy.stripe.com/test_6oE18ae9QeHo9VecMM?client_reference_id=${clientReferenceId}`;
+            }
             setStripeLink(stripeLink);
 
             alert("Proceed to Payment to book reservation!");
@@ -140,10 +169,39 @@ function PrivateRooms() {
             alert("An error occurred. Please try again.");
         }
     };
+    const getTimeSlotOptions = () => {
+        if (selectedDate) {
+            const selectedDay = new Date(selectedDate).getDay(); 
+            switch (selectedDay) {
+                case 0: // Sunday
+                case 2: // Monday
+                case 6: // Wednesday
+                    return ["12pm-10pm"];
+                case 1: // Monday
+                case 3: // Tuesday
+                case 5: // Thursday
+                    return ["12pm-5pm", "5pm-10pm"];
+                case 4: // Friday
+                    return ["12pm-5:30pm", "5:30pm-11pm"];
+                default:
+                    return [];
+            }
+        }
+        return [];
+    };
 
     return (
         <div className="booking-form">
             <h2>Private Room Reservations</h2>
+            <p><strong>Room Information & Rates:</strong></p>
+            <p><strong>Dragon & Wolf Rooms: $15 for half day or full day depending on day</strong></p>
+            <p>* Full day Room Rentals (12-10 pm): Available Monday, Wednesday, Sunday</p>
+            <p>* Half day Room Rentals (Choice of 12pm-5pm or 5pm-10pm): Available Tuesday, Thursday, Saturday</p>
+            <p>* Half day Room Rentals (Choice of 12pm-5:30pm or 5:30pm-11pm): Available Friday</p>
+            <p><strong>Party Room: $25 Per Hour any day of the week</strong></p>
+            <p>* Suited for larger parties</p>
+
+
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="firstName">First Name:</label>
@@ -177,23 +235,50 @@ function PrivateRooms() {
                         <option value="">Select a room</option>
                         <option value="Dragon">Dragon</option>
                         <option value="Wolf">Wolf</option>
+                        <option value="Party">Party</option>
                     </select>
-                </div>
+                    </div>
+                    {(selectedRoom === 'Dragon' || selectedRoom === 'Wolf') && (
+                    <div>
+                        <label htmlFor="timeSlot">Time Slot:</label>
+                        <select id="timeSlot" value={selectedTimeSlot} onChange={(e) => setSelectedTimeSlot(e.target.value)} required>
+                            <option value="">Select a time slot</option>
+                            {getTimeSlotOptions().map(option => (
+                                <option key={option} value={option}>{option}</option>
+                            ))}
+                        </select>
+                    </div>
+                )}
+                {selectedRoom === 'Party' && (
+                    <div>
+                        <label htmlFor="hours">Hours:</label>
+                        <select id="hours" value={selectedHours} onChange={(e) => setSelectedHours(parseInt(e.target.value))} required>
+                            <option value="">Select Number of Hours</option>
+                            <option value="1">1 hour</option>
+                            <option value="2">2 hours</option>
+                            <option value="3">3 hours</option>
+                            <option value="4">4 hours</option>
+                            <option value="5">5 hours</option>
+                            <option value="6">6 hours</option>
+                            <option value="7">7 hours</option>
+                            <option value="8">8 hours</option>
+                            <option value="9">9 hours</option>
+                            <option value="10">10 hours</option>
+                        </select>
+                    </div>
+                )}
                 <p>* Please note that room reservations are valid during business hours of the day that is booked.</p>
                 <button type="submit">Reserve Now</button>
             </form>
 
-            {showPaymentSection && (
-                <>
-                    <div className="payment-information">
-                        <h2>Pricing & Payment</h2>
-                        <p>Total Price: ${totalPrice}</p>
-                    </div>
-                    <div className="payment-section">
-                        <h2>Payment Section</h2>
-                        <button onClick={() => window.location.href = stripeLink}>Proceed to Payment</button>
-                    </div>
-                </>
+            {stripeLink && (
+                <div className="payment-information">
+                    <h2>Pricing & Payment</h2>
+                    <p>Total Price: ${totalPrice}</p>
+                    <p>* Proceed to payment to complete room reservation. </p>
+                    <p>* If Party Room Is Selected, During Stripe Payment: Please Select Correct Number Of Hours to Buy!</p>
+                    <button onClick={() => window.location.href = stripeLink}>Proceed to Payment</button>
+                </div>
             )}
         </div>
     );

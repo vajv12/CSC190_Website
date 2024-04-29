@@ -11,7 +11,6 @@ import Shop from './pages/Product.jsx';
 import Contact from './pages/Contact.jsx';
 import About from './pages/About.jsx';
 import Login from './pages/LoginSignUp.jsx';
-import Cart from './pages/Cart.jsx';
 import Rocklin from './pages/Rocklin.jsx';
 import PrivateRooms from './pages/PrivateRooms.jsx';
 import Product from './pages/Product.jsx';
@@ -97,7 +96,6 @@ function App() {
                       <Route path="/Contact" element={<Contact />} />
                       <Route path="/About" element={<About />} />
                       <Route path="/Login" element={<Login />} />
-                      <Route path="/Cart" element={<Cart />} />
                       <Route path="/Rocklin" element={<Rocklin />} />
                       <Route path="/PrivateRooms" element={<PrivateRooms />} />
                       <Route path="/Product" element={<Product />} />

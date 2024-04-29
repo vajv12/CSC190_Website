@@ -17,16 +17,16 @@ function RocklinEvent({ event, onSubmit }) {
   const { db } = useFirebase();
 
   const handleSignUp = () => {
-    setShowSignup(!showSignup); // Toggle the showSignup state
+    setShowSignup(!showSignup); 
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const formData = {
-        eventId: event.target.eventId.value, // Retrieve event ID from the hidden input field
-        eventName: event.target.eventName.value, // Retrieve event name from the hidden input field
-        eventDate: event.target.eventDate.value, // Retrieve event date from the
+        eventId: event.target.eventId.value, 
+        eventName: event.target.eventName.value, 
+        eventDate: event.target.eventDate.value, 
         firstName,
         lastName,
         email,
@@ -54,9 +54,9 @@ function RocklinEvent({ event, onSubmit }) {
     event.preventDefault();
     try {
         const formData = {
-          eventId: event.target.eventId.value, // Retrieve event ID from the hidden input field
-          eventName: event.target.eventName.value, // Retrieve event name from the hidden input field
-          eventDate: event.target.eventDate.value, // Retrieve event date from the
+          eventId: event.target.eventId.value, 
+          eventName: event.target.eventName.value, 
+          eventDate: event.target.eventDate.value, 
           firstName,
           lastName,
           email,
@@ -84,13 +84,7 @@ function RocklinEvent({ event, onSubmit }) {
   
         alert('Press OK to be redirected to complete payment for sign up!');
   
-        window.location.href = stripeLinkFin; // Redirect to Stripe link
-
-        //setShowSignup(false);
-        //setFirstName('');
-        //setLastName('');
-        //setEmail('');
-        //setPhone('');
+        window.location.href = stripeLinkFin; 
       }
      catch (error) {
       console.error('Error submitting form: ', error);
@@ -104,17 +98,16 @@ function RocklinEvent({ event, onSubmit }) {
       <p>Date: {event.date}</p>
       <p>Description: {event.description}</p>
       <p>Location: {event.location}</p>
-      {event.price && <p>Price: {event.price}</p>} {/* Render price if it exists */}
+      {event.price && <p>Price: {event.price}</p>} 
       <img src={event.image} alt={event.title} />
       {!showSignup ? (
         <button onClick={handleSignUp}>Sign Up</button>
       ) : (
         <form onSubmit={event.stripeLink ? handlePayment : handleSubmit}>
-          {/* Form inputs */}
-          <input type='hidden' name='eventId' value={event.id} /> {/* Hidden input for event ID */}
-          <input type='hidden' name='eventName' value={event.title} /> {/* Hidden input for event name */}
-          <input type='hidden' name='eventDate' value={event.date} /> {/* Hidden input for event date */}
-          <input type='hidden' name='price' value={event.price} /> {/* Hidden input for event date */}
+          <input type='hidden' name='eventId' value={event.id} /> 
+          <input type='hidden' name='eventName' value={event.title} /> 
+          <input type='hidden' name='eventDate' value={event.date} /> 
+          <input type='hidden' name='price' value={event.price} /> 
           <input type='hidden' name='stripeLink' value={event.stripeLink} /> 
           <label>
             First Name:
@@ -157,8 +150,6 @@ function RocklinEvent({ event, onSubmit }) {
     </div>
   );
 }
-  
-
 
 // EventCalendar component with Carousel
 function EventCalendar() {
