@@ -98,8 +98,13 @@ function RocklinEvent({ event, onSubmit }) {
       <p>Date: {event.date}</p>
       <p>Description: {event.description}</p>
       <p>Location: {event.location}</p>
+<<<<<<< HEAD
       {event.price && <p>Price: {event.price}</p>} 
       <img src={event.image} alt={event.title} />
+=======
+      {event.price && <p>Price: {event.price}</p>} {/* Render price if it exists */}
+      <img src={event.image}  />
+>>>>>>> 0b07a066c76834e475d32a1881aac085c794f088
       {!showSignup ? (
         <button onClick={handleSignUp}>Sign Up</button>
       ) : (

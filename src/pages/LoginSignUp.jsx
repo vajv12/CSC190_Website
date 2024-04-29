@@ -4,10 +4,7 @@ import AccountForm from '../components/UserAuth/AccountForm';
 import { useFirebase } from '../FirebaseContext';
 import { setDoc, doc } from 'firebase/firestore';
 import { sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import {  signInWithPopup, signInWithPhoneNumber, PhoneAuthProvider, signInWithCredential } from 'firebase/auth';
-
-
-
+import {  signInWithPopup } from 'firebase/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 
 
@@ -32,13 +29,12 @@ const LoginSignUp = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       // Handle user data or navigate as needed
-      //window.location.href = 'http://localhost:3000/pages/Home';
+      window.location.href = 'http://localhost:3000/pages/Home';
     } catch (error) {
       console.error('Google Sign-In Error:', error.message);
     }
   };
 
-  
 
   function handlePasswordReset() {
     const actionCodeSettings = {
@@ -56,39 +52,14 @@ const LoginSignUp = () => {
       });
   }
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const { email, password, username } = userCredentials;
-
-    try {
-      if (action === 'Sign Up') {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        const user = userCredential.user;
-        await setDoc(doc(db, 'users', user.uid), {
-          username,
-          email,
-        });
-      } else if (action === 'Login') {
-        await signInWithEmailAndPassword(auth, email, password);
-      }
-    } catch (error) {
-      console.error('Authentication Error:', error.message);
-    }
-  };
 
   const handleResetPassword = () => {
     setResetPassword(true);
   };
 
   
-
-
   return (
-    <div className={`container ${isAuthenticated}`}>
+    <div className={`container ${isAuthenticated}`} style={{marginTop:'100px'}}>
       <div className="header">
         <div className="text reset-password">{resetPassword ? 'Reset Password' : action}</div>
         <div className="underline"></div>
