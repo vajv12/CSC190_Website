@@ -97,7 +97,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #66B2B2; /* Change color on hover */
+  background-color:  rgb(35, 52, 78); /* Change color on hover */
 }
 
 /* after form is created css to split location in half */
