@@ -10,7 +10,7 @@ const EventCard = ({ event }) => {
       <div className="eventTitle">{name}</div>
       <div className="eventImageContainer">
         <img src={image} alt={name} className="eventImage" />
-        <a href={detailUrl} className="eventDetailsButton">Details</a>
+   
       </div>
     </div>
   );

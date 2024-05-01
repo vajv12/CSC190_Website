@@ -31,7 +31,7 @@
   .eventImage {
     width: 100%;
     height: 100%; /* Make the image cover the available height */
-    object-fit: cover; /* This will cover the area without distorting the image */
+    object-fit: contain; /* This will cover the area without distorting the image */
   }
   
   .eventDetailsButton {
