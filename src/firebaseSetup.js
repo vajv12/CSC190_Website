@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, query, where, getDocs, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
 import { getAnalytics } from "firebase/analytics";
-
+import { getFunctions} from "firebase/functions";
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDTmAvGOetZpKVXBDQyOG18Y8YfVOVPV3M",
@@ -23,10 +23,11 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const analytics = getAnalytics(app);
+const functions = getFunctions(app);
 
 // Export Firebase services
 export {
-  db, auth, analytics,
+  db, auth, analytics, functions,
   addDoc, collection, query, where, getDocs, updateDoc, serverTimestamp,
   onAuthStateChanged, sendEmailVerification
 };

@@ -2,6 +2,8 @@ const nodemailer = require('nodemailer');
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const stripe = require('stripe')('sk_test_51OfAn1IHfTroUmcjRLjz2Fb41rjIwTbClLbtOpy0LKuJ6cbA0MU9YUuScSrj7IIvKaE8UTCRds1LfUXi4kn8Iwae002FPh92H2');
+const mailchimp = require('@mailchimp/mailchimp_marketing');
+const axios = require('axios');
 
 admin.initializeApp();
 
@@ -130,3 +132,33 @@ const sendEmailConfirmationReceipt = async (data) => {
             console.error('Error sending receipt email:', error);
         }
 };
+
+
+
+exports.handleSubscribeToMailchimp = functions.https.onRequest(async (req, res) => {
+ 
+  try {
+    // Parse the request body
+    const { emailAddress } = req.body;
+
+  
+    const apiKey = '7cd41b1171aa94e170cc896bb96894d8-us22';
+    const audienceId = '99cf79e8b7';
+
+    const response = await axios.post(`https://us22.api.mailchimp.com/3.0/lists/${audienceId}/members`, {
+      email_address: emailAddress,
+      status: 'subscribed',
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${Buffer.from(`apikey:${apiKey}`).toString('base64')}`,
+      },
+    });
+
+    console.log('Subscriber added:', emailAddress);
+    res.status(200).send('Subscription successful');
+  } catch (error) {
+    console.error('Error subscribing to Mailchimp:', error);
+    res.status(500).send('Failed to subscribe');
+  }
+});

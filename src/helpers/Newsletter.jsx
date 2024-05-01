@@ -1,86 +1,62 @@
 //user can sign up to be up to date with the latest news 
 //save emails with timestamp to firebase under subscribers
-import React, { useState } from "react";
-import { serverTimestamp, addDoc, collection, getDocs, query, where } from 'firebase/firestore';
-import { useFirebase } from '../FirebaseContext';
-import axios from 'axios';
-import '../styles/Newsletter.css';
+import React from 'react';
 
-function NewsLetter() {
-  const [email, setEmail] = useState("");
-  const [loader, setLoader] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const { db } = useFirebase();
-
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    setLoader(true);
-
-    try {
-      // Check if email already exists
-      const emailQuery = query(collection(db, 'newsletterRequests'), where('email', '==', email));
-      const emailSnapshot = await getDocs(emailQuery);
-
-      if (!emailSnapshot.empty) {
-        setErrorMessage("You are already subscribed.");
-        setLoader(false);
-        return;
-      }
-
-      // Add email to Firestore
-      const docRef = await addDoc(collection(db, 'newsletterRequests'), {
-        email,
-        timestamp: serverTimestamp(),
-      });
-
-      // Send confirmation email using Cloud Function
-      await sendEmail();
-
-      // Reset the form and show success message
-      setEmail("");
-      setLoader(false);
-      setErrorMessage("");
-      alert("Subscribed successfully!");
-    } catch (error) {
-      console.error("Error subscribing:", error);
-      setErrorMessage("Failed to subscribe. Please try again later.");
-      setLoader(false);
-    }
-  };
-
-  const sendEmail = async () => {
-    try {
-      const response = await axios.post('https://us-central1-csc190-w.cloudfunctions.net/handleNewsletterRequest', { email }); // Update with your Cloud Function endpoint
-      console.log('Response:', response.data);
-      alert('Email sent successfully!');
-    } catch (error) {
-      console.error('Error sending email:', error.response ? error.response.data : error.message);
-      alert('Failed to send email. Please try again later.');
-    }
-  };
-
+function Newsletter() {
   return (
-    <div className="news-letter">
-      <h2>Join our newsletter</h2>
-      <form id="subscribe" onSubmit={handleSubscribe}>
-        
-        <input
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="@email.com"
-          type="email"
-          required
-          disabled={loader}
-        />
-        <button type="submit" disabled={loader}>
-          {loader ? "Subscribing..." : "Subscribe"}
-        </button>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+    <div id="mc_embed_signup">
+      <form
+        action="https://gmail.us22.list-manage.com/subscribe/post?u=42e7780e85f036908e239c885&amp;id=99cf79e8b7&amp;f_id=00eccae1f0"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
+        className="validate"
+        target="_blank"
+      >
+        <div id="mc_embed_signup_scroll">
+          <h2>Join Our Newsletter</h2>
+          
+          <div className="mc-field-group">
+            <label htmlFor="mce-EMAIL">Email Address <span className="asterisk">*</span></label>
+            <input
+              type="email"
+              name="EMAIL"
+              className="required email"
+              id="mce-EMAIL"
+              required=""
+             
+            />
+            <span id="mce-EMAIL-HELPERTEXT" className="helper_text"></span>
+          </div>
+          <div id="mce-responses" className="clear foot">
+            <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
+            <div className="response" id="mce-success-response" style={{ display: 'none' }}></div>
+          </div>
+          <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+            {/* Real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+            <input type="text" name="b_42e7780e85f036908e239c885_99cf79e8b7" tabIndex="-1" value="" />
+          </div>
+          <div className="optionalParent">
+            <div className="clear foot">
+              <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Subscribe" 
+              style={{ backgroundColor: '#007bff',
+              color: 'white',
+              width: '100px', 
+             marginTop:'20px',
+              padding: '5px 10px', }}/>
+              <p style={{ margin: '0px auto' }}>
+                <a href="http://eepurl.com/iO9uMY" title="Mailchimp - email marketing made easy and fun">
+                  <span style={{ display: 'inline-block', backgroundColor: 'transparent', borderRadius: '4px' }}>
+                   
+                  </span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   );
 }
 
-export default NewsLetter;
-
+export default Newsletter;
