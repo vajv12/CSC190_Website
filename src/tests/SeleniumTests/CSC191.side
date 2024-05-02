@@ -566,12 +566,39 @@
       "targets": [],
       "value": "label=Dragon"
     }, {
+      "id": "d377011d-a18f-46ba-9856-8fad54907374",
+      "comment": "",
+      "command": "select",
+      "target": "id=timeSlot",
+      "targets": [],
+      "value": "label=12pm-10pm"
+    }, {
+      "id": "0154a7fb-caa9-4dfb-96c8-e49bf04e6928",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Reserve Now')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1764cd88-eb8e-48fd-a9b1-9c84f9fd1eb5",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Proceed to Payment to book reservation!",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "82a278e0-e808-4584-802f-4cde944bd0b1",
       "comment": "",
       "command": "click",
-      "target": "css=button:nth-child(9)",
+      "target": "css=button:nth-child(10)",
       "targets": [
-        ["css=button:nth-child(9)", "css:finder"],
+        ["css=button:nth-child(10)", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],
         ["xpath=//div[@id='root']/div/div/div[2]/div/form/button", "xpath:idRelative"],
         ["xpath=//button", "xpath:position"],
@@ -589,11 +616,11 @@
       "id": "384fda96-6a17-4f45-bbfb-471383300c61",
       "comment": "",
       "command": "click",
-      "target": "css=.payment-section > button",
+      "target": "css=button:nth-child(5)",
       "targets": [
-        ["css=.payment-section > button", "css:finder"],
-        ["xpath=//div[@id='root']/div/div/div[2]/div/div[2]/button", "xpath:idRelative"],
-        ["xpath=//div[2]/button", "xpath:position"],
+        ["css=button:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
         ["xpath=//button[contains(.,'Proceed to Payment')]", "xpath:innerText"]
       ],
       "value": ""
@@ -639,38 +666,6 @@
         ["xpath=//span/input", "xpath:position"]
       ],
       "value": "test@gmail.com"
-    }, {
-      "id": "a0759e55-d216-4f39-b4cc-8bd30eb9b573",
-      "comment": "",
-      "command": "type",
-      "target": "css=.OtpInput-inputGroup > input:nth-child(1)",
-      "targets": [
-        ["css=.OtpInput-inputGroup > input:nth-child(1)", "css:finder"],
-        ["xpath=//input[@value='6']", "xpath:attributes"],
-        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
-      ],
-      "value": "6"
-    }, {
-      "id": "aeda044d-f3b8-465d-b21f-3a365c95a39a",
-      "comment": "",
-      "command": "type",
-      "target": "css=.OtpInput-inputGroup > input:nth-child(2)",
-      "targets": [
-        ["css=.OtpInput-inputGroup > input:nth-child(2)", "css:finder"],
-        ["xpath=//input[@value='5']", "xpath:attributes"],
-        ["xpath=//input[2]", "xpath:position"]
-      ],
-      "value": "5"
-    }, {
-      "id": "5c0c8783-9bc1-4f69-bd00-f1b82807b83e",
-      "comment": "",
-      "command": "click",
-      "target": "css=.Text-color--gray800:nth-child(1)",
-      "targets": [
-        ["css=.Text-color--gray800:nth-child(1)", "css:finder"],
-        ["xpath=//div[5]/button/div/span/span", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "75c091e6-88a1-45da-a4da-2eecf558c0b8",
       "comment": "",
@@ -796,7 +791,7 @@
         ["xpath=//div[@id='cardNumber-fieldset-inner']/div[2]/div/div/span/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/span/input", "xpath:position"]
       ],
-      "value": "04 / 24"
+      "value": "04 / 28"
     }, {
       "id": "92a76b2b-3289-4e3f-863e-ced710b3c078",
       "comment": "",
@@ -1569,12 +1564,32 @@
       "targets": [],
       "value": "label=Dragon"
     }, {
-      "id": "7f84b5a0-1629-420d-b048-2309def5357e",
+      "id": "93254a68-2843-458e-8737-b58075beea60",
       "comment": "",
       "command": "click",
-      "target": "css=button:nth-child(9)",
+      "target": "id=timeSlot",
       "targets": [
-        ["css=button:nth-child(9)", "css:finder"],
+        ["id=timeSlot", "id"],
+        ["css=#timeSlot", "css:finder"],
+        ["xpath=//select[@id='timeSlot']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/form/div[8]/select", "xpath:idRelative"],
+        ["xpath=//div[8]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abb81744-2fc7-43ec-960d-1f7d33071986",
+      "comment": "",
+      "command": "select",
+      "target": "id=timeSlot",
+      "targets": [],
+      "value": "label=12pm-5pm"
+    }, {
+      "id": "12cfd9b5-c50a-49a3-bbec-33ddc66144da",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],
         ["xpath=//div[@id='root']/div/div/div[2]/div/form/button", "xpath:idRelative"],
         ["xpath=//button", "xpath:position"],
@@ -1585,9 +1600,9 @@
       "id": "d16e6c68-1697-40b2-a560-71bcc86f67ec",
       "comment": "",
       "command": "click",
-      "target": "css=button:nth-child(9)",
+      "target": "css=button",
       "targets": [
-        ["css=button:nth-child(9)", "css:finder"],
+        ["css=button", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],
         ["xpath=//div[@id='root']/div/div/div[2]/div/form/button", "xpath:idRelative"],
         ["xpath=//button", "xpath:position"],
@@ -1605,9 +1620,22 @@
       "id": "a8e3bc87-b9ea-4e65-93fe-4ac4b68888d8",
       "comment": "",
       "command": "assertText",
-      "target": "css=button:nth-child(9)",
-      "targets": [],
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Reserve Now')]", "xpath:innerText"]
+      ],
       "value": "Reserve Now"
+    }, {
+      "id": "440c5b08-fc78-4652-ba85-ed47e79538bc",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "There is already a reservation paid for on the selected date.",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "58941a88-2841-4322-982b-079177528d66",
@@ -1671,19 +1699,27 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "2721549f-c268-4370-ad62-41c6f144c792",
+      "id": "5acc43b8-0bbf-4c03-90e7-420c3547b5fe",
       "comment": "",
-      "command": "assertText",
-      "target": "linkText=Details",
+      "command": "waitForElementVisible",
+      "target": "css=.eventCard:nth-child(1)",
       "targets": [
-        ["linkText=Details", "linkText"],
-        ["css=.eventCard:nth-child(1) .eventDetailsButton", "css:finder"],
-        ["xpath=//a[contains(text(),'Details')]", "xpath:link"],
-        ["xpath=//div[@id='root']/div/div/div[2]/div/div[3]/div/div/div[3]/a", "xpath:idRelative"],
-        ["xpath=//div[3]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Details')]", "xpath:innerText"]
+        ["css=.eventCard:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div/div[3]/div/div", "xpath:position"]
       ],
-      "value": "Details"
+      "value": "5000"
+    }, {
+      "id": "5d139324-ff50-455d-a343-de93530e7eb5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.eventCard:nth-child(1)",
+      "targets": [
+        ["css=.eventCard:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "59f66d51-4a59-4b3b-9230-95f86c66a68c",
@@ -1718,28 +1754,16 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "1754cf0c-8b59-4fd4-872e-2740c4398077",
-      "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=.slide:nth-child(3)",
-      "targets": [
-        ["css=.slide:nth-child(3)", "css:finder"],
-        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/div/div[3]", "xpath:idRelative"],
-        ["xpath=//div/div[3]", "xpath:position"]
-      ],
-      "value": "Details"
-    }, {
       "id": "5ce9ff30-9200-4fa2-b5e7-289a42cf34ed",
       "comment": "",
-      "command": "assertText",
-      "target": "css=.slide-content > h2",
+      "command": "waitForElementPresent",
+      "target": "css=.slide:nth-child(1)",
       "targets": [
-        ["css=.slide-content > h2", "css:finder"],
-        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/div/div/div/h2", "xpath:idRelative"],
-        ["xpath=//h2", "xpath:position"],
-        ["xpath=//h2[contains(.,'Slide 1')]", "xpath:innerText"]
+        ["css=.slide:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
       ],
-      "value": "Slide 1"
+      "value": "30000"
     }, {
       "id": "6be3e1d9-61c0-4387-86dd-fc4b37f4e63f",
       "comment": "",
@@ -1750,15 +1774,14 @@
     }, {
       "id": "5dd2732f-b3b8-457d-b0ae-682a909fbf32",
       "comment": "",
-      "command": "assertText",
-      "target": "css=.slide-content > h2",
+      "command": "assertElementPresent",
+      "target": "css=.slide:nth-child(2)",
       "targets": [
-        ["css=.slide-content > h2", "css:finder"],
-        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/div/div/div/h2", "xpath:idRelative"],
-        ["xpath=//h2", "xpath:position"],
-        ["xpath=//h2[contains(.,'Slide 1')]", "xpath:innerText"]
+        ["css=.slide:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div[2]", "xpath:position"]
       ],
-      "value": "Slide 2"
+      "value": ""
     }]
   }, {
     "id": "3ecd7673-5efe-4921-82ec-e0fea632ae31",
@@ -1794,6 +1817,13 @@
       "comment": "",
       "command": "runScript",
       "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "51e68592-b642-487e-b23b-966dc8dd7ef1",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
       "targets": [],
       "value": ""
     }, {
@@ -1834,11 +1864,12 @@
       "id": "5ef85a37-5b8c-4206-a6ab-7084d05dbeb2",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.slick-active .event-box",
+      "target": "css=.calendar > h2",
       "targets": [
-        ["css=.slick-active .event-box", "css:finder"],
-        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/div/div[2]/div/div", "xpath:idRelative"],
-        ["xpath=//div/div/div/div/div[2]/div/div", "xpath:position"]
+        ["css=.calendar > h2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Event Calendar')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -1868,11 +1899,12 @@
       "id": "f883060c-50b8-4e96-ab39-546675724008",
       "comment": "",
       "command": "assertElementPresent",
-      "target": "css=.slick-active .event-box",
+      "target": "css=.calendar > h2",
       "targets": [
-        ["css=.slick-active .event-box", "css:finder"],
-        ["xpath=//div[@id='root']/div/div/div[2]/div/div/div/div/div[2]/div/div", "xpath:idRelative"],
-        ["xpath=//div/div/div/div/div[2]/div/div", "xpath:position"]
+        ["css=.calendar > h2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[2]/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Event Calendar')]", "xpath:innerText"]
       ],
       "value": ""
     }]
