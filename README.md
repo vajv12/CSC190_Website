@@ -1,12 +1,24 @@
 # Great Escape Games Website Revamp
 *Worked on by SoftGroup*
 
-<sub>Team members: Anuja Chouhan, Alexis Dawatan, Vayhout Lim, Chris Long, Dzmitry Matsiulka, Shari Nguyen, Bruno Reviglio, Voua Vang</sub>
+
 
 <img src="src/assets/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
 <img src="https://cdn-icons-png.flaticon.com/512/1322/1322195.png" alt="partnership handshake" width="15%" height="15%">
 <img src ="public/image/Soft Group Logo.png" alt="SoftGroup Logo" width="30%" height="30%">
+
+<sub>Team members: <br> 
+Anuja Chouhan: achouhan0114@gmail.com <br>
+Alexis Dawatan: adawatan94@gmail.com <br>
+Vayhout Lim: vayhout19@gmail.com <br>
+Chris Long: chrislong561@gmail.com <br>
+Dzmitry Matsiulka: ma.dzmitry@gmail.com <br>
+Shari Nguyen: sharinguyening@gmail.com <br>
+Bruno Reviglio: brunoreviglio@gmail.com <br>
+Voua Vang: vouavang1997@gmail.com <br>
+
+</sub>
 
 # Synonsis
 
