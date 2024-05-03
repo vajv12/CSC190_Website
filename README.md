@@ -44,18 +44,6 @@ Below we have provided a quick look into our layout. <a href="https://www.figma.
 
 
 
-# CSC 190 Progress
-
-[//]: <> (Use your JIRA to create a timeline section with key milestones for your project)
-[//]: <> (NOTE: When coming up with the timeline this is the timeline for what you expect to get done in 191 based on the user stories you created in the backlog for all the key features with estimates.)
-JIRA Mile Stones Sprints 1-4
-#### System Deployment: 
-59,66,62,61,58,2,60
-#### Data Base Model: 
-64,67,65,68,69
-#### UI/UX Design: 
-51,48,49,53,54,57,56,52
-
 
 
 # Setup Environment
