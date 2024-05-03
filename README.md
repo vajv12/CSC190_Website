@@ -3,7 +3,7 @@
 
 <sub>Team members: Anuja Chouhan, Alexis Dawatan, Vayhout Lim, Chris Long, Dzmitry Matsiulka, Shari Nguyen, Bruno Reviglio, Voua Vang</sub>
 
-<img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
+<img src="src/assets/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
 <img src="https://cdn-icons-png.flaticon.com/512/1322/1322195.png" alt="partnership handshake" width="15%" height="15%">
 <img src ="public/image/Soft Group Logo.png" alt="SoftGroup Logo" width="30%" height="30%">
