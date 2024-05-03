@@ -56,42 +56,7 @@ JIRA Mile Stones Sprints 1-4
 #### UI/UX Design: 
 51,48,49,53,54,57,56,52
 
-# Plans for CSC191
-#### Sprint 5: Complete UI/UX Design 
-#### Sprint 6: Start Backend development
 
-- Admin privilege
-- User privilege
-- Payment Portal
-- Finish Web page connection
-- User Accounts/Profiles
-#### Sprint 7: Backend Development/Update UI-UX Design
-
-- Mobel Version
-- Backup and Recovery
-- Security Development
-- Inventory Development
-#### Sprint 8: Begin app Testing/Update Backend Development/Update UI-UX Design
-
-- Inventoy BugTesting
-- Account BugTesting
-- Backup and Recovery
-- Payment Gateway
-- UI/UX BugTesting
-#### Sprint 9: App Testing/app feature development
-
-- Backend BugTesting
-- Updates to testing results
-#### Sprint 10: Open App Testing/Bugfixing
-
-- Open App testing to the client
-- BugFixing of previous results
-#### Sprint 11: Final BugFixing/Testing
-
-- Open App BugFixing
-- Final Backend/Front End Testing
-
-#### Sprint 12: Full App deployment/BugFixing
 
 # Setup Environment
 GitHub
