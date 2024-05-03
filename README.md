@@ -116,7 +116,42 @@ yarn test example.test.js (Replace `example.test.js` with the path to the test f
 
 # Deployment
 
-Continue in CSC191
+## Overview
+Our application utilizes Firebase Hosting to serve our website and essential services, including Firebase Authentication, Firebase Storage, and Firestore. The deployment process is automated using GitHub Actions, ensuring seamless updates to our live environment.
+
+## Source Code Management
+The source code is managed on GitHub, enabling efficient collaboration and change tracking.
+
+## Repository Structure
+- **Main Branch**: Stores production-ready code, triggering automatic deployment to the live environment.
+
+## Continuous Deployment Pipeline
+Our deployment pipeline, powered by GitHub Actions, facilitates continuous integration and deployment.
+
+### Steps in the Deployment Pipeline
+1. **Code Update**: Developers push updates to the main branch directly or via pull requests after code review.
+2. **Build Trigger**: Updates to the main branch trigger the GitHub Actions workflow.
+3. **Build Process**:
+   - Dependencies are installed, and the code is compiled and tested.
+   - Only successful tests proceed to deployment.
+4. **Deployment**:
+   - The build artifact is prepared and deployed to Firebase Hosting.
+   - Utilizes a global CDN for optimal performance.
+5. **Post-Deployment**:
+   - Updated website version becomes instantly accessible.
+   - Continuous monitoring ensures functionality and performance.
+
+## Firebase Services
+Key Firebase services integrated into our deployment:
+- **Firebase Authentication**: Supports various authentication methods for secure access.
+- **Firebase Storage**: Ensures data persistence and security for user-generated content.
+- **Firestore**: Enables real-time data synchronization across devices.
+
+## Maintenance and Monitoring
+Regular maintenance and proactive monitoring ensure operational excellence:
+- System logs are routinely examined for irregularities or errors.
+- Firebase Analytics provides insights into user behavior and system performance.
+
 
 # Developers Instruction
 
