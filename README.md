@@ -40,11 +40,16 @@ Below we have provided a quick look into our layout. <a href="https://www.figma.
 <img src="src/components/images/prototype.JPG" alt="prototype" width="50%" height="50%">
 
 
+# Project Product 
 
-
-
-
-
+#### Home page 
+#### Product
+#### Events
+#### Private Rooms
+#### About 
+#### Contact 
+#### Login 
+#### Signup
 
 # Setup Environment
 GitHub
@@ -61,11 +66,92 @@ FireBase setup:
 
 # Testing
 
-Continue in CSC191
+## Step-by-Step Testing Guide Using Jest and Selenium IDE
+
+### Setting Up the Test Environment
+
+#### Prerequisites:
+- Ensure you are using a **Windows 10 Home** operating system.
+- Ensure you have installed **Google Chrome Version 123 (Official Build) (64-bit)**; if not, install it from [Google Chrome's official download site](https://www.google.com/chrome/). Using a newer version likely will still work.
+- Ensure you have installed **Selenium IDE Chrome Extension Version 3.17.2**; if not, install it from [Chrome Web Store's official site](https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd) or from the [Selenium IDE's official GitHub Page](https://github.com/SeleniumHQ/selenium-ide/releases) for older versions. Using a newer version likely will still work.
+- Ensure you have **Git** installed; if not, install it from [Git's official site](https://git-scm.com/downloads).
+- Ensure you have **Yarn** installed; if not, install it from [Yarn's official site](https://yarnpkg.com/getting-started/install).
+
+#### Pull the Code and Test Scripts:	
+1. Open command prompt.
+2. Navigate to the directory where you want to clone the repository using the following command: cd /path/to/your/directory
+3. Pull the code and test scripts from the repository with the following command:
+git clone https://github.com/vajv12/CSC190_Website.git
+cd CSC190_Website
+
+#### Install Dependencies:
+Run the following command to install all necessary dependencies listed in the `package.json` file:
+yarn install
+
+#### Set Up Jest Testing Library:
+Ensure you are using **Jest version 1.22.10**.
+   - Check with: 
+     ```
+     yarn -v jest
+     ```
+   - If Jest is missing or is a different version, install Jest 1.22.10 using the following command:
+     ```
+     yarn add jest@1.22.10 --dev
+     ```
+
+### Running Tests
+
+#### Running Unit Tests with Jest:
+- To run a specific test file, use the following command in your terminal:
+yarn test example.test.js (Replace `example.test.js` with the path to the test file you want to execute. Available test files can be found in the project folder under `CSC190_Website/src/tests/UnitTests/…`.)
+- To run additional test files, use `CTRL+C` to close out of the current test and run the following command again with a different test file name: yarn test example.test.js
+
+
+#### Running Integration Tests with Selenium IDE:
+- Open Chrome and click on the Selenium IDE extension icon in the top right of the browser window.
+- Open the testing file that is found in the project folder under `CSC190_Website/src/tests/SeleniumTests/CSC191.side`.
+- Select an individual test and then click the triangle shaped play button to run the test.
+- For tests that sign a user in, make sure to sign them out after each test or it may interfere with other tests.
+
 
 # Deployment
 
-Continue in CSC191
+## Overview
+Our application utilizes Firebase Hosting to serve our website and essential services, including Firebase Authentication, Firebase Storage, and Firestore. The deployment process is automated using GitHub Actions, ensuring seamless updates to our live environment.
+
+## Source Code Management
+The source code is managed on GitHub, enabling efficient collaboration and change tracking.
+
+## Repository Structure
+- **Main Branch**: Stores production-ready code, triggering automatic deployment to the live environment.
+
+## Continuous Deployment Pipeline
+Our deployment pipeline, powered by GitHub Actions, facilitates continuous integration and deployment.
+
+### Steps in the Deployment Pipeline
+1. **Code Update**: Developers push updates to the main branch directly or via pull requests after code review.
+2. **Build Trigger**: Updates to the main branch trigger the GitHub Actions workflow.
+3. **Build Process**:
+   - Dependencies are installed, and the code is compiled and tested.
+   - Only successful tests proceed to deployment.
+4. **Deployment**:
+   - The build artifact is prepared and deployed to Firebase Hosting.
+   - Utilizes a global CDN for optimal performance.
+5. **Post-Deployment**:
+   - Updated website version becomes instantly accessible.
+   - Continuous monitoring ensures functionality and performance.
+
+## Firebase Services
+Key Firebase services integrated into our deployment:
+- **Firebase Authentication**: Supports various authentication methods for secure access.
+- **Firebase Storage**: Ensures data persistence and security for user-generated content.
+- **Firestore**: Enables real-time data synchronization across devices.
+
+## Maintenance and Monitoring
+Regular maintenance and proactive monitoring ensure operational excellence:
+- System logs are routinely examined for irregularities or errors.
+- Firebase Analytics provides insights into user behavior and system performance.
+
 
 # Developers Instruction
 
