@@ -14,6 +14,7 @@ function Contact() {
   const[message, setMessage] = useState("");
 
   const[loader, setLoader] = useState(false);
+  const characterCount = message.length;
   const{ db } = useFirebase();
 
   //send email using SMTPJS
@@ -134,7 +135,7 @@ function Contact() {
             onChange= {(e) => setMessage(e.target.value)}
             required
           ></textarea>
-          
+           <div className="character-counter">{characterCount}/300 characters</div>
            <button type="submit"  disabled={loader}>
           {loader ? "Submitting..." : "Submit"}
         </button>
