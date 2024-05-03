@@ -3,7 +3,7 @@
 
 <sub>Team members: Anuja Chouhan, Alexis Dawatan, Vayhout Lim, Chris Long, Dzmitry Matsiulka, Shari Nguyen, Bruno Reviglio, Voua Vang</sub>
 
-<img src="https://github.com/vajv12/CSC190_Website/blob/main/src/components/images/GEG-logo.png"
+<img src="src/assets/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
 <img src="https://cdn-icons-png.flaticon.com/512/1322/1322195.png" alt="partnership handshake" width="15%" height="15%">
 <img src ="public/image/Soft Group Logo.png" alt="SoftGroup Logo" width="30%" height="30%">
@@ -44,54 +44,7 @@ Below we have provided a quick look into our layout. <a href="https://www.figma.
 
 
 
-# CSC 190 Progress
 
-[//]: <> (Use your JIRA to create a timeline section with key milestones for your project)
-[//]: <> (NOTE: When coming up with the timeline this is the timeline for what you expect to get done in 191 based on the user stories you created in the backlog for all the key features with estimates.)
-JIRA Mile Stones Sprints 1-4
-#### System Deployment: 
-59,66,62,61,58,2,60
-#### Data Base Model: 
-64,67,65,68,69
-#### UI/UX Design: 
-51,48,49,53,54,57,56,52
-
-# Plans for CSC191
-#### Sprint 5: Complete UI/UX Design 
-#### Sprint 6: Start Backend development
-
-- Admin privilege
-- User privilege
-- Payment Portal
-- Finish Web page connection
-- User Accounts/Profiles
-#### Sprint 7: Backend Development/Update UI-UX Design
-
-- Mobel Version
-- Backup and Recovery
-- Security Development
-- Inventory Development
-#### Sprint 8: Begin app Testing/Update Backend Development/Update UI-UX Design
-
-- Inventoy BugTesting
-- Account BugTesting
-- Backup and Recovery
-- Payment Gateway
-- UI/UX BugTesting
-#### Sprint 9: App Testing/app feature development
-
-- Backend BugTesting
-- Updates to testing results
-#### Sprint 10: Open App Testing/Bugfixing
-
-- Open App testing to the client
-- BugFixing of previous results
-#### Sprint 11: Final BugFixing/Testing
-
-- Open App BugFixing
-- Final Backend/Front End Testing
-
-#### Sprint 12: Full App deployment/BugFixing
 
 # Setup Environment
 GitHub
