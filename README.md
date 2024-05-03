@@ -61,7 +61,53 @@ FireBase setup:
 
 # Testing
 
-Continue in CSC191
+## Step-by-Step Testing Guide Using Jest and Selenium IDE
+
+### Setting Up the Test Environment
+
+#### Prerequisites:
+- Ensure you are using a **Windows 10 Home** operating system.
+- Ensure you have installed **Google Chrome Version 123 (Official Build) (64-bit)**; if not, install it from [Google Chrome's official download site](https://www.google.com/chrome/). Using a newer version likely will still work.
+- Ensure you have installed **Selenium IDE Chrome Extension Version 3.17.2**; if not, install it from [Chrome Web Store's official site](https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd) or from the [Selenium IDE's official GitHub Page](https://github.com/SeleniumHQ/selenium-ide/releases) for older versions. Using a newer version likely will still work.
+- Ensure you have **Git** installed; if not, install it from [Git's official site](https://git-scm.com/downloads).
+- Ensure you have **Yarn** installed; if not, install it from [Yarn's official site](https://yarnpkg.com/getting-started/install).
+
+#### Pull the Code and Test Scripts:	
+1. Open command prompt.
+2. Navigate to the directory where you want to clone the repository using the following command: cd /path/to/your/directory
+3. Pull the code and test scripts from the repository with the following command:
+git clone https://github.com/vajv12/CSC190_Website.git
+cd CSC190_Website
+
+#### Install Dependencies:
+Run the following command to install all necessary dependencies listed in the `package.json` file:
+yarn install
+
+#### Set Up Jest Testing Library:
+Ensure you are using **Jest version 1.22.10**.
+   - Check with: 
+     ```
+     yarn -v jest
+     ```
+   - If Jest is missing or is a different version, install Jest 1.22.10 using the following command:
+     ```
+     yarn add jest@1.22.10 --dev
+     ```
+
+### Running Tests
+
+#### Running Unit Tests with Jest:
+- To run a specific test file, use the following command in your terminal:
+yarn test example.test.js (Replace `example.test.js` with the path to the test file you want to execute. Available test files can be found in the project folder under `CSC190_Website/src/tests/UnitTests/…`.)
+- To run additional test files, use `CTRL+C` to close out of the current test and run the following command again with a different test file name: yarn test example.test.js
+
+
+#### Running Integration Tests with Selenium IDE:
+- Open Chrome and click on the Selenium IDE extension icon in the top right of the browser window.
+- Open the testing file that is found in the project folder under `CSC190_Website/src/tests/SeleniumTests/CSC191.side`.
+- Select an individual test and then click the triangle shaped play button to run the test.
+- For tests that sign a user in, make sure to sign them out after each test or it may interfere with other tests.
+
 
 # Deployment
 
