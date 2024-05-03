@@ -43,13 +43,37 @@ Below we have provided a quick look into our layout. <a href="https://www.figma.
 # Project Product 
 
 #### Home page 
+The page is layout with a slideshow to show the latest updates. It also displays some featured products.
+<img src="src/assets/Home page.png" alt="ERD" width="100%" height="100%">
+
 #### Product
+The product page displays the current product and its price. When the use clicks on the product it will show the description and review. 
+<img src="src/assets/Product page.png" alt="ERD" width="100%" height="100%">
+
 #### Events
+The event page shows the calender that the client will use to keep his customers updated.
+<img src="src/assets/About us 2 page.png" alt="ERD" width="100%" height="100%">
+
 #### Private Rooms
+The users are able to view the page and book a room in the sacramento region. With information such as user name and time slots. 
+<img src="src/assets/Private Room page.png" alt="ERD" width="100%" height="100%">
+
 #### About 
+Users would be able to read and get to know the store and its location on google maps. When the user interact with it it will bring them to a new page. 
+<img src="src/assets/About us 1 page.png" alt="ERD" width="100%" height="100%">
+<img src="src/assets/About us 2 page.png" alt="ERD" width="100%" height="100%">
+
 #### Contact 
+Users are able to contact the store with any question within a 300 word count. A employee would get back to them
+<img src="src/assets/Contact Us page.png" alt="ERD" width="100%" height="100%">
+
 #### Login 
+Users are able to login in with their emails and password they have created in Signup.
+<img src="src/assets/Login page.png" alt="ERD" width="100%" height="100%"> 
+
 #### Signup
+Users are able to sign up with a username, email, and password. They also have the option to use their google accounts. 
+<img src="src/assets/Sign Up page.png" alt="ERD" width="100%" height="100%">
 
 # Setup Environment
 GitHub
