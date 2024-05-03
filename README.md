@@ -40,11 +40,16 @@ Below we have provided a quick look into our layout. <a href="https://www.figma.
 <img src="src/components/images/prototype.JPG" alt="prototype" width="50%" height="50%">
 
 
+# Project Product 
 
-
-
-
-
+#### Home page 
+#### Product
+#### Events
+#### Private Rooms
+#### About 
+#### Contact 
+#### Login 
+#### Signup
 
 # Setup Environment
 GitHub
