@@ -41,7 +41,7 @@ FireBase is chosen as the backend and database, the reason being it is a simple 
 # ERD
 The ERD is shown below:
 
-<img src="src/components/images/ERD.JPG" alt="ERD" width="100%" height="100%">
+<img src="public/image/ERD.png" alt="ERD" width="100%" height="100%">
 
 # Prototype <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Figma-1-logo.png" alt="Figma logo" width="5%" height="5%">
 
