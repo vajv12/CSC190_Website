@@ -1,14 +1,12 @@
 # Great Escape Games Website Revamp
-*Worked on by SoftGroup*
-
-
 
 <img src="src/assets/GEG-logo.png"
 alt="CSS logo" width="30%" height="30%">
 <img src="https://cdn-icons-png.flaticon.com/512/1322/1322195.png" alt="partnership handshake" width="15%" height="15%">
 <img src ="public/image/Soft Group Logo.png" alt="SoftGroup Logo" width="30%" height="30%">
 
-<sub>Team members: <br> 
+
+#  SoftGroup Team Members: <br> 
 Anuja Chouhan: achouhan0114@gmail.com <br>
 Alexis Dawatan: adawatan94@gmail.com <br>
 Vayhout Lim: vayhout19@gmail.com <br>
