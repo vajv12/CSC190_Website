@@ -24,15 +24,26 @@ Voua Vang: vouavang1997@gmail.com <br>
 
 In CSC 190, our focus has been working with our client: Gary Lane. He is the owner of Great Escape Games, a local store specializing in board games and collectables. Gary's existing website is an outdated website that is counterproductive as it no longer serves the client's needs. Our primary task is to revamp the website and create a modernized interface while also adding new pages and functions that the old website did not have. Our goal is to create an interactive and dynamic website that will help the client better serve his customers' needs enhancing customer-client interaction. Throughout this semester, Soft Group has worked together to find the most suitable languages, IDE, API's, and databases for this project. We created ER Diagrams and prototype pages. Once we established the design, we proceeded into the developmental phase which included coding the front-end and the database. As the semester comes to an end, we discuss how we are proceeding with our work onto the upcoming semester and what we are hoping to achieve.
 
+# Final Project Overview
+
+SoftGroup revamped the Great Escape Games website, completely changing its structure and functionality. Initially, we focused on redesigning the homepage to serve as a hub for the latest product updates and events. Additionally, we implemented a dedicated page for customers to explore and review the newest products, complete with search functionality. For added convenience, customers can now easily locate events at either the Sacramento or Rocklin locations. Notably, we integrated a seamless private room booking system specifically for the Sacramento branch. Furthermore, we developed informative pages about the store and streamlined contact options for customers. A user-friendly account creation and login page were introduced, facilitating room bookings and product reviews. On the administrative side, we enabled product management and event creation capabilities, empowering administrators to maintain the site efficiently. These enhancements effectively addressed Gary Lane's concerns, ensuring the website met their requirements and improved overall productivity.
 
 
-
-# Programming Languages <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" alt="CSS logo" width="7%" height="10%"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="10%" height="10%"><img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="10%" height="10%">
+# Programming Languages <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png" alt="CSS logo" width="3.6%" height="5%"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png" alt="HTML logo" width="5%" height="5%"><img src="https://media.licdn.com/dms/image/D4E12AQFFYnJcaBca2A/article-cover_image-shrink_720_1280/0/1692721264999?e=2147483647&v=beta&t=M1fXs-4m7O8-N-1un-6AWU6sJqck1jOyymr4G5UOamg" alt="HTML logo" width="5%" height="5%">
 
 The programming languages we are using throughout this project are CSS, HTML, and React. We chose these languages as it is fundamental to use when creating a dynamic website.
 
-# IDE <img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="14%" height="14%">
+# IDE <img src="https://ubuntu.com/wp-content/uploads/c9f4/visualstudio_code-card.png" alt="VSCode logo" width="12%" height="12%">
 The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and is user-friendly.
+
+# API <img src="src/assets/stripe.png" width="60" height="30"> <img src="src/assets/google.png" width="30" height="30"> <img src="src/assets/mailchimp.png" width="30" height="30"> 
+<b>Stripe </b> was seamlessly integrated to enable secure payment processing for both event bookings and private room reservations, ensuring a smooth and convenient experience for customers. </br> </br>
+
+<b>Google Maps </b> was utilized to visually showcase the store's precise location, enhancing accessibility and facilitating navigation for visitors. </b> </b>
+
+<b>Google Calendar </b> was employed to display the comprehensive schedule of events and activities hosted by the store, allowing customers to stay informed about upcoming happenings.  </br> </br> 
+
+<b> mailchimp </b> was leveraged to efficiently manage email lists and distribute newsletters, enabling targeted communication and fostering engagement with the store's audience.
 
 # Database <img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png" alt="Firebase logo" width="10%" height="10%">
 FireBase is chosen as the backend and database, the reason being it is a simple application to use along with development options that work well with our plan for the application. 
@@ -49,43 +60,43 @@ We utilized Figma to help map out our website dynamics. It was also used to info
 Below we have provided a quick look into our layout. <a href="https://www.figma.com/file/AbiVev09xmJ9DRe81yQ1bO/Great-Escape-Games?type=whiteboard&node-id=0%3A1&t=VvZZ1qSWYkgmuEbh-1">For more details click here.
 </a> 
 
-<img src="src/components/images/prototype.JPG" alt="prototype" width="50%" height="50%">
+<img src="src/assets/prototype.png" alt="prototype" width="50%" height="50%">
 
 
 # Project Product 
 
 #### Home page 
-The page is layout with a slideshow to show the latest updates. It also displays some featured products.
+The page is layout with a slideshow to show the latest updates with its feature products.
 <img src="src/assets/Home page.png" alt="ERD" width="100%" height="100%">
 
 #### Product
-The product page displays the current product and its price. When the use clicks on the product it will show the description and review. 
+The product page displays the current product and it's price. The page has the ability to search for products and by catergories. When the use clicks on the product it will show the description and review. The client can add products through the admin account.
 <img src="src/assets/Product page.png" alt="ERD" width="100%" height="100%">
 
 #### Events
-The event page shows the calender that the client will use to keep his customers updated.
+The event page shows the calender that the client will use to keep his customers updated. There is a Sacramento and Rocklin version. The client can add events through the admin account.
 <img src="src/assets/About us 2 page.png" alt="ERD" width="100%" height="100%">
 
 #### Private Rooms
-The users are able to view the page and book a room in the sacramento region. With information such as user name and time slots. 
+The users are able to view the page and book a room in the Sacramento region with information such as user name and time slots. <b>Users must be signed in to reserve. </b>
 <img src="src/assets/Private Room page.png" alt="ERD" width="100%" height="100%">
 
 #### About 
-Users would be able to read and get to know the store and its location on google maps. When the user interact with it it will bring them to a new page. 
+Users are able to read and get to know the store and its location on google maps. When the user interact with it it will bring them to a new page. 
 <img src="src/assets/About us 1 page.png" alt="ERD" width="100%" height="100%">
 <img src="src/assets/About us 2 page.png" alt="ERD" width="100%" height="100%">
 
 #### Contact 
-Users are able to contact the store with any question within a 300 word count. A employee would get back to them
+Users are able to contact the store with any question within a 300 word count. A employee will responsed though the email provided. 
 <img src="src/assets/Contact Us page.png" alt="ERD" width="100%" height="100%">
-
-#### Login 
-Users are able to login in with their emails and password they have created in Signup.
-<img src="src/assets/Login page.png" alt="ERD" width="100%" height="100%"> 
 
 #### Signup
 Users are able to sign up with a username, email, and password. They also have the option to use their google accounts. 
 <img src="src/assets/Sign Up page.png" alt="ERD" width="100%" height="100%">
+
+#### Login 
+Users are able to login in with their emails and password they have created in Signup.
+<img src="src/assets/Login page.png" alt="ERD" width="100%" height="100%"> 
 
 # Setup Environment
 GitHub
@@ -187,12 +198,6 @@ Key Firebase services integrated into our deployment:
 Regular maintenance and proactive monitoring ensure operational excellence:
 - System logs are routinely examined for irregularities or errors.
 - Firebase Analytics provides insights into user behavior and system performance.
-
-
-# Developers Instruction
-
-Continue in CSC191
-
 
 
 # Getting Started with Create React App
