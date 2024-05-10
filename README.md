@@ -37,11 +37,11 @@ The programming languages we are using throughout this project are CSS, HTML, an
 The IDE of choice is Visual Studio Code (VSCODE) as everyone in the group has experience with it and is user-friendly.
 
 # API <img src="src/assets/stripe.png" width="60" height="30"> <img src="src/assets/google.png" width="30" height="30"> <img src="src/assets/mailchimp.png" width="30" height="30"> 
-<b>Stripe </b> was seamlessly integrated to enable secure payment processing for both event bookings and private room reservations, ensuring a smooth and convenient experience for customers. </br> </br>
+<b>Stripe </b> was seamlessly integrated to enable secure payment processing for both event bookings and private room reservations, ensuring a smooth and convenient experience for customers. </br> 
 
-<b>Google Maps </b> was utilized to visually showcase the store's precise location, enhancing accessibility and facilitating navigation for visitors. </b> </b>
+<b>Google Maps </b> was utilized to visually showcase the store's precise location, enhancing accessibility and facilitating navigation for visitors. </b> 
 
-<b>Google Calendar </b> was employed to display the comprehensive schedule of events and activities hosted by the store, allowing customers to stay informed about upcoming happenings.  </br> </br> 
+<b>Google Calendar </b> was employed to display the comprehensive schedule of events and activities hosted by the store, allowing customers to stay informed about upcoming happenings.  </br> 
 
 <b> mailchimp </b> was leveraged to efficiently manage email lists and distribute newsletters, enabling targeted communication and fostering engagement with the store's audience.
 
