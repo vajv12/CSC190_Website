@@ -159,7 +159,8 @@ function PrivateRooms() {
                 stripeLink = `https://buy.stripe.com/4gw9Ds2uk0Eu5ri28b?client_reference_id=${clientReferenceId}`;
                 alert("During Stripe Payment: Please Select Correct Number Of Hours to Buy!");
             } else {
-                stripeLink = `https://buy.stripe.com/test_6oE18ae9QeHo9VecMM?client_reference_id=${clientReferenceId}`;
+                //stripeLink = `https://buy.stripe.com/test_6oE18ae9QeHo9VecMM?client_reference_id=${clientReferenceId}`;
+                stripeLink = `https://buy.stripe.com/eVa2b05Gw1Iy4ne28a?client_reference_id=${clientReferenceId}`;
             }
             setStripeLink(stripeLink);
 
