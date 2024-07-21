@@ -24,13 +24,13 @@ function Contact() {
       //from elastic email need to use client domain to make support 
       //and secure to replace username and password with  
       //SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
-      Username : "sharinguyening@gmail.com",
+      Username : "support@greatescapegames.com",
       Password:"4AD30342328240C7724AFD3C6A51193BF987",
       //send copy to customer
       To: email, 
       //use support email
-      Cc: 'sharinguyening@gmail.com',
-      From: 'sharinguyening@gmail.com',
+      Cc: 'support@greatescapegames.com',
+      From: 'support@greatescapegames.com',
       Subject: subject,
       Body: 
       `<strong> Hi ${name} </strong>,

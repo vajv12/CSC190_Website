@@ -89,7 +89,7 @@ function Footer() {
         <p>Mon 12pm - 7pm</p>
         <p>Tue 12pm - 7pm</p>
         <p>Wed 12pm - 9pm</p>
-        <p>Thu 12pm - 7pm</p>
+        <p>Thu 12pm - 10pm</p>
         <p>Fri 12pm - 11pm</p>
         <p>Sat 12pm - 10pm</p>
         <p>Sun 12pm - 6pm</p>

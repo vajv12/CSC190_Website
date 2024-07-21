@@ -174,16 +174,17 @@ function PrivateRooms() {
         if (selectedDate) {
             const selectedDay = new Date(selectedDate).getDay(); 
             switch (selectedDay) {
-                case 0: // Sunday
                 case 2: // Monday
                 case 6: // Wednesday
-                    return ["12pm-10pm"];
+                    return ["12pm-8pm"];
                 case 1: // Monday
                 case 3: // Tuesday
                 case 5: // Thursday
                     return ["12pm-5pm", "5pm-10pm"];
                 case 4: // Friday
                     return ["12pm-5:30pm", "5:30pm-11pm"];
+                case 0: //Sunday
+                    return ["12pm-6pm"];
                 default:
                     return [];
             }
@@ -196,7 +197,8 @@ function PrivateRooms() {
             <h2>Private Room Reservations</h2>
             <p><strong>Room Information & Rates:</strong></p>
             <p><strong>Dragon & Wolf Rooms: $15 for half day or full day depending on day</strong></p>
-            <p>* Full day Room Rentals (12-10 pm): Available Monday, Wednesday, Sunday</p>
+            <p>* Full day Room Rentals (12-8 pm): Available Monday, Wednesday</p>
+            <p>* Full day Room Rental (12-6 pm): Available Sunday</p>
             <p>* Half day Room Rentals (Choice of 12pm-5pm or 5pm-10pm): Available Tuesday, Thursday, Saturday</p>
             <p>* Half day Room Rentals (Choice of 12pm-5:30pm or 5:30pm-11pm): Available Friday</p>
             <p><strong>Party Room: $25 Per Hour any day of the week</strong></p>
