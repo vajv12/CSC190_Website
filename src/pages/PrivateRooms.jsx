@@ -194,9 +194,10 @@ function PrivateRooms() {
 
     return (
         <div className="booking-form">
+            <h2>Our Online Room Reservation is down for maintenance</h2>
             <h2>Private Room Reservations</h2>
             <p><strong>Room Information & Rates:</strong></p>
-            <p><strong>Dragon & Wolf Rooms: $15 for half day or full day depending on day</strong></p>
+            <p><strong>Dragon & Wolf Rooms: $20 for half day or full day depending on day</strong></p>
             <p>* Full day Room Rentals (12-8 pm): Available Monday, Wednesday</p>
             <p>* Full day Room Rental (12-6 pm): Available Sunday</p>
             <p>* Half day Room Rentals (Choice of 12pm-5pm or 5pm-10pm): Available Tuesday, Thursday, Saturday</p>
@@ -271,7 +272,8 @@ function PrivateRooms() {
                     </div>
                 )}
                 <p>* Please note that room reservations are valid during business hours of the day that is booked.</p>
-                <button type="submit">Reserve Now</button>
+                {/* Comment this back in once maintenance is done <button type="submit">Reserve Now</button> */}
+                
             </form>
 
             {stripeLink && (
