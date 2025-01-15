@@ -133,11 +133,11 @@ function About() {
           </div>
           <div className='hours'> 
           <h1>Business Hours: </h1>
-            <dd>Monday: 12pm - 8pm</dd>
+            <dd>Monday: 12pm - 10pm</dd>
             <dd>Tuesday: 12pm - 10pm</dd>
-            <dd>Wednesday: 12pm - 9pm</dd>
+            <dd>Wednesday: 12pm - 10pm</dd>
             <dd>Thursday: 12pm - 10pm</dd>
-            <dd>Friday: 12pm - 11pm</dd>
+            <dd>Friday: 12pm - 12am</dd>
             <dd>Saturday: 12pm - 10pm</dd>
             <dd>Sunday: 12pm - 6pm</dd>
             < br />
