@@ -19,14 +19,14 @@ function About() {
         <p>
             Welcome to Great Escape Games, your go-to destination for all things table-top games!
             We are passionate about bringing people together through the magic of role-playing with our
-            variety of tabletop games and creating a community where ethusiasists of all ages and skill 
+            variety of tabletop games and creating a community where enthusiasts of all ages and skill 
             levels can find their perfect gaming experience.
         </p>
 
         <h2> Our Story</h2>
         <p>
             Established in 1996, Great Escape Games was born out of love for tabletop games and a desire to 
-            provide a dedicated spcae for gameres to connect, explore, and enjoy their favorite pastime activities.
+            provide a dedicated spaces for gamers to connect, explore, and enjoy their favorite pastime activities.
             Our founder, Gary Lane, envisioned a space where the role-playing community could
             thrive, learn, and share their passion for strategy and creativity. 
         </p>
@@ -46,7 +46,7 @@ function About() {
             board games to the latest tabletop release.
         </p>
 
-        <h3>Knowledgable Staff</h3>
+        <h3>Knowledgeable Staff</h3>
         <p>
             Our team consists of avid gamers who are always ready to assist you. Whether you're a 
             seasoned player or new to the world of tabletop gaming, we're here to provide recommendations, answer
@@ -63,7 +63,7 @@ function About() {
         <h3>Dedicated Gaming Space</h3>
         <p>
             Feel at home in our dedicated gaming space. Enjoy a comfortable environment where you can play your favorite
-            games, host meet-ups, or participate in organized play. We provide the tables,space, and a welcoming atmosphere
+            games, host meet-ups, or participate in organized play. We provide the tables, space, and a welcoming atmosphere
             for you to immerse yourseld in your gaming experience.
         </p>
 
@@ -81,7 +81,7 @@ function About() {
        <br />
        <br />
        
-       Let the games being!
+       Let the games begin!
        </p>
 
       </div>
